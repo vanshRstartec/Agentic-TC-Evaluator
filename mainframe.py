@@ -80,7 +80,7 @@ def _parse_steps_xml(raw: str) -> list[dict]:
 # ── Pre-flight checks ─────────────────────────────────────────────────────────
 def _check_prerequisites() -> None:
     """
-    Verify Claude Code CLI and Playwright MCP package are installed.
+    Verify Claude Code CLI and Playwright MCP are configured.
     """
     import shutil
 
@@ -93,26 +93,24 @@ def _check_prerequisites() -> None:
         )
     _log("  Claude Code CLI: found.")
 
-    # 2. Playwright MCP package installed (npx can resolve it)
+    # 2. Playwright MCP — check via claude mcp list (works cross-platform)
     try:
         result = subprocess.run(
-            ["npx", "--yes", "--no-install", "@playwright/mcp", "--version"],
-            capture_output=True, text=True, timeout=15,
+            [CLAUDE_BIN, "mcp", "list"],
+            capture_output=True, text=True, encoding="utf-8",
+            errors="replace", timeout=30,
         )
-        if result.returncode == 0:
-            _log(f"  Playwright MCP: found ({result.stdout.strip()}).")
+        mcp_output = (result.stdout or "") + (result.stderr or "")
+        if "playwright" in mcp_output.lower():
+            _log("  Playwright MCP: found.")
         else:
             raise EnvironmentError(
-                "@playwright/mcp package is not installed.\n"
-                "Install it with:  npm install -g @playwright/mcp"
+                "Playwright MCP server is not configured in Claude Code.\n"
+                "Add it with:\n"
+                "  claude mcp add playwright -- npx @playwright/mcp@latest"
             )
-    except FileNotFoundError:
-        raise EnvironmentError(
-            "npx not found. Node.js is required to run Playwright MCP.\n"
-            "Install Node.js from https://nodejs.org"
-        )
     except subprocess.TimeoutExpired:
-        _log("  Playwright MCP: version check timed out — assuming installed.")
+        _log("  Playwright MCP: check timed out — assuming configured.")
 
     # 3. evaluator.md prompt template
     if not _EVALUATOR_MD.exists():
