@@ -1,0 +1,1319 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "Skip to main content" [ref=e7] [cursor=pointer]:
+        - /url: "#HomeReactContainer"
+        - generic [ref=e9]: Skip to main content
+      - generic [ref=e10]:
+        - navigation [ref=e12]:
+          - link "Agoda logo Home link" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e15]:
+              - img "Primary Logo" [ref=e18]
+              - img "Site secondary logo" [ref=e19]
+          - generic [ref=e20]:
+            - generic [ref=e22]:
+              - generic [ref=e25] [cursor=pointer]: Bundle and save!
+              - link "Flight + Hotel" [ref=e26] [cursor=pointer]:
+                - /url: /packages
+            - link "Hotels & Homes" [ref=e29] [cursor=pointer]:
+              - /url: /
+            - generic [ref=e31]:
+              - generic [ref=e34] [cursor=pointer]: New!
+              - generic [ref=e37]:
+                - button "Transport" [ref=e38]:
+                  - generic [ref=e39]:
+                    - generic [ref=e40] [cursor=pointer]: Transport
+                    - img [ref=e42]
+                - paragraph
+            - button "Travel menu" [ref=e48] [cursor=pointer]:
+              - img [ref=e49]
+        - generic [ref=e51]:
+          - generic [ref=e53]:
+            - button "Sign in" [ref=e56] [cursor=pointer]:
+              - generic [ref=e58]: Sign in
+            - button "Create account" [ref=e61] [cursor=pointer]:
+              - generic [ref=e63]: Create account
+          - button "Account Menu" [ref=e68] [cursor=pointer]:
+            - img [ref=e71]
+    - main [ref=e74]:
+      - generic [ref=e78]:
+        - generic [ref=e80]:
+          - heading "See the world for less" [level=1] [ref=e81]
+          - heading [level=2]
+        - generic [ref=e82]:
+          - tablist [ref=e84]:
+            - tab "Hotels" [selected] [ref=e85] [cursor=pointer]:
+              - generic [ref=e87]:
+                - img [ref=e88]
+                - heading "Hotels" [level=6] [ref=e90]
+            - tab "Flights" [ref=e92] [cursor=pointer]:
+              - generic [ref=e94]:
+                - img [ref=e95]
+                - heading "Flights" [level=6] [ref=e97]
+            - tab "Homes & Apts" [ref=e98] [cursor=pointer]:
+              - generic [ref=e100]:
+                - img [ref=e101]
+                - heading "Homes & Apts" [level=6] [ref=e103]
+            - tab "Flight + Hotel" [ref=e104] [cursor=pointer]:
+              - generic [ref=e106]:
+                - img [ref=e107]
+                - heading "Flight + Hotel" [level=6] [ref=e109]
+            - tab "Activities" [ref=e110] [cursor=pointer]:
+              - generic [ref=e112]:
+                - img [ref=e113]
+                - heading "Activities" [level=6] [ref=e115]
+            - tab "Airport transfer" [ref=e116] [cursor=pointer]:
+              - generic [ref=e118]:
+                - img [ref=e119]
+                - heading "Airport transfer" [level=6] [ref=e121]
+          - tabpanel "Hotels" [ref=e122]:
+            - generic [ref=e124]:
+              - generic [ref=e126]:
+                - generic [ref=e129]:
+                  - generic [ref=e131]:
+                    - button "Overnight Stays" [pressed] [ref=e133] [cursor=pointer]:
+                      - generic [ref=e135]: Overnight Stays
+                    - button "Day Use Stays" [ref=e137] [cursor=pointer]:
+                      - generic [ref=e139]: Day Use Stays
+                  - generic [ref=e141] [cursor=pointer]:
+                    - generic [ref=e143]: 
+                    - generic [ref=e144]:
+                      - combobox "Enter a destination or property" [ref=e145]: Akara Hotel Bangkok
+                      - generic [ref=e146]: Begin typing property name or keyword to search, use arrow keys or tab key to navigate, press Enter to select
+                  - button "Check-in 11 Jun 2026 Thursday" [ref=e147] [cursor=pointer]:
+                    - generic [ref=e148]:
+                      - generic [ref=e150]: 
+                      - generic [ref=e152]:
+                        - generic [ref=e153]: 11 Jun 2026
+                        - generic [ref=e154]: Thursday
+                  - button "Check-out 14 Jun 2026 Sunday" [ref=e155] [cursor=pointer]:
+                    - generic [ref=e156]:
+                      - generic [ref=e158]: 
+                      - generic [ref=e160]:
+                        - generic [ref=e161]: 14 Jun 2026
+                        - generic [ref=e162]: Sunday
+                  - button "Guests and rooms 2 adults 1 room" [ref=e163] [cursor=pointer]:
+                    - generic [ref=e164]:
+                      - generic [ref=e166]: 
+                      - generic [ref=e168]:
+                        - generic [ref=e169]: 2 adults
+                        - generic [ref=e170]: 1 room
+                        - generic [ref=e172]: 
+                - button "Add a flight" [ref=e176] [cursor=pointer]:
+                  - generic [ref=e177]:
+                    - img [ref=e178]
+                    - generic [ref=e180]: Add a flight
+              - button "SEARCH" [ref=e183] [cursor=pointer]:
+                - generic [ref=e185]: SEARCH
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - heading "Top destinations in India" [level=2] [ref=e189]
+          - region "Top destinations in India carousel" [ref=e191]:
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - region "Slide 1 of 12" [ref=e194]:
+                  - group [ref=e195]:
+                    - link "Bangalore Bangalore 5,372 accommodations" [ref=e197] [cursor=pointer]:
+                      - /url: /city/bangalore-in.html
+                      - generic [ref=e198]:
+                        - img "Bangalore" [ref=e199]
+                        - heading "Bangalore" [level=3] [ref=e200]
+                        - generic [ref=e201]: 5,372 accommodations
+                - region "Slide 2 of 12" [ref=e202]:
+                  - group [ref=e203]:
+                    - link "Mumbai Mumbai 4,177 accommodations" [ref=e205] [cursor=pointer]:
+                      - /url: /city/mumbai-in.html
+                      - generic [ref=e206]:
+                        - img "Mumbai" [ref=e207]
+                        - heading "Mumbai" [level=3] [ref=e208]
+                        - generic [ref=e209]: 4,177 accommodations
+                - region "Slide 3 of 12" [ref=e210]:
+                  - group [ref=e211]:
+                    - link "Goa Goa 9,254 accommodations" [ref=e213] [cursor=pointer]:
+                      - /url: /city/goa-in.html
+                      - generic [ref=e214]:
+                        - img "Goa" [ref=e215]
+                        - heading "Goa" [level=3] [ref=e216]
+                        - generic [ref=e217]: 9,254 accommodations
+                - region "Slide 4 of 12" [ref=e218]:
+                  - group [ref=e219]:
+                    - link "Hyderabad Hyderabad 2,735 accommodations" [ref=e221] [cursor=pointer]:
+                      - /url: /city/hyderabad-in.html
+                      - generic [ref=e222]:
+                        - img "Hyderabad" [ref=e223]
+                        - heading "Hyderabad" [level=3] [ref=e224]
+                        - generic [ref=e225]: 2,735 accommodations
+                - region [ref=e226]:
+                  - group [ref=e227]:
+                    - link [ref=e229] [cursor=pointer]:
+                      - /url: /city/new-delhi-and-ncr-in.html
+                      - generic [ref=e230]:
+                        - img [ref=e231]
+                        - heading [level=3] [ref=e232]: New Delhi
+                        - generic [ref=e233]: 12,786 accommodations
+                - region [ref=e234]:
+                  - group [ref=e235]:
+                    - link [ref=e237] [cursor=pointer]:
+                      - /url: /city/chennai-in.html
+                      - generic [ref=e238]:
+                        - heading [level=3] [ref=e239]: Chennai
+                        - generic [ref=e240]: 2,832 accommodations
+                - region [ref=e241]:
+                  - group [ref=e242]:
+                    - link [ref=e244] [cursor=pointer]:
+                      - /url: /city/kochi-in.html
+                      - generic [ref=e245]:
+                        - heading [level=3] [ref=e246]: Kochi
+                        - generic [ref=e247]: 2,165 accommodations
+                - region [ref=e248]:
+                  - group [ref=e249]:
+                    - link [ref=e251] [cursor=pointer]:
+                      - /url: /city/pune-in.html
+                      - generic [ref=e252]:
+                        - heading [level=3] [ref=e253]: Pune
+                        - generic [ref=e254]: 2,494 accommodations
+                - region [ref=e255]:
+                  - group [ref=e256]:
+                    - link [ref=e258] [cursor=pointer]:
+                      - /url: /city/jaipur-in.html
+                      - generic [ref=e259]:
+                        - heading [level=3] [ref=e260]: Jaipur
+                        - generic [ref=e261]: 3,082 accommodations
+                - region [ref=e262]:
+                  - group [ref=e263]:
+                    - link [ref=e265] [cursor=pointer]:
+                      - /url: /city/ooty-in.html
+                      - generic [ref=e266]:
+                        - heading [level=3] [ref=e267]: Ooty
+                        - generic [ref=e268]: 1,427 accommodations
+                - region [ref=e269]:
+                  - group [ref=e270]:
+                    - link [ref=e272] [cursor=pointer]:
+                      - /url: /city/pondicherry-in.html
+                      - generic [ref=e273]:
+                        - heading [level=3] [ref=e274]: Pondicherry
+                        - generic [ref=e275]: 1,596 accommodations
+                - region [ref=e276]:
+                  - group [ref=e277]:
+                    - link [ref=e279] [cursor=pointer]:
+                      - /url: /city/kolkata-in.html
+                      - generic [ref=e280]:
+                        - heading [level=3] [ref=e281]: Kolkata
+                        - generic [ref=e282]: 2,852 accommodations
+              - button "Next destination" [ref=e284] [cursor=pointer]:
+                - img [ref=e285]
+        - generic [ref=e287]:
+          - generic [ref=e288]:
+            - heading "Accommodation Promotions" [level=2] [ref=e289]
+            - link "View all accommodation promotion links" [ref=e291] [cursor=pointer]:
+              - /url: /deals
+              - generic [ref=e292]:
+                - text: View all
+                - img [ref=e293]
+          - region "Accommodation Promotions carousel" [ref=e297]:
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - region "Slide 1 of 10" [ref=e300]:
+                  - link [ref=e301] [cursor=pointer]:
+                    - /url: https://www.agoda.com/deals?cid=1916891
+                    - group [ref=e302]:
+                      - img "Accommodation Promotion 0" [ref=e303]
+                - region "Slide 2 of 10" [ref=e304]:
+                  - link [ref=e305] [cursor=pointer]:
+                    - /url: https://www.agoda.com/?cid=1935082
+                    - group [ref=e306]:
+                      - img "Accommodation Promotion 1" [ref=e307]
+                - region "Slide 3 of 10" [ref=e308]:
+                  - link [ref=e309] [cursor=pointer]:
+                    - /url: https://www.agoda.com/AGPGlobal?cid=1957727
+                    - group [ref=e310]:
+                      - img "Accommodation Promotion 2" [ref=e311]
+                - region [ref=e312]:
+                  - link [ref=e313] [cursor=pointer]:
+                    - /url: https://www.agoda.com/SummerBreakSS?cid=1957809
+                    - group [ref=e314]:
+                      - img [ref=e315]
+                - region [ref=e316]:
+                  - link [ref=e317] [cursor=pointer]:
+                    - /url: https://www.agoda.com/DoubleDaySale?cid=1957693
+                    - group [ref=e318]:
+                      - img [ref=e319]
+                - region [ref=e320]:
+                  - link [ref=e321] [cursor=pointer]:
+                    - /url: https://www.agoda.com/VisitMalaysiaMY?cid=1925109
+                    - group [ref=e322]:
+                      - img [ref=e323]
+                - region [ref=e324]:
+                  - link [ref=e325] [cursor=pointer]:
+                    - /url: https://www.agoda.com/GetawayDealEU?cid=1957706
+                    - group [ref=e326]:
+                      - img [ref=e327]
+                - region [ref=e328]:
+                  - link [ref=e329] [cursor=pointer]:
+                    - /url: https://www.agoda.com/SummerVibesVN?cid=1957751
+                    - group [ref=e330]:
+                      - img [ref=e331]
+                - region [ref=e332]:
+                  - link [ref=e333] [cursor=pointer]:
+                    - /url: https://www.agoda.com/EliteEscapesKA?cid=1924943
+                    - group [ref=e334]:
+                      - img [ref=e335]
+                - region [ref=e336]:
+                  - link [ref=e337] [cursor=pointer]:
+                    - /url: https://www.agoda.com/EscapeBonanzaISC?cid=1925190
+                    - group [ref=e338]:
+                      - img [ref=e339]
+              - button "Next Accommodation Promotion" [ref=e341] [cursor=pointer]:
+                - img [ref=e342]
+        - generic [ref=e344]:
+          - heading "Flights & Activities Promotions" [level=2] [ref=e346]
+          - region "Flights & Activities Promotions carousel" [ref=e349]:
+            - region "Slide 1 of 1" [ref=e352]:
+              - link [ref=e353] [cursor=pointer]:
+                - /url: https://www.agoda.com/promotion/redeem?cinfo=20250501_156376&returnUrl=%2F%3Fcid%3D1915785
+                - group [ref=e354]:
+                  - img "Flights/Activities Promotion 0" [ref=e355]
+        - generic [ref=e356]:
+          - heading "Properties we think you'll like" [level=2] [ref=e358]
+          - region "Properties we think you'll like carousel" [ref=e361]:
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - region "Slide 1 of 10" [ref=e364]:
+                  - link [ref=e365] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_accor?cid=1925247
+                    - group [ref=e366]:
+                      - img "Properties we think you'll like" [ref=e367]
+                - region "Slide 2 of 10" [ref=e368]:
+                  - link [ref=e369] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_wyndham_india?cid=1957687
+                    - group [ref=e370]:
+                      - img "Properties we think you'll like" [ref=e371]
+                - region "Slide 3 of 10" [ref=e372]:
+                  - link [ref=e373] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_clermont?cid=1925154
+                    - group [ref=e374]:
+                      - img "Properties we think you'll like" [ref=e375]
+                - region [ref=e376]:
+                  - link [ref=e377] [cursor=pointer]:
+                    - /url: https://www.agoda.com/FlagshipRoyalOrchidIN?cid=1925074
+                    - group [ref=e378]:
+                      - img [ref=e379]
+                - region [ref=e380]:
+                  - link [ref=e381] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_absolute?cid=1925068
+                    - group [ref=e382]:
+                      - img [ref=e383]
+                - region [ref=e384]:
+                  - link [ref=e385] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_kingston?cid=1957804
+                    - group [ref=e386]:
+                      - img [ref=e387]
+                - region [ref=e388]:
+                  - link [ref=e389] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_sugarmarina?cid=1957712
+                    - group [ref=e390]:
+                      - img [ref=e391]
+                - region [ref=e392]:
+                  - link [ref=e393] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_rwg?cid=1957746
+                    - group [ref=e394]:
+                      - img [ref=e395]
+                - region [ref=e396]:
+                  - link [ref=e397] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_chains_th?cid=1957738
+                    - group [ref=e398]:
+                      - img [ref=e399]
+                - region [ref=e400]:
+                  - link [ref=e401] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_swiss_belhotel?cid=1957728
+                    - group [ref=e402]:
+                      - img [ref=e403]
+              - button "Next property" [ref=e405] [cursor=pointer]:
+                - img [ref=e406]
+        - generic [ref=e409]:
+          - heading "Featured homes recommended for you" [level=2] [ref=e411]
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - generic [ref=e415]:
+                - generic:
+                  - button [disabled]:
+                    - img
+                - tablist "Featured homes recommended for you" [ref=e416]:
+                  - tab "Bangalore" [selected] [ref=e418] [cursor=pointer]:
+                    - paragraph [ref=e419]: Bangalore
+                  - tab "Mumbai" [ref=e422] [cursor=pointer]:
+                    - paragraph [ref=e423]: Mumbai
+                  - tab "Goa" [ref=e425] [cursor=pointer]:
+                    - paragraph [ref=e426]: Goa
+                  - tab "Hyderabad" [ref=e428] [cursor=pointer]:
+                    - paragraph [ref=e429]: Hyderabad
+                  - tab "New Delhi" [ref=e431] [cursor=pointer]:
+                    - paragraph [ref=e432]: New Delhi
+                - generic:
+                  - button [disabled]:
+                    - img
+              - link "See more (Bangalore) properties" [ref=e434] [cursor=pointer]:
+                - /url: /search?city=4923
+                - generic [ref=e435]:
+                  - text: See more (Bangalore) properties
+                  - img [ref=e436]
+            - tabpanel "Bangalore" [ref=e438]:
+              - generic [ref=e439]:
+                - link "8.2 VANYA LUXURY BOUTIQUE RESORT VANYA LUXURY BOUTIQUE RESORT 4 stars out of 5 Kempanahalli, Bangalore Per night before taxes and fees USD 62.38" [ref=e441] [cursor=pointer]:
+                  - /url: /the-vanya-luxury-boutique-resort/hotel/bangalore-in.html?checkIn=2026-06-4&los=1&room=1&adults=2
+                  - generic [ref=e442]:
+                    - generic [ref=e444]:
+                      - paragraph [ref=e447]: "8.2"
+                      - img "VANYA LUXURY BOUTIQUE RESORT" [ref=e448]
+                    - heading "VANYA LUXURY BOUTIQUE RESORT" [level=3] [ref=e450]
+                    - generic [ref=e452]:
+                      - generic [ref=e454]:
+                        - generic [ref=e455]: 4 stars out of 5
+                        - img [ref=e456]
+                        - img [ref=e458]
+                        - img [ref=e460]
+                        - img [ref=e462]
+                      - img [ref=e464]
+                      - generic [ref=e467]: Kempanahalli,
+                      - generic [ref=e468]: Bangalore
+                    - generic [ref=e470]: Per night before taxes and fees
+                    - generic [ref=e472]:
+                      - paragraph [ref=e474]: USD
+                      - paragraph [ref=e476]: "62.38"
+                - link "8.3 Sliceinn Sylva, Wilson Garden, Bangalore Sliceinn Sylva, Wilson Garden, Bangalore 4 stars out of 5 Kormangala, Bangalore Per night before taxes and fees USD 19.36" [ref=e478] [cursor=pointer]:
+                  - /url: /sliceinn-sylva-wilson-garden-bangalore/hotel/bangalore-in.html?checkIn=2026-06-4&los=1&room=1&adults=2
+                  - generic [ref=e479]:
+                    - generic [ref=e481]:
+                      - paragraph [ref=e484]: "8.3"
+                      - img "Sliceinn Sylva, Wilson Garden, Bangalore" [ref=e485]
+                    - heading "Sliceinn Sylva, Wilson Garden, Bangalore" [level=3] [ref=e487]
+                    - generic [ref=e489]:
+                      - generic [ref=e491]:
+                        - generic [ref=e492]: 4 stars out of 5
+                        - img [ref=e493]
+                        - img [ref=e495]
+                        - img [ref=e497]
+                        - img [ref=e499]
+                      - img [ref=e501]
+                      - generic [ref=e504]: Kormangala,
+                      - generic [ref=e505]: Bangalore
+                    - generic [ref=e507]: Per night before taxes and fees
+                    - generic [ref=e509]:
+                      - paragraph [ref=e511]: USD
+                      - paragraph [ref=e513]: "19.36"
+                - link "7.5 HomeSlice Nazaara, HomeStay in BTM HomeSlice Nazaara, HomeStay in BTM 3 stars out of 5 HSR Layout, Bangalore Per night before taxes and fees USD 10.37" [ref=e515] [cursor=pointer]:
+                  - /url: /homeslice-nazaara/hotel/bangalore-in.html?checkIn=2026-06-4&los=1&room=1&adults=2
+                  - generic [ref=e516]:
+                    - generic [ref=e518]:
+                      - paragraph [ref=e521]: "7.5"
+                      - img "HomeSlice Nazaara, HomeStay in BTM" [ref=e522]
+                    - heading "HomeSlice Nazaara, HomeStay in BTM" [level=3] [ref=e524]
+                    - generic [ref=e526]:
+                      - generic [ref=e528]:
+                        - generic [ref=e529]: 3 stars out of 5
+                        - img [ref=e530]
+                        - img [ref=e532]
+                        - img [ref=e534]
+                      - img [ref=e536]
+                      - generic [ref=e539]: HSR Layout,
+                      - generic [ref=e540]: Bangalore
+                    - generic [ref=e542]: Per night before taxes and fees
+                    - generic [ref=e544]:
+                      - paragraph [ref=e546]: USD
+                      - paragraph [ref=e548]: "10.37"
+        - generic [ref=e549]:
+          - heading "Popular destinations outside India" [level=2] [ref=e551]
+          - region "Popular destinations outside India carousel" [ref=e553]:
+            - generic [ref=e554]:
+              - generic [ref=e555]:
+                - region "Slide 1 of 20" [ref=e556]:
+                  - group [ref=e557]:
+                    - link "Kuala Lumpur Kuala Lumpur 19,902 accommodations" [ref=e559] [cursor=pointer]:
+                      - /url: /city/kuala-lumpur-my.html
+                      - generic [ref=e560]:
+                        - img "Kuala Lumpur" [ref=e561]
+                        - heading "Kuala Lumpur" [level=3] [ref=e562]
+                        - generic [ref=e563]: 19,902 accommodations
+                - region "Slide 2 of 20" [ref=e564]:
+                  - group [ref=e565]:
+                    - link "Manila Manila 13,223 accommodations" [ref=e567] [cursor=pointer]:
+                      - /url: /city/manila-ph.html
+                      - generic [ref=e568]:
+                        - img "Manila" [ref=e569]
+                        - heading "Manila" [level=3] [ref=e570]
+                        - generic [ref=e571]: 13,223 accommodations
+                - region "Slide 3 of 20" [ref=e572]:
+                  - group [ref=e573]:
+                    - link "Jakarta Jakarta 14,249 accommodations" [ref=e575] [cursor=pointer]:
+                      - /url: /city/jakarta-id.html
+                      - generic [ref=e576]:
+                        - img "Jakarta" [ref=e577]
+                        - heading "Jakarta" [level=3] [ref=e578]
+                        - generic [ref=e579]: 14,249 accommodations
+                - region "Slide 4 of 20" [ref=e580]:
+                  - group [ref=e581]:
+                    - link "Dubai Dubai 19,464 accommodations" [ref=e583] [cursor=pointer]:
+                      - /url: /city/dubai-ae.html
+                      - generic [ref=e584]:
+                        - img "Dubai" [ref=e585]
+                        - heading "Dubai" [level=3] [ref=e586]
+                        - generic [ref=e587]: 19,464 accommodations
+                - region [ref=e588]:
+                  - group [ref=e589]:
+                    - link [ref=e591] [cursor=pointer]:
+                      - /url: /city/penang-my.html
+                      - generic [ref=e592]:
+                        - img [ref=e593]
+                        - heading [level=3] [ref=e594]: Penang
+                        - generic [ref=e595]: 5,161 accommodations
+                - region [ref=e596]:
+                  - group [ref=e597]:
+                    - link [ref=e599] [cursor=pointer]:
+                      - /url: /city/bangkok-th.html
+                      - generic [ref=e600]:
+                        - heading [level=3] [ref=e601]: Bangkok
+                        - generic [ref=e602]: 12,048 accommodations
+                - region [ref=e603]:
+                  - group [ref=e604]:
+                    - link [ref=e606] [cursor=pointer]:
+                      - /url: /city/malacca-my.html
+                      - generic [ref=e607]:
+                        - heading [level=3] [ref=e608]: Malacca
+                        - generic [ref=e609]: 5,883 accommodations
+                - region [ref=e610]:
+                  - group [ref=e611]:
+                    - link [ref=e613] [cursor=pointer]:
+                      - /url: /city/kota-kinabalu-my.html
+                      - generic [ref=e614]:
+                        - heading [level=3] [ref=e615]: Kota Kinabalu
+                        - generic [ref=e616]: 3,417 accommodations
+                - region [ref=e617]:
+                  - group [ref=e618]:
+                    - link [ref=e620] [cursor=pointer]:
+                      - /url: /city/johor-bahru-my.html
+                      - generic [ref=e621]:
+                        - heading [level=3] [ref=e622]: Johor Bahru
+                        - generic [ref=e623]: 6,994 accommodations
+                - region [ref=e624]:
+                  - group [ref=e625]:
+                    - link [ref=e627] [cursor=pointer]:
+                      - /url: /city/cebu-ph.html
+                      - generic [ref=e628]:
+                        - heading [level=3] [ref=e629]: Cebu
+                        - generic [ref=e630]: 5,254 accommodations
+                - region [ref=e631]:
+                  - group [ref=e632]:
+                    - link [ref=e634] [cursor=pointer]:
+                      - /url: /city/las-vegas-nv-us.html
+                      - generic [ref=e635]:
+                        - heading [level=3] [ref=e636]: Las Vegas (NV)
+                        - generic [ref=e637]: 1,113 accommodations
+                - region [ref=e638]:
+                  - group [ref=e639]:
+                    - link [ref=e641] [cursor=pointer]:
+                      - /url: /city/los-angeles-ca-us.html
+                      - generic [ref=e642]:
+                        - heading [level=3] [ref=e643]: Los Angeles (CA)
+                        - generic [ref=e644]: 4,491 accommodations
+                - region [ref=e645]:
+                  - group [ref=e646]:
+                    - link [ref=e648] [cursor=pointer]:
+                      - /url: /city/bandung-id.html
+                      - generic [ref=e649]:
+                        - heading [level=3] [ref=e650]: Bandung
+                        - generic [ref=e651]: 7,196 accommodations
+                - region [ref=e652]:
+                  - group [ref=e653]:
+                    - link [ref=e655] [cursor=pointer]:
+                      - /url: /city/johor-bahru-my.html
+                      - generic [ref=e656]:
+                        - heading [level=3] [ref=e657]: Johor Bahru
+                        - generic [ref=e658]: 6,994 accommodations
+                - region [ref=e659]:
+                  - group [ref=e660]:
+                    - link [ref=e662] [cursor=pointer]:
+                      - /url: /city/bali-id.html
+                      - generic [ref=e663]:
+                        - heading [level=3] [ref=e664]: Bali
+                        - generic [ref=e665]: 32,908 accommodations
+                - region [ref=e666]:
+                  - group [ref=e667]:
+                    - link [ref=e669] [cursor=pointer]:
+                      - /url: /city/new-york-ny-us.html
+                      - generic [ref=e670]:
+                        - heading [level=3] [ref=e671]: New York (NY)
+                        - generic [ref=e672]: 3,049 accommodations
+                - region [ref=e673]:
+                  - group [ref=e674]:
+                    - link [ref=e676] [cursor=pointer]:
+                      - /url: /city/dallas-tx-us.html
+                      - generic [ref=e677]:
+                        - heading [level=3] [ref=e678]: Dallas (TX)
+                        - generic [ref=e679]: 1,813 accommodations
+                - region [ref=e680]:
+                  - group [ref=e681]:
+                    - link [ref=e683] [cursor=pointer]:
+                      - /url: /city/cameron-highlands-my.html
+                      - generic [ref=e684]:
+                        - heading [level=3] [ref=e685]: Cameron Highlands
+                        - generic [ref=e686]: 1,789 accommodations
+                - region [ref=e687]:
+                  - group [ref=e688]:
+                    - link [ref=e690] [cursor=pointer]:
+                      - /url: /city/singapore-sg.html
+                      - generic [ref=e691]:
+                        - heading [level=3] [ref=e692]: Singapore
+                        - generic [ref=e693]: 1,326 accommodations
+                - region [ref=e694]:
+                  - group [ref=e695]:
+                    - link [ref=e697] [cursor=pointer]:
+                      - /url: /city/ipoh-my.html
+                      - generic [ref=e698]:
+                        - heading [level=3] [ref=e699]: Ipoh
+                        - generic [ref=e700]: 2,516 accommodations
+              - button "Next destination" [ref=e702] [cursor=pointer]:
+                - img [ref=e703]
+        - button "Close" [expanded] [ref=e708] [cursor=pointer]:
+          - img [ref=e709]
+    - contentinfo [ref=e712]:
+      - generic [ref=e716]:
+        - generic [ref=e717]:
+          - heading "Help" [level=2] [ref=e718]
+          - list [ref=e719]:
+            - listitem [ref=e720]:
+              - link "Help center" [ref=e721] [cursor=pointer]:
+                - /url: /info/contact.html
+                - generic [ref=e722]: Help center
+            - listitem [ref=e723]:
+              - link "FAQs" [ref=e724] [cursor=pointer]:
+                - /url: /info/contact.html
+                - generic [ref=e725]: FAQs
+            - listitem [ref=e726]:
+              - link "Privacy policy" [ref=e727] [cursor=pointer]:
+                - /url: /info/privacy.html
+                - generic [ref=e728]: Privacy policy
+            - listitem [ref=e729]:
+              - link "Cookie policy" [ref=e730] [cursor=pointer]:
+                - /url: /info/privacy.html#cookies
+                - generic [ref=e731]: Cookie policy
+            - listitem [ref=e732]:
+              - link "Terms of use" [ref=e733] [cursor=pointer]:
+                - /url: /info/termsofuse.html
+                - generic [ref=e734]: Terms of use
+            - listitem [ref=e735]:
+              - link "Grievance officer" [ref=e736] [cursor=pointer]:
+                - /url: /info/termsofuse.html#india
+                - generic [ref=e737]: Grievance officer
+            - listitem [ref=e738]:
+              - link "Digital Services Act (EU)" [ref=e739] [cursor=pointer]:
+                - /url: /info/eu-digital-services-act.html
+                - generic [ref=e740]: Digital Services Act (EU)
+            - listitem [ref=e741]:
+              - link "Content guidelines & reporting" [ref=e742] [cursor=pointer]:
+                - /url: /info/eu-digital-services-act.html#CM
+                - generic [ref=e743]: Content guidelines & reporting
+            - listitem [ref=e744]:
+              - link "Modern Slavery Statement" [ref=e745] [cursor=pointer]:
+                - /url: //www.bookingholdings.com/modern-slavery-statement/
+                - generic [ref=e746]: Modern Slavery Statement
+        - generic [ref=e747]:
+          - heading "Company" [level=2] [ref=e748]
+          - list [ref=e749]:
+            - listitem [ref=e750]:
+              - link "About us" [ref=e751] [cursor=pointer]:
+                - /url: /about-agoda
+                - generic [ref=e752]: About us
+            - listitem [ref=e753]:
+              - link "Careers" [ref=e754] [cursor=pointer]:
+                - /url: //careersatagoda.com
+                - generic [ref=e755]: Careers
+            - listitem [ref=e756]:
+              - link "Press" [ref=e757] [cursor=pointer]:
+                - /url: //mediaroom.agoda.com
+                - generic [ref=e758]: Press
+            - listitem [ref=e759]:
+              - link "Blog" [ref=e760] [cursor=pointer]:
+                - /url: /blog
+                - generic [ref=e761]: Blog
+            - listitem [ref=e762]:
+              - link "PointsMAX" [ref=e763] [cursor=pointer]:
+                - /url: //www.agoda.com/pointsmax.html
+                - generic [ref=e764]: PointsMAX
+        - generic [ref=e765]:
+          - heading "Destinations" [level=2] [ref=e766]
+          - list [ref=e767]:
+            - listitem [ref=e768]:
+              - link "Countries/Territories" [ref=e769] [cursor=pointer]:
+                - /url: //www.agoda.com/world.html
+                - generic [ref=e770]: Countries/Territories
+            - listitem [ref=e771]:
+              - link "All Flight Routes" [ref=e772] [cursor=pointer]:
+                - /url: //www.agoda.com/flights/world.html
+                - generic [ref=e773]: All Flight Routes
+        - generic [ref=e774]:
+          - heading "Partner with us" [level=2] [ref=e775]
+          - list [ref=e776]:
+            - listitem [ref=e777]:
+              - link "YCS partner portal" [ref=e778] [cursor=pointer]:
+                - /url: ////ycs.agoda.com
+                - generic [ref=e779]: YCS partner portal
+            - listitem [ref=e780]:
+              - link "Partner Hub" [ref=e781] [cursor=pointer]:
+                - /url: //partnerhub.agoda.com/
+                - generic [ref=e782]: Partner Hub
+            - listitem [ref=e783]:
+              - link "Advertise on Agoda" [ref=e784] [cursor=pointer]:
+                - /url: //partnerhub.agoda.com/advertising-solutions/
+                - generic [ref=e785]: Advertise on Agoda
+            - listitem [ref=e786]:
+              - link "Affiliates" [ref=e787] [cursor=pointer]:
+                - /url: ////partners.agoda.com/index.html
+                - generic [ref=e788]: Affiliates
+            - listitem [ref=e789]:
+              - link "Agoda API Documentation" [ref=e790] [cursor=pointer]:
+                - /url: //developer.agoda.com/
+                - generic [ref=e791]: Agoda API Documentation
+        - generic [ref=e792]:
+          - heading "Get the app" [level=2] [ref=e793]
+          - list [ref=e794]:
+            - listitem [ref=e795]:
+              - link "iOS app" [ref=e796] [cursor=pointer]:
+                - /url: //app.appsflyer.com/id440676901?pid=direct&c=hotel_page_footer&af_siteid=1716632&site_id=1716632&af_sub1=desktop
+                - generic [ref=e797]: iOS app
+            - listitem [ref=e798]:
+              - link "Android app" [ref=e799] [cursor=pointer]:
+                - /url: //app.appsflyer.com/com.agoda.mobile.consumer?pid=direct&c=hotel_page_footer&af_siteid=1716632&site_id=1716632&af_sub1=desktop
+                - generic [ref=e800]: Android app
+      - generic [ref=e803]:
+        - generic [ref=e804]:
+          - heading "Destination Cities" [level=2] [ref=e805]
+          - heading "Asia" [level=3] [ref=e806]
+          - list [ref=e807]:
+            - listitem [ref=e808]:
+              - link "Bali Hotels" [ref=e809] [cursor=pointer]:
+                - /url: /city/bali-id.html
+                - generic [ref=e810]: Bali Hotels
+            - listitem [ref=e811]:
+              - link "Bandung Hotels" [ref=e812] [cursor=pointer]:
+                - /url: /city/bandung-id.html
+                - generic [ref=e813]: Bandung Hotels
+            - listitem [ref=e814]:
+              - link "Bangkok Hotels" [ref=e815] [cursor=pointer]:
+                - /url: /city/bangkok-th.html
+                - generic [ref=e816]: Bangkok Hotels
+            - listitem [ref=e817]:
+              - link "Boracay Island Hotels" [ref=e818] [cursor=pointer]:
+                - /url: /city/boracay-island-ph.html
+                - generic [ref=e819]: Boracay Island Hotels
+            - listitem [ref=e820]:
+              - link "Busan Hotels" [ref=e821] [cursor=pointer]:
+                - /url: /city/busan-kr.html
+                - generic [ref=e822]: Busan Hotels
+            - listitem [ref=e823]:
+              - link "Cebu Hotels" [ref=e824] [cursor=pointer]:
+                - /url: /city/cebu-ph.html
+                - generic [ref=e825]: Cebu Hotels
+            - listitem [ref=e826]:
+              - link "Chiang Mai Hotels" [ref=e827] [cursor=pointer]:
+                - /url: /city/chiang-mai-th.html
+                - generic [ref=e828]: Chiang Mai Hotels
+            - listitem [ref=e829]:
+              - link "Da Nang Hotels" [ref=e830] [cursor=pointer]:
+                - /url: /city/da-nang-vn.html
+                - generic [ref=e831]: Da Nang Hotels
+            - listitem [ref=e832]:
+              - link "Fukuoka Hotels" [ref=e833] [cursor=pointer]:
+                - /url: /city/fukuoka-jp.html
+                - generic [ref=e834]: Fukuoka Hotels
+            - listitem [ref=e835]:
+              - link "Hanoi Hotels" [ref=e836] [cursor=pointer]:
+                - /url: /city/hanoi-vn.html
+                - generic [ref=e837]: Hanoi Hotels
+            - listitem [ref=e838]:
+              - link "Hat Yai Hotels" [ref=e839] [cursor=pointer]:
+                - /url: /city/hat-yai-th.html
+                - generic [ref=e840]: Hat Yai Hotels
+            - listitem [ref=e841]:
+              - link "Ho Chi Minh City Hotels" [ref=e842] [cursor=pointer]:
+                - /url: /city/ho-chi-minh-city-vn.html
+                - generic [ref=e843]: Ho Chi Minh City Hotels
+            - listitem [ref=e844]:
+              - link "Hoi An Hotels" [ref=e845] [cursor=pointer]:
+                - /url: /city/hoi-an-vn.html
+                - generic [ref=e846]: Hoi An Hotels
+            - listitem [ref=e847]:
+              - link "Hong Kong Hotels" [ref=e848] [cursor=pointer]:
+                - /url: /city/hong-kong-hk.html
+                - generic [ref=e849]: Hong Kong Hotels
+            - listitem [ref=e850]:
+              - link "Hua Hin Hotels" [ref=e851] [cursor=pointer]:
+                - /url: /city/hua-hin-cha-am-th.html
+                - generic [ref=e852]: Hua Hin Hotels
+            - listitem [ref=e853]:
+              - link "Hualien Hotels" [ref=e854] [cursor=pointer]:
+                - /url: /city/hualien-tw.html
+                - generic [ref=e855]: Hualien Hotels
+            - listitem [ref=e856]:
+              - link "Ipoh Hotels" [ref=e857] [cursor=pointer]:
+                - /url: /city/ipoh-my.html
+                - generic [ref=e858]: Ipoh Hotels
+            - listitem [ref=e859]:
+              - link "Jakarta Hotels" [ref=e860] [cursor=pointer]:
+                - /url: /city/jakarta-id.html
+                - generic [ref=e861]: Jakarta Hotels
+            - listitem [ref=e862]:
+              - link "Jeju Island Hotels" [ref=e863] [cursor=pointer]:
+                - /url: /city/jeju-island-kr.html
+                - generic [ref=e864]: Jeju Island Hotels
+            - listitem [ref=e865]:
+              - link "Johor Bahru Hotels" [ref=e866] [cursor=pointer]:
+                - /url: /city/johor-bahru-my.html
+                - generic [ref=e867]: Johor Bahru Hotels
+            - listitem [ref=e868]:
+              - link "Kaohsiung Hotels" [ref=e869] [cursor=pointer]:
+                - /url: /city/kaohsiung-tw.html
+                - generic [ref=e870]: Kaohsiung Hotels
+            - listitem [ref=e871]:
+              - link "Kota Kinabalu Hotels" [ref=e872] [cursor=pointer]:
+                - /url: /city/kota-kinabalu-my.html
+                - generic [ref=e873]: Kota Kinabalu Hotels
+            - listitem [ref=e874]:
+              - link "Krabi Hotels" [ref=e875] [cursor=pointer]:
+                - /url: /city/krabi-th.html
+                - generic [ref=e876]: Krabi Hotels
+            - listitem [ref=e877]:
+              - link "Kuala Lumpur Hotels" [ref=e878] [cursor=pointer]:
+                - /url: /city/kuala-lumpur-my.html
+                - generic [ref=e879]: Kuala Lumpur Hotels
+            - listitem [ref=e880]:
+              - link "Kuantan Hotels" [ref=e881] [cursor=pointer]:
+                - /url: /city/kuantan-my.html
+                - generic [ref=e882]: Kuantan Hotels
+            - listitem [ref=e883]:
+              - link "Kyoto Hotels" [ref=e884] [cursor=pointer]:
+                - /url: /city/kyoto-jp.html
+                - generic [ref=e885]: Kyoto Hotels
+        - generic [ref=e886]:
+          - list [ref=e887]:
+            - listitem [ref=e888]:
+              - link "Malacca Hotels" [ref=e889] [cursor=pointer]:
+                - /url: /city/malacca-my.html
+                - generic [ref=e890]: Malacca Hotels
+            - listitem [ref=e891]:
+              - link "Manila Hotels" [ref=e892] [cursor=pointer]:
+                - /url: /city/manila-ph.html
+                - generic [ref=e893]: Manila Hotels
+            - listitem [ref=e894]:
+              - link "Nagoya Hotels" [ref=e895] [cursor=pointer]:
+                - /url: /city/nagoya-jp.html
+                - generic [ref=e896]: Nagoya Hotels
+            - listitem [ref=e897]:
+              - link "Nha Trang Hotels" [ref=e898] [cursor=pointer]:
+                - /url: /city/nha-trang-vn.html
+                - generic [ref=e899]: Nha Trang Hotels
+            - listitem [ref=e900]:
+              - link "Okinawa Hotels" [ref=e901] [cursor=pointer]:
+                - /url: /city/okinawa-main-island-jp.html
+                - generic [ref=e902]: Okinawa Hotels
+            - listitem [ref=e903]:
+              - link "Osaka Hotels" [ref=e904] [cursor=pointer]:
+                - /url: /city/osaka-jp.html
+                - generic [ref=e905]: Osaka Hotels
+            - listitem [ref=e906]:
+              - link "Pattaya Hotels" [ref=e907] [cursor=pointer]:
+                - /url: /city/pattaya-th.html
+                - generic [ref=e908]: Pattaya Hotels
+            - listitem [ref=e909]:
+              - link "Penang Hotels" [ref=e910] [cursor=pointer]:
+                - /url: /city/penang-my.html
+                - generic [ref=e911]: Penang Hotels
+            - listitem [ref=e912]:
+              - link "Phuket Hotels" [ref=e913] [cursor=pointer]:
+                - /url: /city/phuket-th.html
+                - generic [ref=e914]: Phuket Hotels
+            - listitem [ref=e915]:
+              - link "Sapporo Hotels" [ref=e916] [cursor=pointer]:
+                - /url: /city/sapporo-jp.html
+                - generic [ref=e917]: Sapporo Hotels
+            - listitem [ref=e918]:
+              - link "Seoul Hotels" [ref=e919] [cursor=pointer]:
+                - /url: /city/seoul-kr.html
+                - generic [ref=e920]: Seoul Hotels
+            - listitem [ref=e921]:
+              - link "Shanghai Hotels" [ref=e922] [cursor=pointer]:
+                - /url: /city/shanghai-cn.html
+                - generic [ref=e923]: Shanghai Hotels
+            - listitem [ref=e924]:
+              - link "Singapore Hotels" [ref=e925] [cursor=pointer]:
+                - /url: /city/singapore-sg.html
+                - generic [ref=e926]: Singapore Hotels
+            - listitem [ref=e927]:
+              - link "Surabaya Hotels" [ref=e928] [cursor=pointer]:
+                - /url: /city/surabaya-id.html
+                - generic [ref=e929]: Surabaya Hotels
+            - listitem [ref=e930]:
+              - link "Taichung Hotels" [ref=e931] [cursor=pointer]:
+                - /url: /city/taichung-tw.html
+                - generic [ref=e932]: Taichung Hotels
+            - listitem [ref=e933]:
+              - link "Tainan Hotels" [ref=e934] [cursor=pointer]:
+                - /url: /city/tainan-tw.html
+                - generic [ref=e935]: Tainan Hotels
+            - listitem [ref=e936]:
+              - link "Taipei Hotels" [ref=e937] [cursor=pointer]:
+                - /url: /city/taipei-tw.html
+                - generic [ref=e938]: Taipei Hotels
+            - listitem [ref=e939]:
+              - link "Tokyo Hotels" [ref=e940] [cursor=pointer]:
+                - /url: /city/tokyo-jp.html
+                - generic [ref=e941]: Tokyo Hotels
+            - listitem [ref=e942]:
+              - link "Yilan Hotels" [ref=e943] [cursor=pointer]:
+                - /url: /city/yilan-tw.html
+                - generic [ref=e944]: Yilan Hotels
+            - listitem [ref=e945]:
+              - link "Yogyakarta Hotels" [ref=e946] [cursor=pointer]:
+                - /url: /city/yogyakarta-id.html
+                - generic [ref=e947]: Yogyakarta Hotels
+          - heading "Europe" [level=3] [ref=e948]
+          - list [ref=e949]:
+            - listitem [ref=e950]:
+              - link "London Hotels" [ref=e951] [cursor=pointer]:
+                - /url: /city/london-gb.html
+                - generic [ref=e952]: London Hotels
+            - listitem [ref=e953]:
+              - link "Paris Hotels" [ref=e954] [cursor=pointer]:
+                - /url: /city/paris-fr.html
+                - generic [ref=e955]: Paris Hotels
+          - heading "Middle East" [level=3] [ref=e956]
+          - list [ref=e957]:
+            - listitem [ref=e958]:
+              - link "Dubai Hotels" [ref=e959] [cursor=pointer]:
+                - /url: /city/dubai-ae.html
+                - generic [ref=e960]: Dubai Hotels
+        - generic [ref=e961]:
+          - heading "Countries & Territories" [level=2] [ref=e962]
+          - heading "Africa" [level=3] [ref=e963]
+          - list [ref=e964]:
+            - listitem [ref=e965]:
+              - link "Morocco Hotels" [ref=e966] [cursor=pointer]:
+                - /url: /country/morocco.html
+                - generic [ref=e967]: Morocco Hotels
+            - listitem [ref=e968]:
+              - link "South Africa Hotels" [ref=e969] [cursor=pointer]:
+                - /url: /country/south-africa.html
+                - generic [ref=e970]: South Africa Hotels
+          - heading "Americas" [level=3] [ref=e971]
+          - list [ref=e972]:
+            - listitem [ref=e973]:
+              - link "Argentina Hotels" [ref=e974] [cursor=pointer]:
+                - /url: /country/argentina.html
+                - generic [ref=e975]: Argentina Hotels
+            - listitem [ref=e976]:
+              - link "Brazil Hotels" [ref=e977] [cursor=pointer]:
+                - /url: /country/brazil.html
+                - generic [ref=e978]: Brazil Hotels
+            - listitem [ref=e979]:
+              - link "Canada Hotels" [ref=e980] [cursor=pointer]:
+                - /url: /country/canada.html
+                - generic [ref=e981]: Canada Hotels
+            - listitem [ref=e982]:
+              - link "Mexico Hotels" [ref=e983] [cursor=pointer]:
+                - /url: /country/mexico.html
+                - generic [ref=e984]: Mexico Hotels
+            - listitem [ref=e985]:
+              - link "United States Hotels" [ref=e986] [cursor=pointer]:
+                - /url: /country/united-states.html
+                - generic [ref=e987]: United States Hotels
+            - listitem [ref=e988]:
+              - link "Venezuela Hotels" [ref=e989] [cursor=pointer]:
+                - /url: /country/venezuela.html
+                - generic [ref=e990]: Venezuela Hotels
+          - heading "Asia" [level=3] [ref=e991]
+          - list [ref=e992]:
+            - listitem [ref=e993]:
+              - link "Cambodia Hotels" [ref=e994] [cursor=pointer]:
+                - /url: /country/cambodia.html
+                - generic [ref=e995]: Cambodia Hotels
+            - listitem [ref=e996]:
+              - link "China Hotels" [ref=e997] [cursor=pointer]:
+                - /url: /country/china.html
+                - generic [ref=e998]: China Hotels
+            - listitem [ref=e999]:
+              - link "India Hotels" [ref=e1000] [cursor=pointer]:
+                - /url: /country/india.html
+                - generic [ref=e1001]: India Hotels
+            - listitem [ref=e1002]:
+              - link "Indonesia Hotels" [ref=e1003] [cursor=pointer]:
+                - /url: /country/indonesia.html
+                - generic [ref=e1004]: Indonesia Hotels
+            - listitem [ref=e1005]:
+              - link "Japan Hotels" [ref=e1006] [cursor=pointer]:
+                - /url: /country/japan.html
+                - generic [ref=e1007]: Japan Hotels
+            - listitem [ref=e1008]:
+              - link "Laos Hotels" [ref=e1009] [cursor=pointer]:
+                - /url: /country/laos.html
+                - generic [ref=e1010]: Laos Hotels
+            - listitem [ref=e1011]:
+              - link "Malaysia Hotels" [ref=e1012] [cursor=pointer]:
+                - /url: /country/malaysia.html
+                - generic [ref=e1013]: Malaysia Hotels
+            - listitem [ref=e1014]:
+              - link "Myanmar Hotels" [ref=e1015] [cursor=pointer]:
+                - /url: /country/myanmar.html
+                - generic [ref=e1016]: Myanmar Hotels
+            - listitem [ref=e1017]:
+              - link "Nepal Hotels" [ref=e1018] [cursor=pointer]:
+                - /url: /country/nepal.html
+                - generic [ref=e1019]: Nepal Hotels
+            - listitem [ref=e1020]:
+              - link "Philippines Hotels" [ref=e1021] [cursor=pointer]:
+                - /url: /country/philippines.html
+                - generic [ref=e1022]: Philippines Hotels
+            - listitem [ref=e1023]:
+              - link "South Korea Hotels" [ref=e1024] [cursor=pointer]:
+                - /url: /country/south-korea.html
+                - generic [ref=e1025]: South Korea Hotels
+            - listitem [ref=e1026]:
+              - link "Sri Lanka Hotels" [ref=e1027] [cursor=pointer]:
+                - /url: /country/sri-lanka.html
+                - generic [ref=e1028]: Sri Lanka Hotels
+            - listitem [ref=e1029]:
+              - link "Taiwan Hotels" [ref=e1030] [cursor=pointer]:
+                - /url: /country/taiwan.html
+                - generic [ref=e1031]: Taiwan Hotels
+            - listitem [ref=e1032]:
+              - link "Thailand Hotels" [ref=e1033] [cursor=pointer]:
+                - /url: /country/thailand.html
+                - generic [ref=e1034]: Thailand Hotels
+            - listitem [ref=e1035]:
+              - link "Vietnam Hotels" [ref=e1036] [cursor=pointer]:
+                - /url: /country/vietnam.html
+                - generic [ref=e1037]: Vietnam Hotels
+        - generic [ref=e1038]:
+          - heading "Europe" [level=3] [ref=e1039]
+          - list [ref=e1040]:
+            - listitem [ref=e1041]:
+              - link "Austria Hotels" [ref=e1042] [cursor=pointer]:
+                - /url: /country/austria.html
+                - generic [ref=e1043]: Austria Hotels
+            - listitem [ref=e1044]:
+              - link "Czech Republic Hotels" [ref=e1045] [cursor=pointer]:
+                - /url: /country/czech-republic.html
+                - generic [ref=e1046]: Czech Republic Hotels
+            - listitem [ref=e1047]:
+              - link "Denmark Hotels" [ref=e1048] [cursor=pointer]:
+                - /url: /country/denmark.html
+                - generic [ref=e1049]: Denmark Hotels
+            - listitem [ref=e1050]:
+              - link "Finland Hotels" [ref=e1051] [cursor=pointer]:
+                - /url: /country/finland.html
+                - generic [ref=e1052]: Finland Hotels
+            - listitem [ref=e1053]:
+              - link "France Hotels" [ref=e1054] [cursor=pointer]:
+                - /url: /country/france.html
+                - generic [ref=e1055]: France Hotels
+            - listitem [ref=e1056]:
+              - link "Germany Hotels" [ref=e1057] [cursor=pointer]:
+                - /url: /country/germany.html
+                - generic [ref=e1058]: Germany Hotels
+            - listitem [ref=e1059]:
+              - link "Greece Hotels" [ref=e1060] [cursor=pointer]:
+                - /url: /country/greece.html
+                - generic [ref=e1061]: Greece Hotels
+            - listitem [ref=e1062]:
+              - link "Hungary Hotels" [ref=e1063] [cursor=pointer]:
+                - /url: /country/hungary.html
+                - generic [ref=e1064]: Hungary Hotels
+            - listitem [ref=e1065]:
+              - link "Ireland Hotels" [ref=e1066] [cursor=pointer]:
+                - /url: /country/ireland.html
+                - generic [ref=e1067]: Ireland Hotels
+            - listitem [ref=e1068]:
+              - link "Italy Hotels" [ref=e1069] [cursor=pointer]:
+                - /url: /country/italy.html
+                - generic [ref=e1070]: Italy Hotels
+            - listitem [ref=e1071]:
+              - link "Netherlands Hotels" [ref=e1072] [cursor=pointer]:
+                - /url: /country/netherlands.html
+                - generic [ref=e1073]: Netherlands Hotels
+            - listitem [ref=e1074]:
+              - link "Russia Hotels" [ref=e1075] [cursor=pointer]:
+                - /url: /country/russia.html
+                - generic [ref=e1076]: Russia Hotels
+            - listitem [ref=e1077]:
+              - link "Spain Hotels" [ref=e1078] [cursor=pointer]:
+                - /url: /country/spain.html
+                - generic [ref=e1079]: Spain Hotels
+            - listitem [ref=e1080]:
+              - link "Sweden Hotels" [ref=e1081] [cursor=pointer]:
+                - /url: /country/sweden.html
+                - generic [ref=e1082]: Sweden Hotels
+            - listitem [ref=e1083]:
+              - link "Switzerland Hotels" [ref=e1084] [cursor=pointer]:
+                - /url: /country/switzerland.html
+                - generic [ref=e1085]: Switzerland Hotels
+            - listitem [ref=e1086]:
+              - link "United Kingdom Hotels" [ref=e1087] [cursor=pointer]:
+                - /url: /country/united-kingdom.html
+                - generic [ref=e1088]: United Kingdom Hotels
+          - heading "Middle East" [level=3] [ref=e1089]
+          - list [ref=e1090]:
+            - listitem [ref=e1091]:
+              - link "Bahrain Hotels" [ref=e1092] [cursor=pointer]:
+                - /url: /country/bahrain.html
+                - generic [ref=e1093]: Bahrain Hotels
+            - listitem [ref=e1094]:
+              - link "Egypt Hotels" [ref=e1095] [cursor=pointer]:
+                - /url: /country/egypt.html
+                - generic [ref=e1096]: Egypt Hotels
+            - listitem [ref=e1097]:
+              - link "Israel Hotels" [ref=e1098] [cursor=pointer]:
+                - /url: /country/israel.html
+                - generic [ref=e1099]: Israel Hotels
+            - listitem [ref=e1100]:
+              - link "United Arab Emirates Hotels" [ref=e1101] [cursor=pointer]:
+                - /url: /country/united-arab-emirates.html
+                - generic [ref=e1102]: United Arab Emirates Hotels
+          - heading "Oceania" [level=3] [ref=e1103]
+          - list [ref=e1104]:
+            - listitem [ref=e1105]:
+              - link "Australia Hotels" [ref=e1106] [cursor=pointer]:
+                - /url: /country/australia.html
+                - generic [ref=e1107]: Australia Hotels
+            - listitem [ref=e1108]:
+              - link "New Zealand Hotels" [ref=e1109] [cursor=pointer]:
+                - /url: /country/new-zealand.html
+                - generic [ref=e1110]: New Zealand Hotels
+        - generic [ref=e1111]:
+          - heading "Destination Guides" [level=2] [ref=e1112]
+          - list [ref=e1113]:
+            - listitem [ref=e1114]:
+              - link "Destination Guides Home" [ref=e1115] [cursor=pointer]:
+                - /url: /travel-guides
+                - generic [ref=e1116]: Destination Guides Home
+          - heading "Asia" [level=3] [ref=e1117]
+          - list [ref=e1118]:
+            - listitem [ref=e1119]:
+              - link "Bali Guide" [ref=e1120] [cursor=pointer]:
+                - /url: /travel-guides/indonesia/bali
+                - generic [ref=e1121]: Bali Guide
+            - listitem [ref=e1122]:
+              - link "Da Nang Guide" [ref=e1123] [cursor=pointer]:
+                - /url: /special-editions/vietnam/da-nang-travel-guide-top-attractions-activities-and-hotels-in-vietnams-coastal-gem/
+                - generic [ref=e1124]: Da Nang Guide
+            - listitem [ref=e1125]:
+              - link "Hong Kong Guide" [ref=e1126] [cursor=pointer]:
+                - /url: /travel-guides/hong-kong
+                - generic [ref=e1127]: Hong Kong Guide
+            - listitem [ref=e1128]:
+              - link "Jakarta Guide" [ref=e1129] [cursor=pointer]:
+                - /url: /travel-guides/indonesia/jakarta
+                - generic [ref=e1130]: Jakarta Guide
+            - listitem [ref=e1131]:
+              - link "Jeju Island Guide" [ref=e1132] [cursor=pointer]:
+                - /url: /travel-guides/south-korea/jeju-island
+                - generic [ref=e1133]: Jeju Island Guide
+            - listitem [ref=e1134]:
+              - link "Kuala Lumpur Guide" [ref=e1135] [cursor=pointer]:
+                - /url: /travel-guides/malaysia/kuala-lumpur
+                - generic [ref=e1136]: Kuala Lumpur Guide
+            - listitem [ref=e1137]:
+              - link "Kyoto Guide" [ref=e1138] [cursor=pointer]:
+                - /url: /travel-guides/japan/kyoto
+                - generic [ref=e1139]: Kyoto Guide
+            - listitem [ref=e1140]:
+              - link "Kyushu Guide" [ref=e1141] [cursor=pointer]:
+                - /url: /travel-guides/japan/kyushu
+                - generic [ref=e1142]: Kyushu Guide
+            - listitem [ref=e1143]:
+              - link "Malacca Guide" [ref=e1144] [cursor=pointer]:
+                - /url: /travel-guides/malaysia/malacca
+                - generic [ref=e1145]: Malacca Guide
+            - listitem [ref=e1146]:
+              - link "Philippines Guide" [ref=e1147] [cursor=pointer]:
+                - /url: /special-editions/philippines/love-the-philippines-top-places-to-visit-and-stay-in-the-tropical-paradise
+                - generic [ref=e1148]: Philippines Guide
+            - listitem [ref=e1149]:
+              - link "Nara Guide" [ref=e1150] [cursor=pointer]:
+                - /url: /travel-guides/japan/nara
+                - generic [ref=e1151]: Nara Guide
+            - listitem [ref=e1152]:
+              - link "Osaka Guide" [ref=e1153] [cursor=pointer]:
+                - /url: /travel-guides/japan/osaka
+                - generic [ref=e1154]: Osaka Guide
+            - listitem [ref=e1155]:
+              - link "Phuket Guide" [ref=e1156] [cursor=pointer]:
+                - /url: /travel-guides/thailand/phuket
+                - generic [ref=e1157]: Phuket Guide
+            - listitem [ref=e1158]:
+              - link "Sapporo Guide" [ref=e1159] [cursor=pointer]:
+                - /url: /travel-guides/japan/sapporo
+                - generic [ref=e1160]: Sapporo Guide
+            - listitem [ref=e1161]:
+              - link "Seoul Guide" [ref=e1162] [cursor=pointer]:
+                - /url: /travel-guides/south-korea/seoul
+                - generic [ref=e1163]: Seoul Guide
+            - listitem [ref=e1164]:
+              - link "Singapore Guide" [ref=e1165] [cursor=pointer]:
+                - /url: /travel-guides/singapore
+                - generic [ref=e1166]: Singapore Guide
+            - listitem [ref=e1167]:
+              - link "Taichung Guide" [ref=e1168] [cursor=pointer]:
+                - /url: /travel-guides/taiwan/taichung
+                - generic [ref=e1169]: Taichung Guide
+            - listitem [ref=e1170]:
+              - link "Taipei Guide" [ref=e1171] [cursor=pointer]:
+                - /url: /travel-guides/taiwan/taipei
+                - generic [ref=e1172]: Taipei Guide
+            - listitem [ref=e1173]:
+              - link "Tokyo Guide" [ref=e1174] [cursor=pointer]:
+                - /url: /travel-guides/japan/tokyo
+                - generic [ref=e1175]: Tokyo Guide
+            - listitem [ref=e1176]:
+              - link "Goa Guide" [ref=e1177] [cursor=pointer]:
+                - /url: /special-editions/goa
+                - generic [ref=e1178]: Goa Guide
+          - heading "Europe" [level=3] [ref=e1179]
+          - list [ref=e1180]:
+            - listitem [ref=e1181]:
+              - link "Paris Guide" [ref=e1182] [cursor=pointer]:
+                - /url: /travel-guides/france/paris
+                - generic [ref=e1183]: Paris Guide
+          - heading "Middle East" [level=3] [ref=e1184]
+          - list [ref=e1185]:
+            - listitem [ref=e1186]:
+              - link "Dubai Guide" [ref=e1187] [cursor=pointer]:
+                - /url: /travel-guides/united-arab-emirates-uae/dubai
+                - generic [ref=e1188]: Dubai Guide
+            - listitem [ref=e1189]:
+              - link "Jeddah Guide" [ref=e1190] [cursor=pointer]:
+                - /url: /travel-guides/saudi-arabia/jeddah
+                - generic [ref=e1191]: Jeddah Guide
+            - listitem [ref=e1192]:
+              - link "Saudi Arabia Guide" [ref=e1193] [cursor=pointer]:
+                - /url: /travel-guides/saudi-arabia
+                - generic [ref=e1194]: Saudi Arabia Guide
+          - heading "Oceania" [level=3] [ref=e1195]
+          - list [ref=e1196]:
+            - listitem [ref=e1197]:
+              - link "Brisbane Guide" [ref=e1198] [cursor=pointer]:
+                - /url: /travel-guides/australia/brisbane
+                - generic [ref=e1199]: Brisbane Guide
+            - listitem [ref=e1200]:
+              - link "Melbourne Guide" [ref=e1201] [cursor=pointer]:
+                - /url: /travel-guides/australia/melbourne
+                - generic [ref=e1202]: Melbourne Guide
+            - listitem [ref=e1203]:
+              - link "Sydney Guide" [ref=e1204] [cursor=pointer]:
+                - /url: /travel-guides/australia/sydney
+                - generic [ref=e1205]: Sydney Guide
+        - generic [ref=e1206]:
+          - heading "Agoda Homes" [level=2] [ref=e1207]
+          - heading "Asia Apartments" [level=3] [ref=e1208]
+          - list [ref=e1209]:
+            - listitem [ref=e1210]:
+              - link "Bangkok Apartments" [ref=e1211] [cursor=pointer]:
+                - /url: /theme/apartments/city/bangkok-th.html
+                - generic [ref=e1212]: Bangkok Apartments
+            - listitem [ref=e1213]:
+              - link "Kuala Lumpur Apartments" [ref=e1214] [cursor=pointer]:
+                - /url: /theme/apartments/city/kuala-lumpur-my.html
+                - generic [ref=e1215]: Kuala Lumpur Apartments
+            - listitem [ref=e1216]:
+              - link "Manila Apartments" [ref=e1217] [cursor=pointer]:
+                - /url: /theme/apartments/city/manila-ph.html
+                - generic [ref=e1218]: Manila Apartments
+            - listitem [ref=e1219]:
+              - link "Osaka Apartments" [ref=e1220] [cursor=pointer]:
+                - /url: /theme/apartments/city/osaka-jp.html
+                - generic [ref=e1221]: Osaka Apartments
+            - listitem [ref=e1222]:
+              - link "Pattaya Apartments" [ref=e1223] [cursor=pointer]:
+                - /url: /theme/apartments/city/pattaya-th.html
+                - generic [ref=e1224]: Pattaya Apartments
+            - listitem [ref=e1225]:
+              - link "Tokyo Apartments" [ref=e1226] [cursor=pointer]:
+                - /url: /theme/apartments/city/tokyo-jp.html
+                - generic [ref=e1227]: Tokyo Apartments
+          - heading "Asia Bungalows" [level=3] [ref=e1228]
+          - list [ref=e1229]:
+            - listitem [ref=e1230]:
+              - link "Bali Bungalows" [ref=e1231] [cursor=pointer]:
+                - /url: /bungalows/city/bali-id.html
+                - generic [ref=e1232]: Bali Bungalows
+            - listitem [ref=e1233]:
+              - link "Koh Kood Bungalows" [ref=e1234] [cursor=pointer]:
+                - /url: /bungalows/city/koh-kood-th.html
+                - generic [ref=e1235]: Koh Kood Bungalows
+            - listitem [ref=e1236]:
+              - link "Koh Lanta Bungalows" [ref=e1237] [cursor=pointer]:
+                - /url: /bungalows/city/koh-lanta-th.html
+                - generic [ref=e1238]: Koh Lanta Bungalows
+            - listitem [ref=e1239]:
+              - link "Koh Phangan Bungalows" [ref=e1240] [cursor=pointer]:
+                - /url: /bungalows/city/koh-phangan-th.html
+                - generic [ref=e1241]: Koh Phangan Bungalows
+            - listitem [ref=e1242]:
+              - link "Koh Samet Bungalows" [ref=e1243] [cursor=pointer]:
+                - /url: /bungalows/city/koh-samet-th.html
+                - generic [ref=e1244]: Koh Samet Bungalows
+            - listitem [ref=e1245]:
+              - link "Phu Quoc Island Bungalows" [ref=e1246] [cursor=pointer]:
+                - /url: /bungalows/city/phu-quoc-island-vn.html
+                - generic [ref=e1247]: Phu Quoc Island Bungalows
+          - heading "Asia Villas" [level=3] [ref=e1248]
+          - list [ref=e1249]:
+            - listitem [ref=e1250]:
+              - link "Bali Villas" [ref=e1251] [cursor=pointer]:
+                - /url: /theme/villas/city/bali-id.html
+                - generic [ref=e1252]: Bali Villas
+            - listitem [ref=e1253]:
+              - link "Phuket Villas" [ref=e1254] [cursor=pointer]:
+                - /url: /theme/villas/city/phuket-th.html
+                - generic [ref=e1255]: Phuket Villas
+            - listitem [ref=e1256]:
+              - link "Pattaya Villas" [ref=e1257] [cursor=pointer]:
+                - /url: /theme/villas/city/pattaya-th.html
+                - generic [ref=e1258]: Pattaya Villas
+            - listitem [ref=e1259]:
+              - link "Hua Hin / Cha-am Villas" [ref=e1260] [cursor=pointer]:
+                - /url: /theme/villas/city/hua-hin-cha-am-th.html
+                - generic [ref=e1261]: Hua Hin / Cha-am Villas
+            - listitem [ref=e1262]:
+              - link "Seoul Villas" [ref=e1263] [cursor=pointer]:
+                - /url: /theme/villas/city/seoul-kr.html
+                - generic [ref=e1264]: Seoul Villas
+            - listitem [ref=e1265]:
+              - link "Port Dickson Villas" [ref=e1266] [cursor=pointer]:
+                - /url: /theme/villas/city/port-dickson-my.html
+                - generic [ref=e1267]: Port Dickson Villas
+          - heading "Asia Vacation Rentals" [level=3] [ref=e1268]
+          - list [ref=e1269]:
+            - listitem [ref=e1270]:
+              - link "Tokyo Vacation Rentals" [ref=e1271] [cursor=pointer]:
+                - /url: /vacation-rentals/city/tokyo-jp.html
+                - generic [ref=e1272]: Tokyo Vacation Rentals
+            - listitem [ref=e1273]:
+              - link "Bangkok Vacation Rentals" [ref=e1274] [cursor=pointer]:
+                - /url: /vacation-rentals/city/bangkok-th.html
+                - generic [ref=e1275]: Bangkok Vacation Rentals
+      - generic [ref=e1277]:
+        - paragraph [ref=e1278]: All material herein © 2005–2026 Agoda Company Pte. Ltd. All Rights Reserved.
+        - paragraph [ref=e1279]: Agoda is part of Booking Holdings Inc., the world leader in online travel & related services.
+        - generic [ref=e1281]:
+          - img "Agoda logo" [ref=e1283]
+          - img "Priceline logo" [ref=e1285]
+          - img "Kayak logo" [ref=e1287]
+          - generic [ref=e1288]:
+            - img "Booking.com logo"
+          - img "Open Table logo" [ref=e1290]
+  - generic [ref=e1294]:
+    - heading "Save 10% on your 1st app booking!" [level=3] [ref=e1295]
+    - paragraph [ref=e1296]: Just scan the QR code for instant savings
+    - generic [ref=e1297]:
+      - img "Phone frame" [ref=e1298]
+      - img "Agoda logo" [ref=e1300]
+      - img "qr code image to download app" [ref=e1302]

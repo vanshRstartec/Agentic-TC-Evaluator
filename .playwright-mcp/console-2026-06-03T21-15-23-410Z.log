@@ -1,0 +1,6 @@
+[     716ms] [ERROR] Not signed in with the identity provider. @ https://www.agoda.com/akara-hotel-bangkok/hotel/bangkok-th.html?countryId=106&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-11&travellerType=1&currencyCode=USD&los=3:0
+[    2438ms] [WARNING] [TikTok Pixel] - Missing 'content_id' paramter
+Issue: The 'content_id' parameter isn't being received. This is required for Video Shopping Ads (VSA).
+Suggestion: Include the 'content_id' parameter in your source code. This is required for Video Shopping Ads (VSA). See https://ads.tiktok.com/help/article/standard-events-parameters?redirected=2 for more information. @ https://analytics.tiktok.com/i18n/pixel/static/main.MTc5ZjUxNDU4MQ.js:0
+[    3623ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 446731502144130. @ https://connect.facebook.net/en_US/fbevents.js:183
+[    4049ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://www.tamgrt.com/RT:0
