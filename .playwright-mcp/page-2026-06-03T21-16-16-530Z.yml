@@ -1,0 +1,267 @@
+- generic [ref=e4]:
+  - generic [ref=e15]:
+    - generic [ref=e18]:
+      - img "Agoda primary logo" [ref=e20]
+      - list [ref=e22]:
+        - listitem [ref=e23]:
+          - generic [ref=e26]: "1"
+          - generic [ref=e31]: Customer information
+        - listitem [ref=e32]:
+          - generic [ref=e35]: "2"
+          - generic [ref=e39]: Payment information
+        - listitem [ref=e40]:
+          - generic [ref=e43]: "3"
+          - generic [ref=e44]: Booking is confirmed!
+    - main [ref=e45]:
+      - generic [ref=e47]:
+        - generic [ref=e50]:
+          - alert [ref=e52]:
+            - img [ref=e54]
+            - heading "Bundle & Save! You're on your way to getting a great deal." [level=4] [ref=e58]:
+              - paragraph [ref=e59]: Bundle & Save! You're on your way to getting a great deal.
+          - generic [ref=e62]:
+            - generic [ref=e64]: For all bookings
+            - group "Contact details" [ref=e65]:
+              - heading "Contact details" [level=3] [ref=e67]
+              - paragraph [ref=e69]: This is where your confirmation will be sent
+              - generic [ref=e72]:
+                - paragraph [ref=e73]: "*Required field"
+                - generic [ref=e74]:
+                  - group [ref=e78]:
+                    - generic [ref=e81]:
+                      - group "First name *" [ref=e82]:
+                        - generic:
+                          - generic: First name *
+                      - generic [ref=e83]:
+                        - generic [ref=e84]:
+                          - generic:
+                            - paragraph: First name *
+                          - textbox "First name *" [ref=e86] [cursor=pointer]
+                        - generic [ref=e87]:
+                          - button:
+                            - generic:
+                              - img
+                  - group [ref=e91]:
+                    - generic [ref=e94]:
+                      - group "Last name *" [ref=e95]:
+                        - generic:
+                          - generic: Last name *
+                      - generic [ref=e96]:
+                        - generic [ref=e97]:
+                          - generic:
+                            - paragraph: Last name *
+                          - textbox "Last name *" [ref=e99] [cursor=pointer]
+                        - generic [ref=e100]:
+                          - button:
+                            - generic:
+                              - img
+                  - group [ref=e104]:
+                    - generic [ref=e107]:
+                      - group "Email *" [ref=e108]:
+                        - generic:
+                          - generic: Email *
+                      - generic [ref=e109]:
+                        - generic [ref=e110]:
+                          - generic:
+                            - paragraph: Email *
+                          - textbox "Email *" [ref=e112] [cursor=pointer]
+                        - generic [ref=e113]:
+                          - button:
+                            - generic:
+                              - img
+                  - group [ref=e117]:
+                    - generic [ref=e124]:
+                      - group "Country/region of residence *" [ref=e125]:
+                        - generic:
+                          - generic: Country/region of residence *
+                      - combobox "Country/region of residence *" [ref=e126] [cursor=pointer]:
+                        - paragraph [ref=e128]: India
+                        - generic:
+                          - img
+                  - group "Mobile number" [ref=e132]:
+                    - generic [ref=e134]: Mobile number
+                    - generic [ref=e136]:
+                      - generic [ref=e143]:
+                        - group "Country code" [ref=e144]:
+                          - generic:
+                            - generic: Country code
+                        - combobox "Country code" [ref=e145] [cursor=pointer]:
+                          - paragraph [ref=e147]: Select
+                          - generic:
+                            - img
+                      - generic [ref=e150]:
+                        - group "Mobile number" [ref=e151]:
+                          - generic:
+                            - generic: Mobile number
+                        - generic [ref=e152]:
+                          - generic [ref=e153]:
+                            - generic:
+                              - paragraph: Mobile number
+                            - textbox "Mobile number" [ref=e155] [cursor=pointer]
+                          - generic [ref=e156]:
+                            - button:
+                              - generic:
+                                - img
+                  - group [ref=e160]:
+                    - generic [ref=e163]: Please make sure your contact information is correct. We'll use it to send your booking confirmation and any reminders to assist your booking completion.
+                  - group [ref=e167]:
+                    - generic [ref=e171] [cursor=pointer]:
+                      - generic [ref=e173]: Make this booking for someone else
+                      - checkbox "Make this booking for someone else" [ref=e174]
+                      - switch "Make this booking for someone else" [ref=e175]
+                  - generic [ref=e179]:
+                    - generic:
+                      - generic:
+                        - group:
+                          - group "Make this booking for someone else"
+          - generic [ref=e182]:
+            - generic [ref=e184]:
+              - generic [ref=e186] [cursor=pointer]:
+                - generic [ref=e188]:
+                  - checkbox "I agree to receive updates and promotions about Agoda and its affiliates or business partners via various channels, including WhatsApp. Opt out anytime. Read more in the Privacy Policy." [checked] [ref=e189]
+                  - img [ref=e191]
+                - paragraph [ref=e195]: I agree to receive updates and promotions about Agoda and its affiliates or business partners via various channels, including WhatsApp. Opt out anytime. Read more in the Privacy Policy.
+              - text: By proceeding with this booking, I agree to Agoda’s
+              - link "Terms of Use" [ref=e196] [cursor=pointer]:
+                - /url: /info/termsofuse.html
+                - generic [ref=e197]: Terms of Use
+              - text: and
+              - link "Privacy Policy" [ref=e198] [cursor=pointer]:
+                - /url: /info/privacy.html
+                - generic [ref=e199]: Privacy Policy
+              - text: .
+            - button "Continue to payment" [ref=e201] [cursor=pointer]:
+              - generic [ref=e203]: Continue to payment
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - heading "Booking Summary" [level=4] [ref=e207]
+            - generic [ref=e209]:
+              - heading "HOTELBANGKOK" [level=5] [ref=e210]:
+                - img [ref=e211]
+                - text: HOTELBANGKOK
+              - generic [ref=e213]:
+                - img "Akara Hotel Bangkok" [ref=e215]
+                - generic [ref=e216]:
+                  - heading "Akara Hotel Bangkok" [level=3] [ref=e219]
+                  - generic [ref=e220]:
+                    - generic [ref=e223]:
+                      - generic [ref=e224]: 5 stars out of 5
+                      - img [ref=e225]
+                      - img [ref=e227]
+                      - img [ref=e229]
+                      - img [ref=e231]
+                      - img [ref=e233]
+                    - tooltip "tooltip This star rating is provided to Agoda by the property, and is usually determined by an official hotel ratings organisation or a third party." [ref=e235]:
+                      - generic [ref=e236]: tooltip
+                      - paragraph [ref=e237]: This star rating is provided to Agoda by the property, and is usually determined by an official hotel ratings organisation or a third party.
+                  - generic [ref=e239]:
+                    - paragraph [ref=e242]:
+                      - generic [ref=e243]: "8.6"
+                      - generic [ref=e244]: Excellent
+                    - paragraph [ref=e245]:
+                      - paragraph [ref=e246]: From 10116 reviews
+              - generic [ref=e247]:
+                - list [ref=e248]:
+                  - listitem [ref=e249]:
+                    - img [ref=e250]
+                    - generic [ref=e253]: 11 June 2026 - 13 June 2026 | 2 nights
+                  - listitem [ref=e254]:
+                    - img [ref=e255]
+                    - text: 1 x Prarop Deluxe King (30 m²)
+                  - listitem [ref=e258]:
+                    - text: "Max: 2 adults, 1 child (0-11 years)"
+                    - generic [ref=e260]: "Guest(s): 2 adults"
+                - button "RISK FREE cancellation before 23:59 hrs. on 7 June 2026 (property local time)." [ref=e261] [cursor=pointer]:
+                  - generic [ref=e263]: RISK FREE cancellation before 23:59 hrs. on 7 June 2026 (property local time).
+                - generic [ref=e264]: We only have 2 rooms left at this price!
+              - generic [ref=e266]:
+                - link "Show more details about this hotel booking - 1" [ref=e267] [cursor=pointer]:
+                  - /url: javascript:void(0);
+                  - text: Show more
+                - img [ref=e268]
+            - generic [ref=e271]:
+              - heading "HOTELBANGKOK" [level=5] [ref=e272]:
+                - img [ref=e273]
+                - text: HOTELBANGKOK
+              - generic [ref=e275]:
+                - img "Akara Hotel Bangkok" [ref=e277]
+                - generic [ref=e278]:
+                  - heading "Akara Hotel Bangkok" [level=3] [ref=e281]
+                  - generic [ref=e282]:
+                    - generic [ref=e285]:
+                      - generic [ref=e286]: 5 stars out of 5
+                      - img [ref=e287]
+                      - img [ref=e289]
+                      - img [ref=e291]
+                      - img [ref=e293]
+                      - img [ref=e295]
+                    - tooltip "tooltip This star rating is provided to Agoda by the property, and is usually determined by an official hotel ratings organisation or a third party." [ref=e297]:
+                      - generic [ref=e298]: tooltip
+                      - paragraph [ref=e299]: This star rating is provided to Agoda by the property, and is usually determined by an official hotel ratings organisation or a third party.
+                  - generic [ref=e301]:
+                    - paragraph [ref=e304]:
+                      - generic [ref=e305]: "8.6"
+                      - generic [ref=e306]: Excellent
+                    - paragraph [ref=e307]:
+                      - paragraph [ref=e308]: From 10116 reviews
+              - generic [ref=e309]:
+                - list [ref=e310]:
+                  - listitem [ref=e311]:
+                    - img [ref=e312]
+                    - generic [ref=e315]: 13 June 2026 - 14 June 2026 | 1 night
+                  - listitem [ref=e316]:
+                    - img [ref=e317]
+                    - text: 1 x Prarop Deluxe Room (30 m²)
+                  - listitem [ref=e320]:
+                    - text: "Max: 2 adults"
+                    - generic [ref=e322]: "Guest(s): 2 adults"
+                - button
+                - generic [ref=e323]: Hurry! Our last room for your dates at this price
+              - generic [ref=e325]:
+                - link "Show more details about this hotel booking - 2" [ref=e326] [cursor=pointer]:
+                  - /url: javascript:void(0);
+                  - text: Show more
+                - img [ref=e327]
+            - link "Booking conditions" [ref=e330] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - generic [ref=e331]: Booking conditions
+          - generic [ref=e333]:
+            - heading "Price Details" [level=3] [ref=e335]
+            - list [ref=e337]:
+              - listitem [ref=e338]:
+                - generic [ref=e340]:
+                  - paragraph [ref=e343]: Akara Hotel Bangkok
+                  - paragraph [ref=e346]: USD 135.20
+                - generic [ref=e351]: 1 X room, 2 X nights
+                - generic [ref=e353]:
+                  - generic [ref=e356]: Taxes & fees
+                  - generic [ref=e359]: + USD 23.93
+              - listitem [ref=e360]:
+                - generic [ref=e362]:
+                  - paragraph [ref=e365]: Akara Hotel Bangkok
+                  - paragraph [ref=e368]: USD 70.23
+                - generic [ref=e373]: 1 X room, 1 X night
+                - generic [ref=e375]:
+                  - generic [ref=e378]: Taxes & fees
+                  - generic [ref=e381]: + USD 12.43
+            - separator [ref=e382]
+            - generic [ref=e384]:
+              - generic [ref=e387]: Total
+              - generic [ref=e390]: USD 241.79
+            - generic [ref=e395]: with taxes & fees
+            - separator [ref=e396]
+            - generic [ref=e399]:
+              - generic [ref=e402]: Total due
+              - generic [ref=e405]: USD 241.79
+  - contentinfo [ref=e406]:
+    - generic [ref=e408]:
+      - paragraph [ref=e409]: All material herein © 2005–2026 Agoda Company Pte. Ltd. All Rights Reserved.
+      - paragraph [ref=e410]: Agoda is part of Booking Holdings Inc., the world leader in online travel & related services.
+      - generic [ref=e411]:
+        - img "Agoda Primary logo" [ref=e414]
+        - img "Priceline logo" [ref=e417]
+        - img "Kayak logo" [ref=e420]
+        - img "Rentalcars.com logo" [ref=e423]
+        - img "Booking.com logo" [ref=e426]
+        - img "OpenTable logo" [ref=e429]
+      - paragraph [ref=e430]: sg-pc-6h-cronos-spa-prod-79b4f88b4f-4wwbp
