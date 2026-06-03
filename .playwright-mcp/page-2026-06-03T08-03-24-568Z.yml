@@ -1,0 +1,1541 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - navigation [ref=e8]:
+        - link "Agoda logo Home link" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e11]:
+            - img "Primary Logo" [ref=e14]
+            - img "Site secondary logo" [ref=e15]
+        - generic [ref=e16]:
+          - generic [ref=e18]:
+            - generic [ref=e21] [cursor=pointer]: Bundle and save!
+            - link "Flight + Hotel" [ref=e22] [cursor=pointer]:
+              - /url: /packages
+          - link "Hotels & Homes" [ref=e25] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e27]:
+            - generic [ref=e30] [cursor=pointer]: New!
+            - generic [ref=e33]:
+              - button "Transport" [ref=e34] [cursor=pointer]:
+                - generic [ref=e35]:
+                  - generic [ref=e36]: Transport
+                  - img [ref=e38]
+              - paragraph
+          - button "Travel menu" [ref=e44] [cursor=pointer]:
+            - img [ref=e45]
+      - generic [ref=e47]:
+        - generic [ref=e49]:
+          - button "Sign in" [ref=e52] [cursor=pointer]:
+            - generic [ref=e54]: Sign in
+          - button "Create account" [ref=e57] [cursor=pointer]:
+            - generic [ref=e59]: Create account
+        - button "Account Menu" [ref=e64] [cursor=pointer]:
+          - img [ref=e67]
+  - generic [ref=e70]:
+    - generic [ref=e71]:
+      - generic [ref=e76]:
+        - generic [ref=e78] [cursor=pointer]:
+          - generic [ref=e80]: 
+          - generic [ref=e81]:
+            - combobox "Enter a destination or property" [ref=e82]: Tokyo
+            - generic [ref=e83]: Begin typing property name or keyword to search, use arrow keys or tab key to navigate, press Enter to select
+        - button "Check-in 10 Jun 2026 Wednesday" [ref=e84] [cursor=pointer]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: 
+            - generic [ref=e89]:
+              - generic [ref=e90]: 10 Jun 2026
+              - generic [ref=e91]: Wednesday
+        - button "Check-out 12 Jun 2026 Friday" [ref=e92] [cursor=pointer]:
+          - generic [ref=e93]:
+            - generic [ref=e95]: 
+            - generic [ref=e97]:
+              - generic [ref=e98]: 12 Jun 2026
+              - generic [ref=e99]: Friday
+        - button "Guests and rooms 2 adults 1 room" [ref=e100] [cursor=pointer]:
+          - generic [ref=e101]:
+            - generic [ref=e103]: 
+            - generic [ref=e105]:
+              - generic [ref=e106]: 2 adults
+              - generic [ref=e107]: 1 room
+              - generic [ref=e109]: 
+        - button "SEARCH" [ref=e111] [cursor=pointer]:
+          - generic [ref=e113]: SEARCH
+      - generic [ref=e118]:
+        - button "Close" [ref=e120] [cursor=pointer]:
+          - img [ref=e121]
+        - generic [ref=e123]:
+          - img "null image" [ref=e124]
+          - generic [ref=e125]:
+            - heading "Looking for instant coupons?" [level=3] [ref=e126]
+            - generic [ref=e128]: Check out our Coupons & Deals page for today's discounts
+          - link "See all coupons" [ref=e130] [cursor=pointer]:
+            - /url: https://www.agoda.com/deals?cid=1897344
+            - generic [ref=e132]: See all coupons
+    - generic [ref=e133]:
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - figure [ref=e140]:
+            - generic [ref=e141]:
+              - button "Search on Map" [ref=e142] [cursor=pointer]:
+                - img "Search on Map" [ref=e143]
+              - button "SEARCH ON MAP" [ref=e146] [cursor=pointer]:
+                - generic [ref=e147]: SEARCH ON MAP
+          - generic [ref=e150]:
+            - generic [ref=e151]: 0 results found
+            - paragraph [ref=e154] [cursor=pointer]:
+              - generic [ref=e155]:
+                - img [ref=e158]
+                - combobox "Text search" [ref=e162]
+                - generic [ref=e163]:
+                  - button:
+                    - generic:
+                      - img
+          - region "Search filter" [ref=e164]:
+            - link "Skip to main content" [ref=e166] [cursor=pointer]:
+              - /url: "#contentContainer"
+              - generic [ref=e168]: Skip to main content
+            - generic [ref=e169]: Making a selection within this region will cause content on this page to change. Product listings will update as each option is selected.
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - heading "Your budget (per night)" [level=3] [ref=e173]
+                - group [ref=e175]:
+                  - generic [ref=e178]:
+                    - slider "MIN" [ref=e182]
+                    - slider "MAX" [ref=e183]
+                  - generic [ref=e184]:
+                    - generic [ref=e185]:
+                      - generic [ref=e186]: Rs.
+                      - generic [ref=e187]: MIN
+                      - textbox "Minimum price filter" [ref=e188]: "0"
+                    - generic [ref=e190]:
+                      - generic [ref=e191]: Rs.
+                      - generic [ref=e192]: MAX
+                      - textbox "Maximum price filter" [ref=e193]: 729,460
+              - separator [ref=e194]
+              - group "Popular filters for Tokyo" [ref=e196]:
+                - heading "Popular filters for Tokyo" [level=3] [ref=e199]
+                - list [ref=e200]:
+                  - listitem [ref=e201]:
+                    - generic [ref=e202] [cursor=pointer]:
+                      - checkbox "Pay now" [ref=e205]
+                      - generic [ref=e210]: Pay now
+                  - listitem [ref=e211]:
+                    - generic [ref=e212] [cursor=pointer]:
+                      - 'checkbox "Guest rating: 6+ Good" [ref=e215]'
+                      - generic [ref=e220]: "Guest rating: 6+ Good"
+                  - listitem [ref=e221]:
+                    - generic [ref=e222] [cursor=pointer]:
+                      - checkbox "Coffee/tea maker" [ref=e225]
+                      - generic [ref=e230]: Coffee/tea maker
+                  - listitem [ref=e231]:
+                    - generic [ref=e232] [cursor=pointer]:
+                      - checkbox "Washing machine" [ref=e235]
+                      - generic [ref=e240]: Washing machine
+                  - listitem [ref=e241]:
+                    - generic [ref=e242] [cursor=pointer]:
+                      - checkbox "Non-smoking" [ref=e245]
+                      - generic [ref=e250]: Non-smoking
+                  - listitem [ref=e251]:
+                    - generic [ref=e252] [cursor=pointer]:
+                      - checkbox "Smoking area" [ref=e255]
+                      - generic [ref=e260]: Smoking area
+                  - listitem [ref=e261]:
+                    - generic [ref=e262] [cursor=pointer]:
+                      - checkbox "Front desk [24-hour]" [ref=e265]
+                      - generic [ref=e270]: Front desk [24-hour]
+                  - listitem [ref=e271]:
+                    - generic [ref=e272] [cursor=pointer]:
+                      - checkbox "Internet" [ref=e275]
+                      - generic [ref=e280]: Internet
+            - separator [ref=e281]
+            - generic [ref=e282]:
+              - group "Property type" [ref=e283]:
+                - heading "Property type" [level=3] [ref=e286]
+                - list [ref=e287]:
+                  - listitem [ref=e288]:
+                    - generic [ref=e289] [cursor=pointer]:
+                      - checkbox "Entire homes & apartments3865 items" [ref=e292]
+                      - generic [ref=e297]: Entire homes & apartments (3865)
+                  - listitem [ref=e298]:
+                    - generic [ref=e299] [cursor=pointer]:
+                      - checkbox "Hotel3278 items" [ref=e302]
+                      - generic [ref=e307]: Hotel (3278)
+                  - listitem [ref=e308]:
+                    - generic [ref=e309] [cursor=pointer]:
+                      - checkbox "Apartment/Flat3089 items" [ref=e312]
+                      - generic [ref=e317]: Apartment/Flat (3089)
+                  - listitem [ref=e318]:
+                    - generic [ref=e319] [cursor=pointer]:
+                      - checkbox "Entire House512 items" [ref=e322]
+                      - generic [ref=e327]: Entire House (512)
+                  - listitem [ref=e328]:
+                    - generic [ref=e329] [cursor=pointer]:
+                      - checkbox "Guesthouse/bed and breakfast221 items" [ref=e332]
+                      - generic [ref=e337]: Guesthouse/bed and breakfast (221)
+                  - listitem [ref=e338]:
+                    - generic [ref=e339] [cursor=pointer]:
+                      - checkbox "Villa195 items" [ref=e342]
+                      - generic [ref=e347]: Villa (195)
+                  - listitem [ref=e348]:
+                    - generic [ref=e349] [cursor=pointer]:
+                      - checkbox "Serviced apartment179 items" [ref=e352]
+                      - generic [ref=e357]: Serviced apartment (179)
+                  - listitem [ref=e358]:
+                    - generic [ref=e359] [cursor=pointer]:
+                      - checkbox "Hostel104 items" [ref=e362]
+                      - generic [ref=e367]: Hostel (104)
+                  - listitem [ref=e368]:
+                    - generic [ref=e369] [cursor=pointer]:
+                      - checkbox "Homestay59 items" [ref=e372]
+                      - generic [ref=e377]: Homestay (59)
+                  - listitem [ref=e378]:
+                    - generic [ref=e379] [cursor=pointer]:
+                      - checkbox "Inn37 items" [ref=e382]
+                      - generic [ref=e387]: Inn (37)
+                  - listitem [ref=e388]:
+                    - generic [ref=e389] [cursor=pointer]:
+                      - checkbox "Capsule hotel30 items" [ref=e392]
+                      - generic [ref=e397]: Capsule hotel (30)
+                  - listitem [ref=e398]:
+                    - generic [ref=e399] [cursor=pointer]:
+                      - checkbox "Ryokan26 items" [ref=e402]
+                      - generic [ref=e407]: Ryokan (26)
+              - button "Show 6 more for Property type" [ref=e408] [cursor=pointer]:
+                - generic [ref=e409]:
+                  - text: Show 6 more
+                  - img [ref=e410]
+            - separator [ref=e412]
+            - generic [ref=e413]:
+              - group "Neighborhood" [ref=e414]:
+                - heading "Neighborhood" [level=3] [ref=e417]
+                - list [ref=e418]:
+                  - listitem [ref=e419]:
+                    - generic [ref=e420]:
+                      - generic [ref=e422] [cursor=pointer]:
+                        - checkbox "Shinjuku1039 items" [ref=e425]
+                        - generic [ref=e429]:
+                          - generic [ref=e430]: Shinjuku (1039)
+                          - img [ref=e432]
+                      - 'tooltip "tooltip Most popular area Shinjuku area has: Shinjuku Gyoen National Garden Tokyo Metropolitan Government Building observation room 8.5 /10 Location score" [ref=e434]':
+                        - generic [ref=e435]: tooltip
+                        - generic [ref=e438]:
+                          - generic [ref=e441]:
+                            - img [ref=e442]
+                            - generic [ref=e444]: Most popular area
+                          - generic [ref=e446]:
+                            - paragraph [ref=e449]: "Shinjuku area has:"
+                            - list [ref=e450]:
+                              - listitem [ref=e451]:
+                                - generic [ref=e453]:
+                                  - img [ref=e455]
+                                  - paragraph [ref=e458]: Shinjuku Gyoen National Garden
+                              - listitem [ref=e459]:
+                                - generic [ref=e461]:
+                                  - img [ref=e463]
+                                  - paragraph [ref=e466]: Tokyo Metropolitan Government Building observation room
+                            - generic [ref=e467]:
+                              - generic [ref=e468]:
+                                - paragraph [ref=e470]: "8.5"
+                                - paragraph [ref=e472]: /10
+                              - paragraph [ref=e474]: Location score
+                  - listitem [ref=e475]:
+                    - generic [ref=e476]:
+                      - generic [ref=e478] [cursor=pointer]:
+                        - checkbox "Asakusa1029 items Shopping" [ref=e481]
+                        - generic [ref=e485]:
+                          - generic [ref=e486]: Asakusa (1029)
+                          - generic [ref=e487]: Shopping
+                      - 'tooltip "tooltip Family favorite area Asakusa area has: Sensoji Temple Tokyo Skytree Shopping 8.6 /10 Location score" [ref=e488]':
+                        - generic [ref=e489]: tooltip
+                        - generic [ref=e492]:
+                          - generic [ref=e495]:
+                            - img [ref=e496]
+                            - generic [ref=e498]: Family favorite area
+                          - generic [ref=e500]:
+                            - paragraph [ref=e503]: "Asakusa area has:"
+                            - list [ref=e504]:
+                              - listitem [ref=e505]:
+                                - generic [ref=e507]:
+                                  - img [ref=e509]
+                                  - paragraph [ref=e512]: Sensoji Temple
+                              - listitem [ref=e513]:
+                                - generic [ref=e515]:
+                                  - img [ref=e517]
+                                  - paragraph [ref=e520]: Tokyo Skytree
+                              - listitem [ref=e521]:
+                                - generic [ref=e523]:
+                                  - img [ref=e525]
+                                  - paragraph [ref=e528]: Shopping
+                            - generic [ref=e529]:
+                              - generic [ref=e530]:
+                                - paragraph [ref=e532]: "8.6"
+                                - paragraph [ref=e534]: /10
+                              - paragraph [ref=e536]: Location score
+                  - listitem [ref=e537]:
+                    - generic [ref=e538] [cursor=pointer]:
+                      - checkbox "Toshima647 items" [ref=e541]
+                      - generic [ref=e546]: Toshima (647)
+                  - listitem [ref=e547]:
+                    - generic [ref=e548] [cursor=pointer]:
+                      - checkbox "Katsushika392 items" [ref=e551]
+                      - generic [ref=e556]: Katsushika (392)
+                  - listitem [ref=e557]:
+                    - generic [ref=e558]:
+                      - generic [ref=e560] [cursor=pointer]:
+                        - checkbox "Shibuya388 items" [ref=e563]
+                        - generic [ref=e568]: Shibuya (388)
+                      - 'tooltip "tooltip Shibuya area has: Meiji Jingu Shibuya Crossing 8.8 /10 Location score" [ref=e569]':
+                        - generic [ref=e570]: tooltip
+                        - generic [ref=e576]:
+                          - paragraph [ref=e579]: "Shibuya area has:"
+                          - list [ref=e580]:
+                            - listitem [ref=e581]:
+                              - generic [ref=e583]:
+                                - img [ref=e585]
+                                - paragraph [ref=e588]: Meiji Jingu
+                            - listitem [ref=e589]:
+                              - generic [ref=e591]:
+                                - img [ref=e593]
+                                - paragraph [ref=e596]: Shibuya Crossing
+                          - generic [ref=e597]:
+                            - generic [ref=e598]:
+                              - paragraph [ref=e600]: "8.8"
+                              - paragraph [ref=e602]: /10
+                            - paragraph [ref=e604]: Location score
+                  - listitem [ref=e605]:
+                    - generic [ref=e606] [cursor=pointer]:
+                      - checkbox "Ryōgoku366 items" [ref=e609]
+                      - generic [ref=e614]: Ryōgoku (366)
+                  - listitem [ref=e615]:
+                    - generic [ref=e616]:
+                      - generic [ref=e618] [cursor=pointer]:
+                        - checkbox "Ueno350 items Shopping" [ref=e621]
+                        - generic [ref=e625]:
+                          - generic [ref=e626]: Ueno (350)
+                          - generic [ref=e627]: Shopping
+                      - 'tooltip "tooltip Family favorite area Ueno area has: Ueno Park Ueno Zoo Shopping 8.7 /10 Location score" [ref=e628]':
+                        - generic [ref=e629]: tooltip
+                        - generic [ref=e632]:
+                          - generic [ref=e635]:
+                            - img [ref=e636]
+                            - generic [ref=e638]: Family favorite area
+                          - generic [ref=e640]:
+                            - paragraph [ref=e643]: "Ueno area has:"
+                            - list [ref=e644]:
+                              - listitem [ref=e645]:
+                                - generic [ref=e647]:
+                                  - img [ref=e649]
+                                  - paragraph [ref=e652]: Ueno Park
+                              - listitem [ref=e653]:
+                                - generic [ref=e655]:
+                                  - img [ref=e657]
+                                  - paragraph [ref=e660]: Ueno Zoo
+                              - listitem [ref=e661]:
+                                - generic [ref=e663]:
+                                  - img [ref=e665]
+                                  - paragraph [ref=e668]: Shopping
+                            - generic [ref=e669]:
+                              - generic [ref=e670]:
+                                - paragraph [ref=e672]: "8.7"
+                                - paragraph [ref=e674]: /10
+                              - paragraph [ref=e676]: Location score
+                  - listitem [ref=e677]:
+                    - generic [ref=e678]:
+                      - generic [ref=e680] [cursor=pointer]:
+                        - checkbox "Shinagawa331 items" [ref=e683]
+                        - generic [ref=e688]: Shinagawa (331)
+                      - 'tooltip "tooltip Shinagawa area has: T.Y.HARBOR MEAT YAZAWA 8.5 /10 Location score" [ref=e689]':
+                        - generic [ref=e690]: tooltip
+                        - generic [ref=e696]:
+                          - paragraph [ref=e699]: "Shinagawa area has:"
+                          - list [ref=e700]:
+                            - listitem [ref=e701]:
+                              - generic [ref=e703]:
+                                - img [ref=e705]
+                                - paragraph [ref=e708]: T.Y.HARBOR
+                            - listitem [ref=e709]:
+                              - generic [ref=e711]:
+                                - img [ref=e713]
+                                - paragraph [ref=e716]: MEAT YAZAWA
+                          - generic [ref=e717]:
+                            - generic [ref=e718]:
+                              - paragraph [ref=e720]: "8.5"
+                              - paragraph [ref=e722]: /10
+                            - paragraph [ref=e724]: Location score
+                  - listitem [ref=e725]:
+                    - generic [ref=e726] [cursor=pointer]:
+                      - checkbox "Kamata323 items" [ref=e729]
+                      - generic [ref=e734]: Kamata (323)
+                  - listitem [ref=e735]:
+                    - generic [ref=e736]:
+                      - generic [ref=e738] [cursor=pointer]:
+                        - checkbox "Akihabara275 items City center" [ref=e741]
+                        - generic [ref=e745]:
+                          - generic [ref=e746]: Akihabara (275)
+                          - generic [ref=e747]: City center
+                      - 'tooltip "tooltip Akihabara area has: Akihabara Heaven''s Gate City center 8.6 /10 Location score" [ref=e748]':
+                        - generic [ref=e749]: tooltip
+                        - generic [ref=e755]:
+                          - paragraph [ref=e758]: "Akihabara area has:"
+                          - list [ref=e759]:
+                            - listitem [ref=e760]:
+                              - generic [ref=e762]:
+                                - img [ref=e764]
+                                - paragraph [ref=e767]: Akihabara
+                            - listitem [ref=e768]:
+                              - generic [ref=e770]:
+                                - img [ref=e772]
+                                - paragraph [ref=e775]: Heaven's Gate
+                            - listitem [ref=e776]:
+                              - generic [ref=e778]:
+                                - img [ref=e780]
+                                - paragraph [ref=e783]: City center
+                          - generic [ref=e784]:
+                            - generic [ref=e785]:
+                              - paragraph [ref=e787]: "8.6"
+                              - paragraph [ref=e789]: /10
+                            - paragraph [ref=e791]: Location score
+                  - listitem [ref=e792]:
+                    - generic [ref=e793] [cursor=pointer]:
+                      - checkbox "Edogawa246 items" [ref=e796]
+                      - generic [ref=e801]: Edogawa (246)
+                  - listitem [ref=e802]:
+                    - generic [ref=e803] [cursor=pointer]:
+                      - checkbox "Nakano218 items" [ref=e806]
+                      - generic [ref=e811]: Nakano (218)
+              - button "Show 24 more for Neighborhood" [ref=e812] [cursor=pointer]:
+                - generic [ref=e813]:
+                  - text: Show 24 more
+                  - img [ref=e814]
+            - separator [ref=e816]
+            - group "Payment options" [ref=e818]:
+              - heading "Payment options" [level=3] [ref=e821]
+              - list [ref=e822]:
+                - listitem [ref=e823]:
+                  - generic [ref=e824] [cursor=pointer]:
+                    - checkbox "Free cancellation2203 items" [ref=e827]
+                    - generic [ref=e832]: Free cancellation (2203)
+                - listitem [ref=e833]:
+                  - generic [ref=e834] [cursor=pointer]:
+                    - checkbox "Pay at the hotel410 items" [ref=e837]
+                    - generic [ref=e842]: Pay at the hotel (410)
+                - listitem [ref=e843]:
+                  - generic [ref=e844] [cursor=pointer]:
+                    - checkbox "Book now, pay later1256 items" [ref=e847]
+                    - generic [ref=e852]: Book now, pay later (1256)
+                - listitem [ref=e853]:
+                  - generic [ref=e854] [cursor=pointer]:
+                    - checkbox "Pay now5344 items" [ref=e857]
+                    - generic [ref=e862]: Pay now (5344)
+                - listitem [ref=e863]:
+                  - generic [ref=e864] [cursor=pointer]:
+                    - checkbox "Book without credit card3 items" [ref=e867]
+                    - generic [ref=e872]: Book without credit card (3)
+            - separator [ref=e873]
+            - group "Star rating" [ref=e875]:
+              - heading "Star rating" [level=3] [ref=e878]
+              - list [ref=e879]:
+                - listitem [ref=e880]:
+                  - generic [ref=e881]:
+                    - generic [ref=e883] [cursor=pointer]:
+                      - checkbox "Agoda Luxe46 items New" [ref=e886]
+                      - generic [ref=e890]:
+                        - generic [ref=e891]: Agoda Luxe (46)
+                        - generic [ref=e893]:
+                          - generic [ref=e894]: New
+                          - generic [ref=e895]: New
+                    - tooltip "tooltip Luxury stays rated 'Exceptional' by our users" [ref=e896]:
+                      - generic [ref=e897]: tooltip
+                      - generic [ref=e898]: Luxury stays rated 'Exceptional' by our users
+                - listitem [ref=e899]:
+                  - generic [ref=e900] [cursor=pointer]:
+                    - checkbox "5-Star rating 151 items" [ref=e903]
+                    - generic [ref=e907]:
+                      - generic [ref=e909]:
+                        - generic [ref=e910]: 5-Star rating
+                        - img [ref=e911]
+                        - img [ref=e913]
+                        - img [ref=e915]
+                        - img [ref=e917]
+                        - img [ref=e919]
+                      - generic [ref=e921]: (151)
+                - listitem [ref=e922]:
+                  - generic [ref=e923] [cursor=pointer]:
+                    - checkbox "4-Star rating 1237 items" [ref=e926]
+                    - generic [ref=e930]:
+                      - generic [ref=e932]:
+                        - generic [ref=e933]: 4-Star rating
+                        - img [ref=e934]
+                        - img [ref=e936]
+                        - img [ref=e938]
+                        - img [ref=e940]
+                      - generic [ref=e942]: (1237)
+                - listitem [ref=e943]:
+                  - generic [ref=e944] [cursor=pointer]:
+                    - checkbox "3-Star rating 3646 items" [ref=e947]
+                    - generic [ref=e951]:
+                      - generic [ref=e953]:
+                        - generic [ref=e954]: 3-Star rating
+                        - img [ref=e955]
+                        - img [ref=e957]
+                        - img [ref=e959]
+                      - generic [ref=e961]: (3646)
+                - listitem [ref=e962]:
+                  - generic [ref=e963] [cursor=pointer]:
+                    - checkbox "2-Star rating 1440 items" [ref=e966]
+                    - generic [ref=e970]:
+                      - generic [ref=e972]:
+                        - generic [ref=e973]: 2-Star rating
+                        - img [ref=e974]
+                        - img [ref=e976]
+                      - generic [ref=e978]: (1440)
+                - listitem [ref=e979]:
+                  - generic [ref=e980] [cursor=pointer]:
+                    - checkbox "1-Star rating 407 items" [ref=e983]
+                    - generic [ref=e987]:
+                      - generic [ref=e989]:
+                        - generic [ref=e990]: 1-Star rating
+                        - img [ref=e991]
+                      - generic [ref=e993]: (407)
+            - separator [ref=e994]
+            - generic [ref=e995]:
+              - group "Room offers" [ref=e996]:
+                - heading "Room offers" [level=3] [ref=e999]
+                - list [ref=e1000]:
+                  - listitem [ref=e1001]:
+                    - generic [ref=e1002] [cursor=pointer]:
+                      - checkbox "Breakfast included714 items" [ref=e1005]
+                      - generic [ref=e1010]: Breakfast included (714)
+                  - listitem [ref=e1011]:
+                    - generic [ref=e1012] [cursor=pointer]:
+                      - checkbox "Late check-out86 items" [ref=e1015]
+                      - generic [ref=e1020]: Late check-out (86)
+                  - listitem [ref=e1021]:
+                    - generic [ref=e1022] [cursor=pointer]:
+                      - checkbox "Early check-in 71 items" [ref=e1025]
+                      - generic [ref=e1030]: Early check-in (71)
+                  - listitem [ref=e1031]:
+                    - generic [ref=e1032] [cursor=pointer]:
+                      - checkbox "Dinner included25 items" [ref=e1035]
+                      - generic [ref=e1040]: Dinner included (25)
+                  - listitem [ref=e1041]:
+                    - generic [ref=e1042] [cursor=pointer]:
+                      - checkbox "Complimentary snacks6 items" [ref=e1045]
+                      - generic [ref=e1050]: Complimentary snacks (6)
+                  - listitem [ref=e1051]:
+                    - generic [ref=e1052] [cursor=pointer]:
+                      - checkbox "Outside food delivery allowed6 items" [ref=e1055]
+                      - generic [ref=e1060]: Outside food delivery allowed (6)
+                  - listitem [ref=e1061]:
+                    - generic [ref=e1062] [cursor=pointer]:
+                      - checkbox "Delivery from family and relatives allowed5 items" [ref=e1065]
+                      - generic [ref=e1070]: Delivery from family and relatives allowed (5)
+                  - listitem [ref=e1071]:
+                    - generic [ref=e1072] [cursor=pointer]:
+                      - checkbox "Free sauna access 5 items" [ref=e1075]
+                      - generic [ref=e1080]: Free sauna access (5)
+                  - listitem [ref=e1081]:
+                    - generic [ref=e1082] [cursor=pointer]:
+                      - checkbox "Lunch included4 items" [ref=e1085]
+                      - generic [ref=e1090]: Lunch included (4)
+                  - listitem [ref=e1091]:
+                    - generic [ref=e1092] [cursor=pointer]:
+                      - checkbox "Espresso machine with pods3 items" [ref=e1095]
+                      - generic [ref=e1100]: Espresso machine with pods (3)
+                  - listitem [ref=e1101]:
+                    - generic [ref=e1102] [cursor=pointer]:
+                      - checkbox "Free shuttle service 3 items" [ref=e1105]
+                      - generic [ref=e1110]: Free shuttle service (3)
+                  - listitem [ref=e1111]:
+                    - generic [ref=e1112] [cursor=pointer]:
+                      - checkbox "Airport transfer2 items" [ref=e1115]
+                      - generic [ref=e1120]: Airport transfer (2)
+              - button "Show 5 more for Room offers" [ref=e1121] [cursor=pointer]:
+                - generic [ref=e1122]:
+                  - text: Show 5 more
+                  - img [ref=e1123]
+            - separator [ref=e1125]
+            - generic [ref=e1126]:
+              - group "Property facilities" [ref=e1127]:
+                - heading "Property facilities" [level=3] [ref=e1130]
+                - list [ref=e1131]:
+                  - listitem [ref=e1132]:
+                    - generic [ref=e1133] [cursor=pointer]:
+                      - checkbox "Swimming pool29 items" [ref=e1136]
+                      - generic [ref=e1141]: Swimming pool (29)
+                  - listitem [ref=e1142]:
+                    - generic [ref=e1143] [cursor=pointer]:
+                      - checkbox "Internet5651 items" [ref=e1146]
+                      - generic [ref=e1151]: Internet (5651)
+                  - listitem [ref=e1152]:
+                    - generic [ref=e1153] [cursor=pointer]:
+                      - checkbox "Car park740 items" [ref=e1156]
+                      - generic [ref=e1161]: Car park (740)
+                  - listitem [ref=e1162]:
+                    - generic [ref=e1163] [cursor=pointer]:
+                      - checkbox "Airport transfer191 items" [ref=e1166]
+                      - generic [ref=e1171]: Airport transfer (191)
+                  - listitem [ref=e1172]:
+                    - generic [ref=e1173] [cursor=pointer]:
+                      - checkbox "Gym/fitness92 items" [ref=e1176]
+                      - generic [ref=e1181]: Gym/fitness (92)
+                  - listitem [ref=e1182]:
+                    - generic [ref=e1183] [cursor=pointer]:
+                      - checkbox "Front desk [24-hour]1101 items" [ref=e1186]
+                      - generic [ref=e1191]: Front desk [24-hour] (1101)
+                  - listitem [ref=e1192]:
+                    - generic [ref=e1193] [cursor=pointer]:
+                      - checkbox "Family/child friendly2823 items" [ref=e1196]
+                      - generic [ref=e1201]: Family/child friendly (2823)
+                  - listitem [ref=e1202]:
+                    - generic [ref=e1203] [cursor=pointer]:
+                      - checkbox "Non-smoking4453 items" [ref=e1206]
+                      - generic [ref=e1211]: Non-smoking (4453)
+                  - listitem [ref=e1212]:
+                    - generic [ref=e1213] [cursor=pointer]:
+                      - checkbox "Spa/sauna123 items" [ref=e1216]
+                      - generic [ref=e1221]: Spa/sauna (123)
+                  - listitem [ref=e1222]:
+                    - generic [ref=e1223] [cursor=pointer]:
+                      - checkbox "Restaurants565 items" [ref=e1226]
+                      - generic [ref=e1231]: Restaurants (565)
+                  - listitem [ref=e1232]:
+                    - generic [ref=e1233] [cursor=pointer]:
+                      - checkbox "Smoking area1039 items" [ref=e1236]
+                      - generic [ref=e1241]: Smoking area (1039)
+                  - listitem [ref=e1242]:
+                    - generic [ref=e1243] [cursor=pointer]:
+                      - checkbox "Pets allowed125 items" [ref=e1246]
+                      - generic [ref=e1251]: Pets allowed (125)
+              - button "Show 4 more for Property facilities" [ref=e1252] [cursor=pointer]:
+                - generic [ref=e1253]:
+                  - text: Show 4 more
+                  - img [ref=e1254]
+            - separator [ref=e1256]
+            - group "Guest rating" [ref=e1258]:
+              - heading "Guest rating" [level=3] [ref=e1261]
+              - list [ref=e1262]:
+                - listitem [ref=e1263]:
+                  - generic [ref=e1264] [cursor=pointer]:
+                    - radio "9+ Exceptional1789 items" [ref=e1267]
+                    - generic [ref=e1271]:
+                      - paragraph [ref=e1273]: 9+
+                      - generic [ref=e1274]: Exceptional (1789)
+                - listitem [ref=e1275]:
+                  - generic [ref=e1276] [cursor=pointer]:
+                    - radio "8+ Excellent4002 items" [ref=e1279]
+                    - generic [ref=e1283]:
+                      - paragraph [ref=e1285]: 8+
+                      - generic [ref=e1286]: Excellent (4002)
+                - listitem [ref=e1287]:
+                  - generic [ref=e1288] [cursor=pointer]:
+                    - radio "7+ Very good4965 items" [ref=e1291]
+                    - generic [ref=e1295]:
+                      - paragraph [ref=e1297]: 7+
+                      - generic [ref=e1298]: Very good (4965)
+                - listitem [ref=e1299]:
+                  - generic [ref=e1300] [cursor=pointer]:
+                    - radio "6+ Good5346 items" [ref=e1303]
+                    - generic [ref=e1307]:
+                      - paragraph [ref=e1309]: 6+
+                      - generic [ref=e1310]: Good (5346)
+            - separator [ref=e1311]
+            - generic [ref=e1312]:
+              - group "Room amenities" [ref=e1313]:
+                - heading "Room amenities" [level=3] [ref=e1316]
+                - list [ref=e1317]:
+                  - listitem [ref=e1318]:
+                    - generic [ref=e1319] [cursor=pointer]:
+                      - checkbox "Heating4741 items" [ref=e1322]
+                      - generic [ref=e1327]: Heating (4741)
+                  - listitem [ref=e1328]:
+                    - generic [ref=e1329] [cursor=pointer]:
+                      - checkbox "Refrigerator4500 items" [ref=e1332]
+                      - generic [ref=e1337]: Refrigerator (4500)
+                  - listitem [ref=e1338]:
+                    - generic [ref=e1339] [cursor=pointer]:
+                      - checkbox "Washing machine4142 items" [ref=e1342]
+                      - generic [ref=e1347]: Washing machine (4142)
+                  - listitem [ref=e1348]:
+                    - generic [ref=e1349] [cursor=pointer]:
+                      - checkbox "TV3530 items" [ref=e1352]
+                      - generic [ref=e1357]: TV (3530)
+                  - listitem [ref=e1358]:
+                    - generic [ref=e1359] [cursor=pointer]:
+                      - checkbox "Bathtub3426 items" [ref=e1362]
+                      - generic [ref=e1367]: Bathtub (3426)
+                  - listitem [ref=e1368]:
+                    - generic [ref=e1369] [cursor=pointer]:
+                      - checkbox "Air conditioning2063 items" [ref=e1372]
+                      - generic [ref=e1377]: Air conditioning (2063)
+                  - listitem [ref=e1378]:
+                    - generic [ref=e1379] [cursor=pointer]:
+                      - checkbox "Balcony/terrace1576 items" [ref=e1382]
+                      - generic [ref=e1387]: Balcony/terrace (1576)
+                  - listitem [ref=e1388]:
+                    - generic [ref=e1389] [cursor=pointer]:
+                      - checkbox "Kitchen1512 items" [ref=e1392]
+                      - generic [ref=e1397]: Kitchen (1512)
+                  - listitem [ref=e1398]:
+                    - generic [ref=e1399] [cursor=pointer]:
+                      - checkbox "Internet access912 items" [ref=e1402]
+                      - generic [ref=e1407]: Internet access (912)
+                  - listitem [ref=e1408]:
+                    - generic [ref=e1409] [cursor=pointer]:
+                      - checkbox "Coffee/tea maker897 items" [ref=e1412]
+                      - generic [ref=e1417]: Coffee/tea maker (897)
+                  - listitem [ref=e1418]:
+                    - generic [ref=e1419] [cursor=pointer]:
+                      - checkbox "Ironing facilities736 items" [ref=e1422]
+                      - generic [ref=e1427]: Ironing facilities (736)
+                  - listitem [ref=e1428]:
+                    - generic [ref=e1429] [cursor=pointer]:
+                      - checkbox "Pets allowed in room14 items" [ref=e1432]
+                      - generic [ref=e1437]: Pets allowed in room (14)
+              - button "Show 2 more for Room amenities" [ref=e1438] [cursor=pointer]:
+                - generic [ref=e1439]:
+                  - text: Show 2 more
+                  - img [ref=e1440]
+            - separator [ref=e1442]
+            - group "Distance to center" [ref=e1444]:
+              - heading "Distance to center" [level=3] [ref=e1447]
+              - list [ref=e1448]:
+                - listitem [ref=e1449]:
+                  - generic [ref=e1450] [cursor=pointer]:
+                    - checkbox "Inside city center1285 items" [ref=e1453]
+                    - generic [ref=e1458]: Inside city center (1285)
+                - listitem [ref=e1459]:
+                  - generic [ref=e1460] [cursor=pointer]:
+                    - checkbox "<2 km to center2418 items" [ref=e1463]
+                    - generic [ref=e1468]: <2 km to center (2418)
+                - listitem [ref=e1469]:
+                  - generic [ref=e1470] [cursor=pointer]:
+                    - checkbox "2-5 km to center2311 items" [ref=e1473]
+                    - generic [ref=e1478]: 2-5 km to center (2311)
+                - listitem [ref=e1479]:
+                  - generic [ref=e1480] [cursor=pointer]:
+                    - checkbox "5-10 km to center1367 items" [ref=e1483]
+                    - generic [ref=e1488]: 5-10 km to center (1367)
+                - listitem [ref=e1489]:
+                  - generic [ref=e1490] [cursor=pointer]:
+                    - checkbox ">10 km to center382 items" [ref=e1493]
+                    - generic [ref=e1498]: ">10 km to center (382)"
+            - separator [ref=e1499]
+            - group "Bed type" [ref=e1501]:
+              - heading "Bed type" [level=3] [ref=e1504]
+              - list [ref=e1505]:
+                - listitem [ref=e1506]:
+                  - generic [ref=e1507] [cursor=pointer]:
+                    - checkbox "Double5865 items" [ref=e1510]
+                    - generic [ref=e1515]: Double (5865)
+                - listitem [ref=e1516]:
+                  - generic [ref=e1517] [cursor=pointer]:
+                    - checkbox "Single/twin3257 items" [ref=e1520]
+                    - generic [ref=e1525]: Single/twin (3257)
+                - listitem [ref=e1526]:
+                  - generic [ref=e1527] [cursor=pointer]:
+                    - checkbox "Queen738 items" [ref=e1530]
+                    - generic [ref=e1535]: Queen (738)
+                - listitem [ref=e1536]:
+                  - generic [ref=e1537] [cursor=pointer]:
+                    - checkbox "Bunk bed471 items" [ref=e1540]
+                    - generic [ref=e1545]: Bunk bed (471)
+                - listitem [ref=e1546]:
+                  - generic [ref=e1547] [cursor=pointer]:
+                    - checkbox "King323 items" [ref=e1550]
+                    - generic [ref=e1555]: King (323)
+            - separator [ref=e1556]
+            - group "Popular with families" [ref=e1558]:
+              - heading "Popular with families" [level=3] [ref=e1561]
+              - list [ref=e1562]:
+                - listitem [ref=e1563]:
+                  - generic [ref=e1564] [cursor=pointer]:
+                    - checkbox "Kids stay for free" [ref=e1567]
+                    - generic [ref=e1572]: Kids stay for free
+            - separator [ref=e1573]
+            - group "Location rating" [ref=e1575]:
+              - heading "Location rating" [level=3] [ref=e1578]
+              - list [ref=e1579]:
+                - listitem [ref=e1580]:
+                  - generic [ref=e1581] [cursor=pointer]:
+                    - radio "9+ Exceptional1760 items" [ref=e1584]
+                    - generic [ref=e1588]:
+                      - paragraph [ref=e1590]: 9+
+                      - generic [ref=e1591]: Exceptional (1760)
+                - listitem [ref=e1592]:
+                  - generic [ref=e1593] [cursor=pointer]:
+                    - radio "8+ Excellent3667 items" [ref=e1596]
+                    - generic [ref=e1600]:
+                      - paragraph [ref=e1602]: 8+
+                      - generic [ref=e1603]: Excellent (3667)
+                - listitem [ref=e1604]:
+                  - generic [ref=e1605] [cursor=pointer]:
+                    - radio "7+ Very good4640 items" [ref=e1608]
+                    - generic [ref=e1612]:
+                      - paragraph [ref=e1614]: 7+
+                      - generic [ref=e1615]: Very good (4640)
+            - separator [ref=e1616]
+            - group "Looking for something special?" [ref=e1618]:
+              - heading "Looking for something special?" [level=3] [ref=e1620]
+              - list [ref=e1621]:
+                - listitem [ref=e1622]:
+                  - button "Great for Families" [ref=e1624] [cursor=pointer]:
+                    - img [ref=e1625]
+                    - generic [ref=e1628]: Great for Families
+                - listitem [ref=e1629]:
+                  - button "Great for Groups" [ref=e1631] [cursor=pointer]:
+                    - img [ref=e1632]
+                    - generic [ref=e1635]: Great for Groups
+                - listitem [ref=e1636]:
+                  - button "Workation Friendly" [ref=e1638] [cursor=pointer]:
+                    - img [ref=e1639]
+                    - generic [ref=e1642]: Workation Friendly
+                - listitem [ref=e1643]:
+                  - button "Pets Allowed" [ref=e1645] [cursor=pointer]:
+                    - img [ref=e1646]
+                    - generic [ref=e1649]: Pets Allowed
+            - separator [ref=e1650]
+            - group "Near popular attractions" [ref=e1652]:
+              - heading "Near popular attractions" [level=3] [ref=e1655]
+              - list [ref=e1656]:
+                - listitem [ref=e1657]:
+                  - generic [ref=e1658] [cursor=pointer]:
+                    - checkbox "Sensoji Temple444 items" [ref=e1661]
+                    - generic [ref=e1666]: Sensoji Temple (444)
+                - listitem [ref=e1667]:
+                  - generic [ref=e1668] [cursor=pointer]:
+                    - checkbox "Asakusa428 items" [ref=e1671]
+                    - generic [ref=e1676]: Asakusa (428)
+                - listitem [ref=e1677]:
+                  - generic [ref=e1678] [cursor=pointer]:
+                    - checkbox "Tokyo Skytree340 items" [ref=e1681]
+                    - generic [ref=e1686]: Tokyo Skytree (340)
+                - listitem [ref=e1687]:
+                  - generic [ref=e1688] [cursor=pointer]:
+                    - checkbox "Ueno Park176 items" [ref=e1691]
+                    - generic [ref=e1696]: Ueno Park (176)
+                - listitem [ref=e1697]:
+                  - generic [ref=e1698] [cursor=pointer]:
+                    - checkbox "Shibuya Crossing151 items" [ref=e1701]
+                    - generic [ref=e1706]: Shibuya Crossing (151)
+                - listitem [ref=e1707]:
+                  - generic [ref=e1708] [cursor=pointer]:
+                    - checkbox "Ginza132 items" [ref=e1711]
+                    - generic [ref=e1716]: Ginza (132)
+                - listitem [ref=e1717]:
+                  - generic [ref=e1718] [cursor=pointer]:
+                    - checkbox "Shinjuku Gyoen National Garden125 items" [ref=e1721]
+                    - generic [ref=e1726]: Shinjuku Gyoen National Garden (125)
+                - listitem [ref=e1727]:
+                  - generic [ref=e1728] [cursor=pointer]:
+                    - checkbox "Tokyo Metropolitan Government Building observation room114 items" [ref=e1731]
+                    - generic [ref=e1736]: Tokyo Metropolitan Government Building observation room (114)
+                - listitem [ref=e1737]:
+                  - generic [ref=e1738] [cursor=pointer]:
+                    - checkbox "Tokyo Tower88 items" [ref=e1741]
+                    - generic [ref=e1746]: Tokyo Tower (88)
+                - listitem [ref=e1747]:
+                  - generic [ref=e1748] [cursor=pointer]:
+                    - checkbox "Meiji Jingu35 items" [ref=e1751]
+                    - generic [ref=e1756]: Meiji Jingu (35)
+            - separator [ref=e1757]
+            - group "Number of bedrooms" [ref=e1759]:
+              - heading "Number of bedrooms" [level=3] [ref=e1762]
+              - list [ref=e1763]:
+                - listitem [ref=e1764]:
+                  - generic [ref=e1765] [cursor=pointer]:
+                    - checkbox "1 bedroom/studio5144 items" [ref=e1768]
+                    - generic [ref=e1773]: 1 bedroom/studio (5144)
+                - listitem [ref=e1774]:
+                  - generic [ref=e1775] [cursor=pointer]:
+                    - checkbox "2 bedrooms947 items" [ref=e1778]
+                    - generic [ref=e1783]: 2 bedrooms (947)
+                - listitem [ref=e1784]:
+                  - generic [ref=e1785] [cursor=pointer]:
+                    - checkbox "3+ bedrooms730 items" [ref=e1788]
+                    - generic [ref=e1793]: 3+ bedrooms (730)
+            - separator [ref=e1794]
+            - group "Popular hotel brands" [ref=e1796]:
+              - heading "Popular hotel brands" [level=3] [ref=e1799]
+              - list [ref=e1800]:
+                - listitem [ref=e1801]:
+                  - generic [ref=e1802] [cursor=pointer]:
+                    - checkbox "APA Hotels87 items" [ref=e1805]
+                    - generic [ref=e1810]: APA Hotels (87)
+                - listitem [ref=e1811]:
+                  - generic [ref=e1812] [cursor=pointer]:
+                    - checkbox "Hotel Livemax36 items" [ref=e1815]
+                    - generic [ref=e1820]: Hotel Livemax (36)
+                - listitem [ref=e1821]:
+                  - generic [ref=e1822] [cursor=pointer]:
+                    - checkbox "matsuri technologies72 items" [ref=e1825]
+                    - generic [ref=e1830]: matsuri technologies (72)
+                - listitem [ref=e1831]:
+                  - generic [ref=e1832] [cursor=pointer]:
+                    - checkbox "UBIQS64 items" [ref=e1835]
+                    - generic [ref=e1840]: UBIQS (64)
+                - listitem [ref=e1841]:
+                  - generic [ref=e1842] [cursor=pointer]:
+                    - checkbox "Kuomin Liu48 items" [ref=e1845]
+                    - generic [ref=e1850]: Kuomin Liu (48)
+                - listitem [ref=e1851]:
+                  - generic [ref=e1852] [cursor=pointer]:
+                    - checkbox "ICONIA HOSPITALITY29 items" [ref=e1855]
+                    - generic [ref=e1860]: ICONIA HOSPITALITY (29)
+                - listitem [ref=e1861]:
+                  - generic [ref=e1862] [cursor=pointer]:
+                    - checkbox "Hotel Monday26 items" [ref=e1865]
+                    - generic [ref=e1870]: Hotel Monday (26)
+                - listitem [ref=e1871]:
+                  - generic [ref=e1872] [cursor=pointer]:
+                    - checkbox "Marriott Hotels and Resorts20 items" [ref=e1875]
+                    - generic [ref=e1880]: Marriott Hotels and Resorts (20)
+                - listitem [ref=e1881]:
+                  - generic [ref=e1882] [cursor=pointer]:
+                    - checkbox "Ideal Japan20 items" [ref=e1885]
+                    - generic [ref=e1890]: Ideal Japan (20)
+                - listitem [ref=e1891]:
+                  - generic [ref=e1892] [cursor=pointer]:
+                    - checkbox "Super Hotel19 items" [ref=e1895]
+                    - generic [ref=e1900]: Super Hotel (19)
+        - generic [ref=e1901]:
+          - generic [ref=e1902]:
+            - region "Announcement"
+            - generic [ref=e1904]:
+              - heading "7,763 properties in Tokyo" [level=3] [ref=e1906]
+              - 'combobox "Sort by: Best match" [ref=e1910] [cursor=pointer]':
+                - paragraph [ref=e1912]: "Sort by: Best match"
+                - img [ref=e1913]
+            - list [ref=e1916]:
+              - listitem [ref=e1917] [cursor=pointer]:
+                - group "Property Card" [ref=e1918]:
+                  - generic [ref=e1919]:
+                    - generic [ref=e1920]: Hotel Gracery Shinjuku opens in a new tab
+                    - generic [ref=e1922]:
+                      - generic [ref=e1924]:
+                        - region [ref=e1925]:
+                          - list [ref=e1926]:
+                            - listitem [ref=e1927]:
+                              - img "Exterior view" [ref=e1928]
+                            - listitem [ref=e1929]:
+                              - img "Property View 2" [ref=e1930]
+                            - listitem [ref=e1931]:
+                              - img "Bar/lounge" [ref=e1932]
+                            - listitem [ref=e1933]:
+                              - img "Lobby" [ref=e1934]
+                            - listitem [ref=e1935]:
+                              - img "Property View 5" [ref=e1936]
+                            - listitem [ref=e1937]:
+                              - img "Entrance" [ref=e1938]
+                            - listitem [ref=e1939]:
+                              - img "Property View 7" [ref=e1940]
+                            - listitem [ref=e1941]:
+                              - img "Property View 8" [ref=e1942]
+                            - listitem [ref=e1943]:
+                              - img "Lobby" [ref=e1944]
+                            - listitem [ref=e1945]:
+                              - img "Lobby" [ref=e1946]
+                          - generic:
+                            - button [disabled]:
+                              - img
+                          - button "Next property image Hotel Gracery Shinjuku" [ref=e1948]:
+                            - img [ref=e1949]
+                          - generic:
+                            - generic: 1/10
+                        - generic [ref=e1952]:
+                          - button "2024 Award" [ref=e1954]:
+                            - img [ref=e1955]
+                            - generic [ref=e1957]: 2024 Award
+                          - tooltip "tooltip Awarded as a top choice of Agoda travelers in 2024." [ref=e1958]:
+                            - generic [ref=e1959]: tooltip
+                            - paragraph [ref=e1961]: Awarded as a top choice of Agoda travelers in 2024.
+                        - button "Add Hotel Gracery Shinjuku to saved list" [ref=e1962]:
+                          - img [ref=e1964]
+                      - generic [ref=e1967]:
+                        - banner [ref=e1968]:
+                          - link "Hotel Gracery Shinjuku" [ref=e1970]:
+                            - /url: /hotel-gracery-shinjuku/hotel/tokyo-jp.html?countryId=3&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-10&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=INR&isFreeOccSearch=false&flightSearchCriteria=[object Object]&tspTypes=7,8&los=2&searchrequestid=572bbd8c-d15e-4ba6-a2d5-fbfedc14ace4
+                            - generic [ref=e1971]: Hotel Gracery Shinjuku
+                          - generic [ref=e1972]:
+                            - generic [ref=e1973]:
+                              - button "4 stars out of 5" [ref=e1975]:
+                                - generic [ref=e1976]:
+                                  - generic [ref=e1977]: 4 stars out of 5
+                                  - img [ref=e1978]
+                                  - img [ref=e1980]
+                                  - img [ref=e1982]
+                                  - img [ref=e1984]
+                              - tooltip "tooltip Star rating Gold star ratings are provided by the property to reflect the comfort, facilities, and amenities you can expect." [ref=e1986]:
+                                - generic [ref=e1987]: tooltip
+                                - paragraph [ref=e1988]: Star rating
+                                - paragraph [ref=e1989]: Gold star ratings are provided by the property to reflect the comfort, facilities, and amenities you can expect.
+                            - generic [ref=e1990]:
+                              - img [ref=e1991]
+                              - generic [ref=e1993]:
+                                - button "Shinjuku, Tokyo - City center" [ref=e1994]:
+                                  - generic [ref=e1995]: Shinjuku, Tokyo - City center
+                                - generic [ref=e1996]: 177 m from Seibu Shinjuku Train Station • 1.1 km from Tokyo Metropolitan Government Building observation room • 1.3 km from Shinjuku Gyoen National Garden
+                        - generic [ref=e2000]: Booked 34 times today
+                        - complementary [ref=e2002]:
+                          - generic [ref=e2003]:
+                            - button "Promoted" [ref=e2005]:
+                              - generic [ref=e2007]: Promoted
+                            - tooltip "tooltip Agoda earns increased commission on bookings at this property. Commission earned by Agoda affects the order of your search results." [ref=e2008]:
+                              - generic [ref=e2009]: tooltip
+                              - paragraph [ref=e2010]: Agoda earns increased commission on bookings at this property. Commission earned by Agoda affects the order of your search results.
+                        - complementary [ref=e2011]:
+                          - list [ref=e2012]:
+                            - listitem [ref=e2013]:
+                              - generic [ref=e2015]:
+                                - img [ref=e2016]
+                                - generic [ref=e2018]: International Deals
+                            - listitem [ref=e2019]:
+                              - generic [ref=e2021]:
+                                - img [ref=e2022]
+                                - generic [ref=e2024]: "\"The first and first choice hotel when you come to Tokyo\""
+                      - generic [ref=e2026]:
+                        - generic [ref=e2028]:
+                          - generic [ref=e2029]:
+                            - button "Average rating Excellent 8.7 out of 10 with 29,339 reviews" [ref=e2031]:
+                              - generic [ref=e2032]:
+                                - generic [ref=e2033]: Average rating Excellent 8.7 out of 10 with 29,339 reviews
+                                - paragraph [ref=e2036]:
+                                  - generic [ref=e2037]: "8.7"
+                                  - generic [ref=e2038]: Excellent
+                                - paragraph [ref=e2039]: 29,339 reviews
+                            - heading "Sorry, there is no content available." [level=5] [ref=e2042]
+                          - paragraph [ref=e2047]:
+                            - generic [ref=e2048]: "9.2"
+                            - generic [ref=e2049]: Location score
+                        - generic [ref=e2050]:
+                          - complementary [ref=e2051]:
+                            - list [ref=e2052]:
+                              - listitem [ref=e2053]:
+                                - generic [ref=e2056]: Only 1 left
+                              - listitem [ref=e2057]:
+                                - generic [ref=e2059]:
+                                  - img [ref=e2060]
+                                  - generic [ref=e2062]: MEGA SALE
+                          - complementary [ref=e2063]:
+                            - list [ref=e2064]:
+                              - listitem [ref=e2065]:
+                                - generic [ref=e2066]:
+                                  - paragraph [ref=e2068]: "-75%"
+                                  - generic [ref=e2070]:
+                                    - 'button "Original price: 46,575" [ref=e2072]':
+                                      - generic [ref=e2073]:
+                                        - generic [ref=e2074]: "Original price: 46,575"
+                                        - text: 46,575
+                                    - tooltip "tooltip The highest bookable price somebody paid to book this room type in the last year." [ref=e2075]:
+                                      - generic [ref=e2076]: tooltip
+                                      - generic [ref=e2077]: The highest bookable price somebody paid to book this room type in the last year.
+                              - listitem [ref=e2078]:
+                                - generic [ref=e2080]: Rs. 11,644
+                          - generic [ref=e2081]:
+                            - generic [ref=e2082]: Per night before taxes and fees
+                            - generic [ref=e2083]: + FREE CANCELLATION
+              - listitem [ref=e2084] [cursor=pointer]:
+                - group "Property Card" [ref=e2085]:
+                  - generic [ref=e2086]:
+                    - generic [ref=e2087]: Premium Apart MONday GINZA EAST opens in a new tab
+                    - generic [ref=e2089]:
+                      - generic [ref=e2091]:
+                        - region [ref=e2092]:
+                          - list [ref=e2093]:
+                            - listitem [ref=e2094]:
+                              - img "Property View 1" [ref=e2095]
+                            - listitem [ref=e2096]:
+                              - img "Property View 2" [ref=e2097]
+                            - listitem [ref=e2098]:
+                              - img "Property View 3" [ref=e2099]
+                            - listitem [ref=e2100]:
+                              - img "Property View 4" [ref=e2101]
+                            - listitem [ref=e2102]:
+                              - img "Property View 5" [ref=e2103]
+                            - listitem [ref=e2104]:
+                              - img "Property View 6" [ref=e2105]
+                            - listitem [ref=e2106]:
+                              - img "Property View 7" [ref=e2107]
+                            - listitem [ref=e2108]:
+                              - img "Property View 8" [ref=e2109]
+                            - listitem [ref=e2110]:
+                              - img "Property View 9" [ref=e2111]
+                            - listitem [ref=e2112]:
+                              - img "Property View 10" [ref=e2113]
+                          - generic:
+                            - button [disabled]:
+                              - img
+                          - button "Next property image Premium Apart MONday GINZA EAST" [ref=e2115]:
+                            - img [ref=e2116]
+                          - generic:
+                            - generic: 1/10
+                        - generic [ref=e2120]: Newly built in 2025
+                        - button "Add Premium Apart MONday GINZA EAST to saved list" [ref=e2121]:
+                          - img [ref=e2123]
+                      - generic [ref=e2126]:
+                        - banner [ref=e2127]:
+                          - link "Premium Apart MONday GINZA EAST" [ref=e2129]:
+                            - /url: /premium-apart-monday-ginza-east/hotel/tokyo-jp.html?countryId=3&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-10&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=INR&isFreeOccSearch=false&flightSearchCriteria=[object Object]&los=2&searchrequestid=572bbd8c-d15e-4ba6-a2d5-fbfedc14ace4
+                            - generic [ref=e2130]: Premium Apart MONday GINZA EAST
+                          - generic [ref=e2131]:
+                            - generic [ref=e2132]:
+                              - button "4 stars out of 5" [ref=e2134]:
+                                - generic [ref=e2135]:
+                                  - generic [ref=e2136]: 4 stars out of 5
+                                  - img [ref=e2137]
+                                  - img [ref=e2139]
+                                  - img [ref=e2141]
+                                  - img [ref=e2143]
+                              - tooltip "tooltip Star rating Gold star ratings are provided by the property to reflect the comfort, facilities, and amenities you can expect." [ref=e2145]:
+                                - generic [ref=e2146]: tooltip
+                                - paragraph [ref=e2147]: Star rating
+                                - paragraph [ref=e2148]: Gold star ratings are provided by the property to reflect the comfort, facilities, and amenities you can expect.
+                            - generic [ref=e2149]:
+                              - img [ref=e2150]
+                              - generic [ref=e2152]:
+                                - button "Ginza, Tokyo - 0.5 km to center" [ref=e2153]:
+                                  - generic [ref=e2154]: Ginza, Tokyo - 0.5 km to center
+                                - generic [ref=e2155]: 259 m from Hatchobori Subway Station • 924 m from Ginza • 3.3 km from Tokyo Tower
+                        - complementary [ref=e2157]:
+                          - generic [ref=e2158]:
+                            - button "Promoted" [ref=e2160]:
+                              - generic [ref=e2162]: Promoted
+                            - tooltip "tooltip Agoda earns increased commission on bookings at this property. Commission earned by Agoda affects the order of your search results." [ref=e2163]:
+                              - generic [ref=e2164]: tooltip
+                              - paragraph [ref=e2165]: Agoda earns increased commission on bookings at this property. Commission earned by Agoda affects the order of your search results.
+                        - complementary [ref=e2166]:
+                          - list [ref=e2167]:
+                            - listitem [ref=e2168]:
+                              - generic [ref=e2170]:
+                                - img [ref=e2171]
+                                - generic [ref=e2173]: International Deals
+                      - generic [ref=e2175]:
+                        - generic [ref=e2177]:
+                          - generic [ref=e2178]:
+                            - button "Average rating Exceptional 9.1 out of 10 with 398 reviews" [ref=e2180]:
+                              - generic [ref=e2181]:
+                                - generic [ref=e2182]: Average rating Exceptional 9.1 out of 10 with 398 reviews
+                                - paragraph [ref=e2185]:
+                                  - generic [ref=e2186]: "9.1"
+                                  - generic [ref=e2187]: Exceptional
+                                - paragraph [ref=e2188]: 398 reviews
+                            - heading "Sorry, there is no content available." [level=5] [ref=e2191]
+                          - paragraph [ref=e2196]:
+                            - generic [ref=e2197]: "8.8"
+                            - generic [ref=e2198]: Location score
+                        - generic [ref=e2199]:
+                          - complementary [ref=e2200]:
+                            - list [ref=e2201]:
+                              - listitem [ref=e2202]:
+                                - generic [ref=e2205]: Only 1 left
+                          - complementary [ref=e2206]:
+                            - list [ref=e2207]:
+                              - listitem [ref=e2208]:
+                                - generic [ref=e2209]:
+                                  - paragraph [ref=e2211]: "-32%"
+                                  - generic [ref=e2213]:
+                                    - 'button "Original price: 23,812" [ref=e2215]':
+                                      - generic [ref=e2216]:
+                                        - generic [ref=e2217]: "Original price: 23,812"
+                                        - text: 23,812
+                                    - tooltip "tooltip The highest bookable price somebody paid to book this room type in the last year." [ref=e2218]:
+                                      - generic [ref=e2219]: tooltip
+                                      - generic [ref=e2220]: The highest bookable price somebody paid to book this room type in the last year.
+                              - listitem [ref=e2221]:
+                                - generic [ref=e2223]: Rs. 16,174
+                          - generic [ref=e2225]: Per night before taxes and fees
+              - listitem
+              - listitem [ref=e2226] [cursor=pointer]:
+                - group "Property Card" [ref=e2227]:
+                  - generic [ref=e2228]:
+                    - generic [ref=e2229]: The Royal Park Hotel Ginza 6-chome opens in a new tab
+                    - generic [ref=e2230]:
+                      - generic [ref=e2232]:
+                        - img [ref=e2234]
+                        - paragraph [ref=e2237]: HELLO ASIA
+                        - paragraph [ref=e2238]: Limited time offer
+                      - generic [ref=e2239]:
+                        - generic [ref=e2241]:
+                          - region [ref=e2242]:
+                            - list [ref=e2243]:
+                              - listitem [ref=e2244]:
+                                - img "Exterior view" [ref=e2245]
+                              - listitem [ref=e2246]:
+                                - img "Guestroom" [ref=e2247]
+                              - listitem [ref=e2248]:
+                                - img "Lobby" [ref=e2249]
+                              - listitem [ref=e2250]:
+                                - img "Lobby" [ref=e2251]
+                              - listitem [ref=e2252]:
+                                - img "Reception" [ref=e2253]
+                              - listitem [ref=e2254]:
+                                - img "Property View 6" [ref=e2255]
+                              - listitem [ref=e2256]:
+                                - img "Property View 7" [ref=e2257]
+                              - listitem [ref=e2258]:
+                                - img "Property View 8" [ref=e2259]
+                              - listitem [ref=e2260]:
+                                - img "Reception" [ref=e2261]
+                              - listitem [ref=e2262]:
+                                - img "Reception" [ref=e2263]
+                            - generic:
+                              - button [disabled]:
+                                - img
+                            - button "Next property image The Royal Park Hotel Ginza 6-chome" [ref=e2265]:
+                              - img [ref=e2266]
+                            - generic:
+                              - generic: 1/10
+                          - generic [ref=e2270]: Newly built in 2024
+                          - button "Add The Royal Park Hotel Ginza 6-chome to saved list" [ref=e2271]:
+                            - img [ref=e2273]
+                        - generic [ref=e2276]:
+                          - banner [ref=e2277]:
+                            - link "The Royal Park Hotel Ginza 6-chome" [ref=e2279]:
+                              - /url: /the-royal-park-hotel-ginza-6-chome/hotel/tokyo-jp.html?countryId=3&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-10&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=INR&isFreeOccSearch=false&flightSearchCriteria=[object Object]&los=2&searchrequestid=572bbd8c-d15e-4ba6-a2d5-fbfedc14ace4
+                              - generic [ref=e2280]: The Royal Park Hotel Ginza 6-chome
+                            - generic [ref=e2281]:
+                              - generic [ref=e2282]:
+                                - button "4 stars out of 5" [ref=e2284]:
+                                  - generic [ref=e2285]:
+                                    - generic [ref=e2286]: 4 stars out of 5
+                                    - img [ref=e2287]
+                                    - img [ref=e2289]
+                                    - img [ref=e2291]
+                                    - img [ref=e2293]
+                                - tooltip "tooltip Star rating Gold star ratings are provided by the property to reflect the comfort, facilities, and amenities you can expect." [ref=e2295]:
+                                  - generic [ref=e2296]: tooltip
+                                  - paragraph [ref=e2297]: Star rating
+                                  - paragraph [ref=e2298]: Gold star ratings are provided by the property to reflect the comfort, facilities, and amenities you can expect.
+                              - generic [ref=e2299]:
+                                - img [ref=e2300]
+                                - generic [ref=e2302]:
+                                  - button "Ginza, Tokyo - City center" [ref=e2303]:
+                                    - generic [ref=e2304]: Ginza, Tokyo - City center
+                                  - generic [ref=e2305]: 243 m from Higashi-Ginza Subway Station • 426 m from Ginza • 2.1 km from Tokyo Tower
+                          - generic [ref=e2309]: Booked 12 times today
+                          - complementary [ref=e2311]:
+                            - generic [ref=e2312]:
+                              - button "Promoted" [ref=e2314]:
+                                - generic [ref=e2316]: Promoted
+                              - tooltip "tooltip Agoda earns increased commission on bookings at this property. Commission earned by Agoda affects the order of your search results." [ref=e2317]:
+                                - generic [ref=e2318]: tooltip
+                                - paragraph [ref=e2319]: Agoda earns increased commission on bookings at this property. Commission earned by Agoda affects the order of your search results.
+                          - complementary [ref=e2320]:
+                            - list [ref=e2321]:
+                              - listitem [ref=e2322]:
+                                - generic [ref=e2324]:
+                                  - img [ref=e2325]
+                                  - generic [ref=e2327]: "\"The location is perfect and I love the private onsen!\""
+                        - generic [ref=e2329]:
+                          - generic [ref=e2331]:
+                            - generic [ref=e2332]:
+                              - button "Average rating Excellent 8.9 out of 10 with 5,914 reviews" [ref=e2334]:
+                                - generic [ref=e2335]:
+                                  - generic [ref=e2336]: Average rating Excellent 8.9 out of 10 with 5,914 reviews
+                                  - paragraph [ref=e2339]:
+                                    - generic [ref=e2340]: "8.9"
+                                    - generic [ref=e2341]: Excellent
+                                  - paragraph [ref=e2342]: 5,914 reviews
+                              - heading "Sorry, there is no content available." [level=5] [ref=e2345]
+                            - paragraph [ref=e2350]:
+                              - generic [ref=e2351]: "9.2"
+                              - generic [ref=e2352]: Location score
+                          - generic [ref=e2353]:
+                            - complementary [ref=e2354]:
+                              - list [ref=e2355]:
+                                - listitem [ref=e2356]:
+                                  - generic [ref=e2359]: Only 1 left
+                            - complementary [ref=e2360]:
+                              - list [ref=e2361]:
+                                - listitem [ref=e2362]:
+                                  - generic [ref=e2363]:
+                                    - paragraph [ref=e2365]: "-58%"
+                                    - generic [ref=e2367]:
+                                      - 'button "Original price: 44,556" [ref=e2369]':
+                                        - generic [ref=e2370]:
+                                          - generic [ref=e2371]: "Original price: 44,556"
+                                          - text: 44,556
+                                      - tooltip "tooltip The highest bookable price somebody paid to book this room type in the last year." [ref=e2372]:
+                                        - generic [ref=e2373]: tooltip
+                                        - generic [ref=e2374]: The highest bookable price somebody paid to book this room type in the last year.
+                                - listitem [ref=e2375]:
+                                  - generic [ref=e2377]: Rs. 18,596
+                            - generic [ref=e2378]:
+                              - generic [ref=e2379]: Per night before taxes and fees
+                              - generic [ref=e2380]: + FREE CANCELLATION
+              - listitem [ref=e2381] [cursor=pointer]:
+                - group "Property Card" [ref=e2382]:
+                  - generic [ref=e2384]: Shinjuku Granbell Hotel opens in a new tab
+              - listitem [ref=e2386] [cursor=pointer]:
+                - group "Property Card" [ref=e2387]:
+                  - generic [ref=e2389]: MONday Apart Premium Nihonbashi opens in a new tab
+              - listitem [ref=e2391] [cursor=pointer]:
+                - group "Property Card" [ref=e2392]:
+                  - generic [ref=e2394]: The Tokyo EDITION, Toranomon opens in a new tab
+              - listitem [ref=e2396] [cursor=pointer]:
+                - group "Property Card" [ref=e2397]:
+                  - generic [ref=e2399]: TABI UENO opens in a new tab
+              - listitem
+              - listitem [ref=e2401] [cursor=pointer]:
+                - group "Property Card" [ref=e2402]:
+                  - generic [ref=e2404]: Sotetsu Fresa Inn Higashi Shinjuku opens in a new tab
+              - listitem [ref=e2406]:
+                - generic [ref=e2408]:
+                  - heading "Limited Time Sale" [level=3] [ref=e2410]
+                  - region "Limited Time Sale carousel" [ref=e2411]:
+                    - generic [ref=e2413]:
+                      - link "Grand Prince Hotel Shin Takanawa 5 star tooltip Star ratings are based on amenities, guest ratings, and room size, among other factors. 8.3 Excellent 13,995 reviews Shinagawa, Tokyo Rs. 35,144 Rs. 11,661 Per night before taxes and fees (2 adults)" [ref=e2415] [cursor=pointer]:
+                        - /url: /grand-prince-hotel-new-takanawa/hotel/tokyo-jp.html?countryId=3&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-10&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=INR&isFreeOccSearch=false&flightSearchCriteria=[object Object]&los=2&searchrequestid=572bbd8c-d15e-4ba6-a2d5-fbfedc14ace4
+                        - generic [ref=e2418]:
+                          - generic [ref=e2419]:
+                            - paragraph [ref=e2420]: Grand Prince Hotel Shin Takanawa
+                            - generic [ref=e2421]:
+                              - button "5 star" [ref=e2423]:
+                                - generic [ref=e2424]:
+                                  - generic [ref=e2425]: 5 star
+                                  - img [ref=e2426]
+                                  - img [ref=e2428]
+                                  - img [ref=e2430]
+                                  - img [ref=e2432]
+                                  - img [ref=e2434]
+                              - tooltip "tooltip Star ratings are based on amenities, guest ratings, and room size, among other factors." [ref=e2436]:
+                                - generic [ref=e2437]: tooltip
+                                - paragraph [ref=e2438]: Star ratings are based on amenities, guest ratings, and room size, among other factors.
+                            - generic [ref=e2440]:
+                              - paragraph [ref=e2442]:
+                                - generic [ref=e2443]: "8.3"
+                                - generic [ref=e2444]: Excellent
+                              - paragraph [ref=e2445]: 13,995 reviews
+                            - generic [ref=e2446]:
+                              - img [ref=e2447]
+                              - generic [ref=e2449]: Shinagawa, Tokyo
+                          - generic [ref=e2450]:
+                            - generic [ref=e2452]: Rs. 35,144
+                            - generic [ref=e2454]:
+                              - generic [ref=e2455]: Rs.
+                              - generic [ref=e2456]: 11,661
+                            - generic [ref=e2457]: Per night before taxes and fees (2 adults)
+                      - link "Shinjuku Kuyakusho-mae Capsule Hotel 1 star tooltip Star ratings are based on amenities, guest ratings, and room size, among other factors. 7.5 Very good 18,991 reviews Shinjuku, Tokyo Rs. 13,285 Rs. 3,321 Per night before taxes and fees (2 adults)" [ref=e2459] [cursor=pointer]:
+                        - /url: /shinjuku-kuyakusho-mae-capsule-hotel/hotel/tokyo-jp.html?countryId=3&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-10&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=INR&isFreeOccSearch=false&flightSearchCriteria=[object Object]&los=2&searchrequestid=572bbd8c-d15e-4ba6-a2d5-fbfedc14ace4
+                        - generic [ref=e2462]:
+                          - generic [ref=e2463]:
+                            - paragraph [ref=e2464]: Shinjuku Kuyakusho-mae Capsule Hotel
+                            - generic [ref=e2465]:
+                              - button "1 star" [ref=e2467]:
+                                - generic [ref=e2468]:
+                                  - generic [ref=e2469]: 1 star
+                                  - img [ref=e2470]
+                              - tooltip "tooltip Star ratings are based on amenities, guest ratings, and room size, among other factors." [ref=e2472]:
+                                - generic [ref=e2473]: tooltip
+                                - paragraph [ref=e2474]: Star ratings are based on amenities, guest ratings, and room size, among other factors.
+                            - generic [ref=e2476]:
+                              - paragraph [ref=e2478]:
+                                - generic [ref=e2479]: "7.5"
+                                - generic [ref=e2480]: Very good
+                              - paragraph [ref=e2481]: 18,991 reviews
+                            - generic [ref=e2482]:
+                              - img [ref=e2483]
+                              - generic [ref=e2485]: Shinjuku, Tokyo
+                          - generic [ref=e2486]:
+                            - generic [ref=e2488]: Rs. 13,285
+                            - generic [ref=e2490]:
+                              - generic [ref=e2491]: Rs.
+                              - generic [ref=e2492]: 3,321
+                            - generic [ref=e2493]: Per night before taxes and fees (2 adults)
+                      - link "The Royal Park Hotel Ginza 6-chome 4 star tooltip Star ratings are based on amenities, guest ratings, and room size, among other factors. 8.9 Excellent 5,914 reviews Ginza, Tokyo Rs. 44,556 Rs. 18,596 Per night before taxes and fees (2 adults)" [ref=e2495] [cursor=pointer]:
+                        - /url: /the-royal-park-hotel-ginza-6-chome/hotel/tokyo-jp.html?countryId=3&finalPriceView=1&isShowMobileAppPrice=false&cid=-1&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-06-10&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=INR&isFreeOccSearch=false&flightSearchCriteria=[object Object]&los=2&searchrequestid=572bbd8c-d15e-4ba6-a2d5-fbfedc14ace4
+                        - generic [ref=e2498]:
+                          - generic [ref=e2499]:
+                            - paragraph [ref=e2500]: The Royal Park Hotel Ginza 6-chome
+                            - generic [ref=e2501]:
+                              - button "4 star" [ref=e2503]:
+                                - generic [ref=e2504]:
+                                  - generic [ref=e2505]: 4 star
+                                  - img [ref=e2506]
+                                  - img [ref=e2508]
+                                  - img [ref=e2510]
+                                  - img [ref=e2512]
+                              - tooltip "tooltip Star ratings are based on amenities, guest ratings, and room size, among other factors." [ref=e2514]:
+                                - generic [ref=e2515]: tooltip
+                                - paragraph [ref=e2516]: Star ratings are based on amenities, guest ratings, and room size, among other factors.
+                            - generic [ref=e2518]:
+                              - paragraph [ref=e2520]:
+                                - generic [ref=e2521]: "8.9"
+                                - generic [ref=e2522]: Excellent
+                              - paragraph [ref=e2523]: 5,914 reviews
+                            - generic [ref=e2524]:
+                              - img [ref=e2525]
+                              - generic [ref=e2527]: Ginza, Tokyo
+                          - generic [ref=e2528]:
+                            - generic [ref=e2530]: Rs. 44,556
+                            - generic [ref=e2532]:
+                              - generic [ref=e2533]: Rs.
+                              - generic [ref=e2534]: 18,596
+                            - generic [ref=e2535]: Per night before taxes and fees (2 adults)
+              - listitem [ref=e2536] [cursor=pointer]:
+                - group "Property Card" [ref=e2537]:
+                  - generic [ref=e2539]: Shinjuku Washington Hotel Annex opens in a new tab
+              - listitem [ref=e2541] [cursor=pointer]:
+                - group "Property Card" [ref=e2542]:
+                  - generic [ref=e2544]: MONday Apart Premium Ginza Shintomicho opens in a new tab
+              - listitem
+              - listitem [ref=e2546] [cursor=pointer]:
+                - group "Property Card" [ref=e2547]:
+                  - generic [ref=e2549]: APA Hotel Higashi Shinjuku Kabukicho Tower opens in a new tab
+            - status [ref=e2551]: Search results updated. 49 properties found.
+          - generic [ref=e2554]:
+            - generic [ref=e2557]: Page 1 of 87
+            - button "Next" [ref=e2559] [cursor=pointer]:
+              - generic [ref=e2561]: Next
+        - navigation "breadcrumbs" [ref=e2565]:
+          - list [ref=e2566]:
+            - listitem [ref=e2567]:
+              - link "Home" [ref=e2569] [cursor=pointer]:
+                - /url: /?asq=u2qcklxwzru5nduxj0kof3t91go8joyymxagy8fkbh1bn0lgatyh25sdxoy34qb9bn3wsqbftqqlxioryncz6lebqgaxwtrae37t6hckvhhnrkjzy4tzzebhnqce6ba7g5lwuyqyonb87jshwqvk9onxkmrn4l8gsqslfm4c6en9qomh4tvdvtvlbltypwknkrkogrr%2blqtbgopotc0%2bn6eafvp5dyjctkd24f8wboy%3d
+                - generic [ref=e2570]: Home
+            - listitem [ref=e2571]:
+              - generic [ref=e2572]:
+                - link "World" [ref=e2573] [cursor=pointer]:
+                  - /url: /world.html?asq=u2qcklxwzru5nduxj0kof3t91go8joyymxagy8fkbh1bn0lgatyh25sdxoy34qb9bn3wsqbftqqlxioryncz6lebqgaxwtrae37t6hckvhhnrkjzy4tzzebhnqce6ba7g5lwuyqyonb87jshwqvk9onxkmrn4l8gsqslfm4c6en9qomh4tvdvtvlbltypwknkrkogrr%2blqtbgopotc0%2bn6eafvp5dyjctkd24f8wboy%3d
+                  - generic [ref=e2574]: World
+                - generic [ref=e2575]: (6,479,729)
+            - listitem [ref=e2576]:
+              - generic [ref=e2577]:
+                - link "Japan" [ref=e2578] [cursor=pointer]:
+                  - /url: /country/japan.html?asq=u2qcklxwzru5nduxj0kof3t91go8joyymxagy8fkbh1bn0lgatyh25sdxoy34qb9bn3wsqbftqqlxioryncz6lebqgaxwtrae37t6hckvhhnrkjzy4tzzebhnqce6ba7g5lwuyqyonb87jshwqvk9onxkmrn4l8gsqslfm4c6en9qomh4tvdvtvlbltypwknkrkogrr%2blqtbgopotc0%2bn6eafvp5dyjctkd24f8wboy%3d
+                  - generic [ref=e2579]: Japan
+                - generic [ref=e2580]: (154,527)
+            - listitem [ref=e2581]:
+              - generic [ref=e2582]:
+                - link "Tokyo Prefecture" [ref=e2583] [cursor=pointer]:
+                  - /url: /region/tokyo-prefecture-jp.html?asq=u2qcklxwzru5nduxj0kof3t91go8joyymxagy8fkbh1bn0lgatyh25sdxoy34qb9bn3wsqbftqqlxioryncz6lebqgaxwtrae37t6hckvhhnrkjzy4tzzebhnqce6ba7g5lwuyqyonb87jshwqvk9onxkmrn4l8gsqslfm4c6en9qomh4tvdvtvlbltypwknkrkogrr%2blqtbgopotc0%2bn6eafvp5dyjctkd24f8wboy%3d
+                  - generic [ref=e2584]: Tokyo Prefecture
+                - generic [ref=e2585]: (0)
+            - listitem [ref=e2586]:
+              - generic [ref=e2587]:
+                - link "Tokyo" [ref=e2588] [cursor=pointer]:
+                  - /url: /city/tokyo-jp.html?asq=u2qcklxwzru5nduxj0kof3t91go8joyymxagy8fkbh1bn0lgatyh25sdxoy34qb9bn3wsqbftqqlxioryncz6lebqgaxwtrae37t6hckvhhnrkjzy4tzzebhnqce6ba7g5lwuyqyonb87jshwqvk9onxkmrn4l8gsqslfm4c6en9qomh4tvdvtvlbltypwknkrkogrr%2blqtbgopotc0%2bn6eafvp5dyjctkd24f8wboy%3d
+                  - generic [ref=e2589]: Tokyo
+                - generic [ref=e2590]: (12,486)
+            - listitem
+      - button "Download App" [ref=e2592]:
+        - img [ref=e2593]
+  - contentinfo [ref=e2596]:
+    - generic [ref=e2600]:
+      - generic [ref=e2601]:
+        - heading "Help" [level=2] [ref=e2602]
+        - list [ref=e2603]:
+          - listitem [ref=e2604]:
+            - link "Help center" [ref=e2605] [cursor=pointer]:
+              - /url: /info/contact.html
+              - generic [ref=e2606]: Help center
+          - listitem [ref=e2607]:
+            - link "FAQs" [ref=e2608] [cursor=pointer]:
+              - /url: /info/contact.html
+              - generic [ref=e2609]: FAQs
+          - listitem [ref=e2610]:
+            - link "Privacy policy" [ref=e2611] [cursor=pointer]:
+              - /url: /info/privacy.html
+              - generic [ref=e2612]: Privacy policy
+          - listitem [ref=e2613]:
+            - link "Cookie policy" [ref=e2614] [cursor=pointer]:
+              - /url: /info/privacy.html#cookies
+              - generic [ref=e2615]: Cookie policy
+          - listitem [ref=e2616]:
+            - link "Terms of use" [ref=e2617] [cursor=pointer]:
+              - /url: /info/termsofuse.html
+              - generic [ref=e2618]: Terms of use
+          - listitem [ref=e2619]:
+            - link "Grievance officer" [ref=e2620] [cursor=pointer]:
+              - /url: /info/termsofuse.html#india
+              - generic [ref=e2621]: Grievance officer
+          - listitem [ref=e2622]:
+            - link "Digital Services Act (EU)" [ref=e2623] [cursor=pointer]:
+              - /url: /info/eu-digital-services-act.html
+              - generic [ref=e2624]: Digital Services Act (EU)
+          - listitem [ref=e2625]:
+            - link "Content guidelines & reporting" [ref=e2626] [cursor=pointer]:
+              - /url: /info/eu-digital-services-act.html#CM
+              - generic [ref=e2627]: Content guidelines & reporting
+          - listitem [ref=e2628]:
+            - link "Modern Slavery Statement" [ref=e2629] [cursor=pointer]:
+              - /url: //www.bookingholdings.com/modern-slavery-statement/
+              - generic [ref=e2630]: Modern Slavery Statement
+      - generic [ref=e2631]:
+        - heading "Company" [level=2] [ref=e2632]
+        - list [ref=e2633]:
+          - listitem [ref=e2634]:
+            - link "About us" [ref=e2635] [cursor=pointer]:
+              - /url: /about-agoda
+              - generic [ref=e2636]: About us
+          - listitem [ref=e2637]:
+            - link "Careers" [ref=e2638] [cursor=pointer]:
+              - /url: //careersatagoda.com
+              - generic [ref=e2639]: Careers
+          - listitem [ref=e2640]:
+            - link "Press" [ref=e2641] [cursor=pointer]:
+              - /url: //mediaroom.agoda.com
+              - generic [ref=e2642]: Press
+          - listitem [ref=e2643]:
+            - link "Blog" [ref=e2644] [cursor=pointer]:
+              - /url: /blog
+              - generic [ref=e2645]: Blog
+          - listitem [ref=e2646]:
+            - link "PointsMAX" [ref=e2647] [cursor=pointer]:
+              - /url: //www.agoda.com/pointsmax.html
+              - generic [ref=e2648]: PointsMAX
+      - generic [ref=e2649]:
+        - heading "Destinations" [level=2] [ref=e2650]
+        - list [ref=e2651]:
+          - listitem [ref=e2652]:
+            - link "Countries/Territories" [ref=e2653] [cursor=pointer]:
+              - /url: //www.agoda.com/world.html
+              - generic [ref=e2654]: Countries/Territories
+          - listitem [ref=e2655]:
+            - link "All Flight Routes" [ref=e2656] [cursor=pointer]:
+              - /url: //www.agoda.com/flights/world.html
+              - generic [ref=e2657]: All Flight Routes
+      - generic [ref=e2658]:
+        - heading "Partner with us" [level=2] [ref=e2659]
+        - list [ref=e2660]:
+          - listitem [ref=e2661]:
+            - link "YCS partner portal" [ref=e2662] [cursor=pointer]:
+              - /url: ////ycs.agoda.com
+              - generic [ref=e2663]: YCS partner portal
+          - listitem [ref=e2664]:
+            - link "Partner Hub" [ref=e2665] [cursor=pointer]:
+              - /url: //partnerhub.agoda.com/
+              - generic [ref=e2666]: Partner Hub
+          - listitem [ref=e2667]:
+            - link "Advertise on Agoda" [ref=e2668] [cursor=pointer]:
+              - /url: //partnerhub.agoda.com/advertising-solutions/
+              - generic [ref=e2669]: Advertise on Agoda
+          - listitem [ref=e2670]:
+            - link "Affiliates" [ref=e2671] [cursor=pointer]:
+              - /url: ////partners.agoda.com/index.html
+              - generic [ref=e2672]: Affiliates
+          - listitem [ref=e2673]:
+            - link "Agoda API Documentation" [ref=e2674] [cursor=pointer]:
+              - /url: //developer.agoda.com/
+              - generic [ref=e2675]: Agoda API Documentation
+      - generic [ref=e2676]:
+        - heading "Get the app" [level=2] [ref=e2677]
+        - list [ref=e2678]:
+          - listitem [ref=e2679]:
+            - link "iOS app" [ref=e2680] [cursor=pointer]:
+              - /url: //app.appsflyer.com/id440676901?pid=direct&c=hotel_page_footer&af_siteid=1716632&site_id=1716632&af_sub1=desktop
+              - generic [ref=e2681]: iOS app
+          - listitem [ref=e2682]:
+            - link "Android app" [ref=e2683] [cursor=pointer]:
+              - /url: //app.appsflyer.com/com.agoda.mobile.consumer?pid=direct&c=hotel_page_footer&af_siteid=1716632&site_id=1716632&af_sub1=desktop
+              - generic [ref=e2684]: Android app
+    - generic [ref=e2686]:
+      - paragraph [ref=e2687]: All material herein © 2005–2026 Agoda Company Pte. Ltd. All Rights Reserved.
+      - paragraph [ref=e2688]: Agoda is part of Booking Holdings Inc., the world leader in online travel & related services.
+      - generic [ref=e2690]:
+        - img "Agoda logo" [ref=e2692]
+        - img "Priceline logo" [ref=e2694]
+        - img "Kayak logo" [ref=e2696]
+        - img "Booking.com logo" [ref=e2698]
+        - img "Open Table logo" [ref=e2700]

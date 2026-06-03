@@ -1,0 +1,27 @@
+- generic [ref=e5]:
+  - img "Organization background image" [ref=e6]
+  - generic [ref=e7]:
+    - generic [ref=e13]:
+      - img "Organization banner logo" [ref=e16]
+      - main [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e65]:
+            - button "Back" [ref=e66] [cursor=pointer]
+            - generic "c936939@exelonds.com" [ref=e67]
+          - generic [ref=e68]:
+            - textbox [ref=e69]: c936939@exelonds.com
+            - heading "Enter password" [level=1] [ref=e71]
+            - generic [ref=e73]:
+              - alert
+              - textbox "Enter the password for c936939@exelonds.com" [active] [ref=e75]:
+                - /placeholder: Password
+            - link "Forgot my password" [ref=e82] [cursor=pointer]:
+              - /url: https://passwordreset.microsoftonline.com/?ru=https%3a%2f%2flogin.microsoftonline.com%2f600d01fc-055f-49c6-868f-3ecfcc791773%2freprocess%3fctx%3drQQIARAApdC9btNAAABgX5KGJgLqRgyMGcpCuPju_JeLFIk0TRoFtWlKFaks1dl3rt3asbGdIvUJCmLoAKrEBmKASEgVYkCwMDCgTp0YmDqiLhTEkA3EM7B8D_DdzJIqqi8QtYa4rWnQ0TCFmqFxyFSLQt1yTMw5pZyRuFSUH718XXq3effOx8bj528-P12bgNtumkZJXVFSaCcxjIQdwl2ryvbHsXggrMRLRVIdiVSpsnHqKn647Y0UxrhiM9-3mL37HoBTAL4DMMkolAjKMEc6IVTjlDNLNRyuY0Y5toipbxFEDGQggnVsIu1bZq7fHKcu-UcYe_viV6bghHGwFYVJ-ixbiAX34sYN0nmbXTAQ4gg7NkS67kCN2gasGTUHqsJ2bNuk2DTVk-y1MBIjj5ejOHQ8X5RFwDz_NAfOc5dRtj47W5Sl61JZmubAi5lSURatn4vN4FVvcvSw_PULlk5mlL2lSrtyrztuWZttZVOtNQcb_jAw3NVO30UdlYRL2z2tVxslzkqD1vFhHhzm8xd5cHBJ-lD4781PV6Tp1T8Xv6dPjo5_dM_nbintdn95uNGzkLu3vra-E4hhsHo_qJiDlZR3B2Frcbxs6BHfMcPGsSydydLZvDSdlw9K0l81&mkt=en-US&hosted=0&device_platform=Windows+10
+            - button "Sign in" [ref=e85] [cursor=pointer]
+    - contentinfo [ref=e29]:
+      - generic [ref=e30]:
+        - link "Terms of use" [ref=e31] [cursor=pointer]:
+          - /url: https://www.microsoft.com/en-US/servicesagreement/
+        - link "Privacy & cookies" [ref=e32] [cursor=pointer]:
+          - /url: https://privacy.microsoft.com/en-US/privacystatement
+        - button "Click here for troubleshooting information" [ref=e33] [cursor=pointer]: ...

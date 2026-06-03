@@ -1,0 +1,571 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link "Skip to main content" [ref=e7] [cursor=pointer]:
+        - /url: "#HomeReactContainer"
+        - generic [ref=e9]: Skip to main content
+      - generic [ref=e10]:
+        - navigation [ref=e12]:
+          - link "Agoda logo Home link" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e15]:
+              - img "Primary Logo" [ref=e18]
+              - img "Site secondary logo" [ref=e19]
+          - generic [ref=e20]:
+            - generic [ref=e22]:
+              - generic [ref=e25] [cursor=pointer]: Bundle and save!
+              - link "Flight + Hotel" [ref=e26] [cursor=pointer]:
+                - /url: /packages
+            - link "Hotels & Homes" [ref=e29] [cursor=pointer]:
+              - /url: /
+            - generic [ref=e31]:
+              - generic [ref=e34] [cursor=pointer]: New!
+              - generic [ref=e37]:
+                - button "Transport" [ref=e38]:
+                  - generic [ref=e39]:
+                    - generic [ref=e40] [cursor=pointer]: Transport
+                    - img [ref=e42]
+                - paragraph
+            - button "Travel menu" [ref=e48] [cursor=pointer]:
+              - img [ref=e49]
+        - generic [ref=e51]:
+          - generic [ref=e53]:
+            - button "Sign in" [ref=e56] [cursor=pointer]:
+              - generic [ref=e58]: Sign in
+            - button "Create account" [ref=e61] [cursor=pointer]:
+              - generic [ref=e63]: Create account
+          - button "Account Menu" [ref=e68] [cursor=pointer]:
+            - img [ref=e71]
+    - main [ref=e74]:
+      - generic [ref=e78]:
+        - generic [ref=e80]:
+          - heading "See the world for less" [level=1] [ref=e81]
+          - heading [level=2]
+        - generic [ref=e82]:
+          - tablist [ref=e84]:
+            - tab "Hotels" [selected] [ref=e85] [cursor=pointer]:
+              - generic [ref=e87]:
+                - img [ref=e88]
+                - heading "Hotels" [level=6] [ref=e90]
+            - tab "Flights" [ref=e92] [cursor=pointer]:
+              - generic [ref=e94]:
+                - img [ref=e95]
+                - heading "Flights" [level=6] [ref=e97]
+            - tab "Homes & Apts" [ref=e98] [cursor=pointer]:
+              - generic [ref=e100]:
+                - img [ref=e101]
+                - heading "Homes & Apts" [level=6] [ref=e103]
+            - tab "Flight + Hotel" [ref=e104] [cursor=pointer]:
+              - generic [ref=e106]:
+                - img [ref=e107]
+                - heading "Flight + Hotel" [level=6] [ref=e109]
+            - tab "Activities" [ref=e110] [cursor=pointer]:
+              - generic [ref=e112]:
+                - img [ref=e113]
+                - heading "Activities" [level=6] [ref=e115]
+            - tab "Airport transfer" [ref=e116] [cursor=pointer]:
+              - generic [ref=e118]:
+                - img [ref=e119]
+                - heading "Airport transfer" [level=6] [ref=e121]
+          - tabpanel "Hotels" [ref=e122]:
+            - generic [ref=e124]:
+              - generic [ref=e126]:
+                - generic [ref=e129]:
+                  - generic [ref=e131]:
+                    - button "Overnight Stays" [pressed] [ref=e133] [cursor=pointer]:
+                      - generic [ref=e135]: Overnight Stays
+                    - button "Day Use Stays" [ref=e137] [cursor=pointer]:
+                      - generic [ref=e139]: Day Use Stays
+                  - generic [ref=e141] [cursor=pointer]:
+                    - generic [ref=e143]: 
+                    - generic [ref=e144]:
+                      - combobox "Enter a destination or property" [ref=e145]
+                      - generic [ref=e146]: Begin typing property name or keyword to search, use arrow keys or tab key to navigate, press Enter to select
+                  - button "Check-in 12 Jun 2026 Friday" [ref=e147] [cursor=pointer]:
+                    - generic [ref=e148]:
+                      - generic [ref=e150]: 
+                      - generic [ref=e152]:
+                        - generic [ref=e153]: 12 Jun 2026
+                        - generic [ref=e154]: Friday
+                  - button "Check-out 13 Jun 2026 Saturday" [ref=e155] [cursor=pointer]:
+                    - generic [ref=e156]:
+                      - generic [ref=e158]: 
+                      - generic [ref=e160]:
+                        - generic [ref=e161]: 13 Jun 2026
+                        - generic [ref=e162]: Saturday
+                  - button "Guests and rooms 2 adults 1 room" [ref=e163] [cursor=pointer]:
+                    - generic [ref=e164]:
+                      - generic [ref=e166]: 
+                      - generic [ref=e168]:
+                        - generic [ref=e169]: 2 adults
+                        - generic [ref=e170]: 1 room
+                        - generic [ref=e172]: 
+                - button "Add a flight" [ref=e176] [cursor=pointer]:
+                  - generic [ref=e177]:
+                    - img [ref=e178]
+                    - generic [ref=e180]: Add a flight
+              - button "SEARCH" [ref=e183] [cursor=pointer]:
+                - generic [ref=e185]: SEARCH
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - heading "Top destinations in India" [level=2] [ref=e189]
+          - region "Top destinations in India carousel" [ref=e191]:
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - region "Slide 1 of 12" [ref=e194]:
+                  - group [ref=e195]:
+                    - link "Bangalore Bangalore 5,372 accommodations" [ref=e197] [cursor=pointer]:
+                      - /url: /city/bangalore-in.html
+                      - generic [ref=e198]:
+                        - img "Bangalore" [ref=e199]
+                        - heading "Bangalore" [level=3] [ref=e200]
+                        - generic [ref=e201]: 5,372 accommodations
+                - region "Slide 2 of 12" [ref=e202]:
+                  - group [ref=e203]:
+                    - link "Mumbai Mumbai 4,177 accommodations" [ref=e205] [cursor=pointer]:
+                      - /url: /city/mumbai-in.html
+                      - generic [ref=e206]:
+                        - img "Mumbai" [ref=e207]
+                        - heading "Mumbai" [level=3] [ref=e208]
+                        - generic [ref=e209]: 4,177 accommodations
+                - region "Slide 3 of 12" [ref=e210]:
+                  - group [ref=e211]:
+                    - link "Goa Goa 9,254 accommodations" [ref=e213] [cursor=pointer]:
+                      - /url: /city/goa-in.html
+                      - generic [ref=e214]:
+                        - img "Goa" [ref=e215]
+                        - heading "Goa" [level=3] [ref=e216]
+                        - generic [ref=e217]: 9,254 accommodations
+                - region "Slide 4 of 12" [ref=e218]:
+                  - group [ref=e219]:
+                    - link "Hyderabad Hyderabad 2,735 accommodations" [ref=e221] [cursor=pointer]:
+                      - /url: /city/hyderabad-in.html
+                      - generic [ref=e222]:
+                        - img "Hyderabad" [ref=e223]
+                        - heading "Hyderabad" [level=3] [ref=e224]
+                        - generic [ref=e225]: 2,735 accommodations
+                - region [ref=e226]:
+                  - group [ref=e227]:
+                    - link [ref=e229] [cursor=pointer]:
+                      - /url: /city/new-delhi-and-ncr-in.html
+                      - generic [ref=e230]:
+                        - img [ref=e231]
+                        - heading [level=3] [ref=e232]: New Delhi
+                        - generic [ref=e233]: 12,786 accommodations
+                - region [ref=e234]:
+                  - group [ref=e235]:
+                    - link [ref=e237] [cursor=pointer]:
+                      - /url: /city/chennai-in.html
+                      - generic [ref=e238]:
+                        - img [ref=e239]
+                        - heading [level=3] [ref=e240]: Chennai
+                        - generic [ref=e241]: 2,832 accommodations
+                - region [ref=e242]:
+                  - group [ref=e243]:
+                    - link [ref=e245] [cursor=pointer]:
+                      - /url: /city/kochi-in.html
+                      - generic [ref=e246]:
+                        - img [ref=e247]
+                        - heading [level=3] [ref=e248]: Kochi
+                        - generic [ref=e249]: 2,165 accommodations
+                - region [ref=e250]:
+                  - group [ref=e251]:
+                    - link [ref=e253] [cursor=pointer]:
+                      - /url: /city/pune-in.html
+                      - generic [ref=e254]:
+                        - img [ref=e255]
+                        - heading [level=3] [ref=e256]: Pune
+                        - generic [ref=e257]: 2,494 accommodations
+                - region [ref=e258]:
+                  - group [ref=e259]:
+                    - link [ref=e261] [cursor=pointer]:
+                      - /url: /city/jaipur-in.html
+                      - generic [ref=e262]:
+                        - heading [level=3] [ref=e263]: Jaipur
+                        - generic [ref=e264]: 3,082 accommodations
+                - region [ref=e265]:
+                  - group [ref=e266]:
+                    - link [ref=e268] [cursor=pointer]:
+                      - /url: /city/ooty-in.html
+                      - generic [ref=e269]:
+                        - heading [level=3] [ref=e270]: Ooty
+                        - generic [ref=e271]: 1,427 accommodations
+                - region [ref=e272]:
+                  - group [ref=e273]:
+                    - link [ref=e275] [cursor=pointer]:
+                      - /url: /city/pondicherry-in.html
+                      - generic [ref=e276]:
+                        - heading [level=3] [ref=e277]: Pondicherry
+                        - generic [ref=e278]: 1,596 accommodations
+                - region [ref=e279]:
+                  - group [ref=e280]:
+                    - link [ref=e282] [cursor=pointer]:
+                      - /url: /city/kolkata-in.html
+                      - generic [ref=e283]:
+                        - heading [level=3] [ref=e284]: Kolkata
+                        - generic [ref=e285]: 2,852 accommodations
+              - button "Next destination" [ref=e287] [cursor=pointer]:
+                - img [ref=e288]
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - heading "Accommodation Promotions" [level=2] [ref=e292]
+            - link "View all accommodation promotion links" [ref=e294] [cursor=pointer]:
+              - /url: /deals
+              - generic [ref=e295]:
+                - text: View all
+                - img [ref=e296]
+          - region "Accommodation Promotions carousel" [ref=e300]:
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - region "Slide 1 of 11" [ref=e303]:
+                  - link [ref=e304] [cursor=pointer]:
+                    - /url: https://www.agoda.com/deals?cid=1916891
+                    - group [ref=e305]:
+                      - img "Accommodation Promotion 0" [ref=e306]
+                - region "Slide 2 of 11" [ref=e307]:
+                  - link [ref=e308] [cursor=pointer]:
+                    - /url: https://www.agoda.com/?cid=1935082
+                    - group [ref=e309]:
+                      - img "Accommodation Promotion 1" [ref=e310]
+                - region "Slide 3 of 11" [ref=e311]:
+                  - link [ref=e312] [cursor=pointer]:
+                    - /url: https://www.agoda.com/AGPGlobal?cid=1957727
+                    - group [ref=e313]:
+                      - img "Accommodation Promotion 2" [ref=e314]
+                - region [ref=e315]:
+                  - link [ref=e316] [cursor=pointer]:
+                    - /url: https://www.agoda.com/SuperWednesday?cid=1901260
+                    - group [ref=e317]:
+                      - img [ref=e318]
+                - region [ref=e319]:
+                  - link [ref=e320] [cursor=pointer]:
+                    - /url: https://www.agoda.com/SummerBreakSS?cid=1957809
+                    - group [ref=e321]:
+                      - img [ref=e322]
+                - region [ref=e323]:
+                  - link [ref=e324] [cursor=pointer]:
+                    - /url: https://www.agoda.com/DoubleDaySale?cid=1957693
+                    - group [ref=e325]:
+                      - img [ref=e326]
+                - region [ref=e327]:
+                  - link [ref=e328] [cursor=pointer]:
+                    - /url: https://www.agoda.com/VisitMalaysiaMY?cid=1925109
+                    - group [ref=e329]:
+                      - img [ref=e330]
+                - region [ref=e331]:
+                  - link [ref=e332] [cursor=pointer]:
+                    - /url: https://www.agoda.com/GetawayDealEU?cid=1957706
+                    - group [ref=e333]:
+                      - img [ref=e334]
+                - region [ref=e335]:
+                  - link [ref=e336] [cursor=pointer]:
+                    - /url: https://www.agoda.com/SummerVibesVN?cid=1957751
+                    - group [ref=e337]:
+                      - img [ref=e338]
+                - region [ref=e339]:
+                  - link [ref=e340] [cursor=pointer]:
+                    - /url: https://www.agoda.com/EliteEscapesKA?cid=1924943
+                    - group [ref=e341]:
+                      - img [ref=e342]
+                - region [ref=e343]:
+                  - link [ref=e344] [cursor=pointer]:
+                    - /url: https://www.agoda.com/EscapeBonanzaISC?cid=1925190
+                    - group [ref=e345]:
+                      - img [ref=e346]
+              - button "Next Accommodation Promotion" [ref=e348] [cursor=pointer]:
+                - img [ref=e349]
+        - generic [ref=e351]:
+          - heading "Flights & Activities Promotions" [level=2] [ref=e353]
+          - region "Flights & Activities Promotions carousel" [ref=e356]:
+            - region "Slide 1 of 1" [ref=e359]:
+              - link [ref=e360] [cursor=pointer]:
+                - /url: https://www.agoda.com/promotion/redeem?cinfo=20250501_156376&returnUrl=%2F%3Fcid%3D1915785
+                - group [ref=e361]:
+                  - img "Flights/Activities Promotion 0" [ref=e362]
+        - generic [ref=e363]:
+          - heading "Properties we think you'll like" [level=2] [ref=e365]
+          - region "Properties we think you'll like carousel" [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]:
+                - region "Slide 1 of 10" [ref=e371]:
+                  - link [ref=e372] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_accor?cid=1925247
+                    - group [ref=e373]:
+                      - img "Properties we think you'll like" [ref=e374]
+                - region "Slide 2 of 10" [ref=e375]:
+                  - link [ref=e376] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_wyndham_india?cid=1957687
+                    - group [ref=e377]:
+                      - img "Properties we think you'll like" [ref=e378]
+                - region "Slide 3 of 10" [ref=e379]:
+                  - link [ref=e380] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_clermont?cid=1925154
+                    - group [ref=e381]:
+                      - img "Properties we think you'll like" [ref=e382]
+                - region [ref=e383]:
+                  - link [ref=e384] [cursor=pointer]:
+                    - /url: https://www.agoda.com/FlagshipRoyalOrchidIN?cid=1925074
+                    - group [ref=e385]:
+                      - img [ref=e386]
+                - region [ref=e387]:
+                  - link [ref=e388] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_absolute?cid=1925068
+                    - group [ref=e389]:
+                      - img [ref=e390]
+                - region [ref=e391]:
+                  - link [ref=e392] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_kingston?cid=1957804
+                    - group [ref=e393]:
+                      - img [ref=e394]
+                - region [ref=e395]:
+                  - link [ref=e396] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_sugarmarina?cid=1957712
+                    - group [ref=e397]:
+                      - img [ref=e398]
+                - region [ref=e399]:
+                  - link [ref=e400] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_rwg?cid=1957746
+                    - group [ref=e401]:
+                      - img [ref=e402]
+                - region [ref=e403]:
+                  - link [ref=e404] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_chains_th?cid=1957738
+                    - group [ref=e405]:
+                      - img [ref=e406]
+                - region [ref=e407]:
+                  - link [ref=e408] [cursor=pointer]:
+                    - /url: https://www.agoda.com/flagship_swiss_belhotel?cid=1957728
+                    - group [ref=e409]:
+                      - img [ref=e410]
+              - button "Next property" [ref=e412] [cursor=pointer]:
+                - img [ref=e413]
+        - generic [ref=e416]:
+          - heading "Featured homes recommended for you" [level=2] [ref=e418]
+          - generic [ref=e420]:
+            - generic [ref=e421]:
+              - generic [ref=e422]:
+                - generic:
+                  - button [disabled]:
+                    - img
+                - tablist "Featured homes recommended for you" [ref=e423]:
+                  - tab "Bangalore" [selected] [ref=e425] [cursor=pointer]:
+                    - paragraph [ref=e426]: Bangalore
+                  - tab "Mumbai" [ref=e429] [cursor=pointer]:
+                    - paragraph [ref=e430]: Mumbai
+                  - tab "Goa" [ref=e432] [cursor=pointer]:
+                    - paragraph [ref=e433]: Goa
+                  - tab "Hyderabad" [ref=e435] [cursor=pointer]:
+                    - paragraph [ref=e436]: Hyderabad
+                  - tab "New Delhi" [ref=e438] [cursor=pointer]:
+                    - paragraph [ref=e439]: New Delhi
+                - generic:
+                  - button [disabled]:
+                    - img
+              - link "See more (Bangalore) properties" [ref=e441] [cursor=pointer]:
+                - /url: /search?city=4923
+                - generic [ref=e442]:
+                  - text: See more (Bangalore) properties
+                  - img [ref=e443]
+            - tabpanel "Bangalore" [ref=e445]:
+              - generic [ref=e446]:
+                - link "8.3 Sliceinn Sylva, Wilson Garden, Bangalore Sliceinn Sylva, Wilson Garden, Bangalore 4 stars out of 5 Kormangala, Bangalore Per night before taxes and fees INR 4,962.32" [ref=e448] [cursor=pointer]:
+                  - /url: /sliceinn-sylva-wilson-garden-bangalore/hotel/bangalore-in.html?checkIn=2026-06-3&los=1&room=1&adults=2
+                  - generic [ref=e449]:
+                    - generic [ref=e451]:
+                      - paragraph [ref=e454]: "8.3"
+                      - img "Sliceinn Sylva, Wilson Garden, Bangalore" [ref=e455]
+                    - heading "Sliceinn Sylva, Wilson Garden, Bangalore" [level=3] [ref=e457]
+                    - generic [ref=e459]:
+                      - generic [ref=e461]:
+                        - generic [ref=e462]: 4 stars out of 5
+                        - img [ref=e463]
+                        - img [ref=e465]
+                        - img [ref=e467]
+                        - img [ref=e469]
+                      - img [ref=e471]
+                      - generic [ref=e474]: Kormangala,
+                      - generic [ref=e475]: Bangalore
+                    - generic [ref=e477]: Per night before taxes and fees
+                    - generic [ref=e479]:
+                      - paragraph [ref=e481]: INR
+                      - paragraph [ref=e483]: 4,962.32
+                - link "7.5 HomeSlice Nazaara, HomeStay in BTM HomeSlice Nazaara, HomeStay in BTM 3 stars out of 5 HSR Layout, Bangalore Per night before taxes and fees INR 1,173.63" [ref=e485] [cursor=pointer]:
+                  - /url: /homeslice-nazaara/hotel/bangalore-in.html?checkIn=2026-06-3&los=1&room=1&adults=2
+                  - generic [ref=e486]:
+                    - generic [ref=e488]:
+                      - paragraph [ref=e491]: "7.5"
+                      - img "HomeSlice Nazaara, HomeStay in BTM" [ref=e492]
+                    - heading "HomeSlice Nazaara, HomeStay in BTM" [level=3] [ref=e494]
+                    - generic [ref=e496]:
+                      - generic [ref=e498]:
+                        - generic [ref=e499]: 3 stars out of 5
+                        - img [ref=e500]
+                        - img [ref=e502]
+                        - img [ref=e504]
+                      - img [ref=e506]
+                      - generic [ref=e509]: HSR Layout,
+                      - generic [ref=e510]: Bangalore
+                    - generic [ref=e512]: Per night before taxes and fees
+                    - generic [ref=e514]:
+                      - paragraph [ref=e516]: INR
+                      - paragraph [ref=e518]: 1,173.63
+        - generic [ref=e519]:
+          - heading "Popular destinations outside India" [level=2] [ref=e521]
+          - region "Popular destinations outside India carousel" [ref=e523]:
+            - generic [ref=e524]:
+              - generic [ref=e525]:
+                - region "Slide 1 of 20" [ref=e526]:
+                  - group [ref=e527]:
+                    - link "Kuala Lumpur Kuala Lumpur 19,902 accommodations" [ref=e529] [cursor=pointer]:
+                      - /url: /city/kuala-lumpur-my.html
+                      - generic [ref=e530]:
+                        - img "Kuala Lumpur"
+                        - heading "Kuala Lumpur" [level=3] [ref=e531]
+                        - generic [ref=e532]: 19,902 accommodations
+                - region "Slide 2 of 20" [ref=e533]:
+                  - group [ref=e534]:
+                    - link "Manila Manila 13,223 accommodations" [ref=e536] [cursor=pointer]:
+                      - /url: /city/manila-ph.html
+                      - generic [ref=e537]:
+                        - img "Manila"
+                        - heading "Manila" [level=3] [ref=e538]
+                        - generic [ref=e539]: 13,223 accommodations
+                - region "Slide 3 of 20" [ref=e540]:
+                  - group [ref=e541]:
+                    - link "Jakarta Jakarta 14,249 accommodations" [ref=e543] [cursor=pointer]:
+                      - /url: /city/jakarta-id.html
+                      - generic [ref=e544]:
+                        - img "Jakarta"
+                        - heading "Jakarta" [level=3] [ref=e545]
+                        - generic [ref=e546]: 14,249 accommodations
+                - region "Slide 4 of 20" [ref=e547]:
+                  - group [ref=e548]:
+                    - link "Dubai Dubai 19,464 accommodations" [ref=e550] [cursor=pointer]:
+                      - /url: /city/dubai-ae.html
+                      - generic [ref=e551]:
+                        - img "Dubai"
+                        - heading "Dubai" [level=3] [ref=e552]
+                        - generic [ref=e553]: 19,464 accommodations
+                - region [ref=e554]:
+                  - group [ref=e555]:
+                    - link [ref=e557] [cursor=pointer]:
+                      - /url: /city/penang-my.html
+                      - generic [ref=e558]:
+                        - heading [level=3] [ref=e559]: Penang
+                        - generic [ref=e560]: 5,161 accommodations
+                - region [ref=e561]:
+                  - group [ref=e562]:
+                    - link [ref=e564] [cursor=pointer]:
+                      - /url: /city/bangkok-th.html
+                      - generic [ref=e565]:
+                        - heading [level=3] [ref=e566]: Bangkok
+                        - generic [ref=e567]: 12,048 accommodations
+                - region [ref=e568]:
+                  - group [ref=e569]:
+                    - link [ref=e571] [cursor=pointer]:
+                      - /url: /city/malacca-my.html
+                      - generic [ref=e572]:
+                        - heading [level=3] [ref=e573]: Malacca
+                        - generic [ref=e574]: 5,883 accommodations
+                - region [ref=e575]:
+                  - group [ref=e576]:
+                    - link [ref=e578] [cursor=pointer]:
+                      - /url: /city/kota-kinabalu-my.html
+                      - generic [ref=e579]:
+                        - heading [level=3] [ref=e580]: Kota Kinabalu
+                        - generic [ref=e581]: 3,417 accommodations
+                - region [ref=e582]:
+                  - group [ref=e583]:
+                    - link [ref=e585] [cursor=pointer]:
+                      - /url: /city/johor-bahru-my.html
+                      - generic [ref=e586]:
+                        - heading [level=3] [ref=e587]: Johor Bahru
+                        - generic [ref=e588]: 6,994 accommodations
+                - region [ref=e589]:
+                  - group [ref=e590]:
+                    - link [ref=e592] [cursor=pointer]:
+                      - /url: /city/cebu-ph.html
+                      - generic [ref=e593]:
+                        - heading [level=3] [ref=e594]: Cebu
+                        - generic [ref=e595]: 5,254 accommodations
+                - region [ref=e596]:
+                  - group [ref=e597]:
+                    - link [ref=e599] [cursor=pointer]:
+                      - /url: /city/las-vegas-nv-us.html
+                      - generic [ref=e600]:
+                        - heading [level=3] [ref=e601]: Las Vegas (NV)
+                        - generic [ref=e602]: 1,113 accommodations
+                - region [ref=e603]:
+                  - group [ref=e604]:
+                    - link [ref=e606] [cursor=pointer]:
+                      - /url: /city/los-angeles-ca-us.html
+                      - generic [ref=e607]:
+                        - heading [level=3] [ref=e608]: Los Angeles (CA)
+                        - generic [ref=e609]: 4,491 accommodations
+                - region [ref=e610]:
+                  - group [ref=e611]:
+                    - link [ref=e613] [cursor=pointer]:
+                      - /url: /city/bandung-id.html
+                      - generic [ref=e614]:
+                        - heading [level=3] [ref=e615]: Bandung
+                        - generic [ref=e616]: 7,196 accommodations
+                - region [ref=e617]:
+                  - group [ref=e618]:
+                    - link [ref=e620] [cursor=pointer]:
+                      - /url: /city/johor-bahru-my.html
+                      - generic [ref=e621]:
+                        - heading [level=3] [ref=e622]: Johor Bahru
+                        - generic [ref=e623]: 6,994 accommodations
+                - region [ref=e624]:
+                  - group [ref=e625]:
+                    - link [ref=e627] [cursor=pointer]:
+                      - /url: /city/bali-id.html
+                      - generic [ref=e628]:
+                        - heading [level=3] [ref=e629]: Bali
+                        - generic [ref=e630]: 32,908 accommodations
+                - region [ref=e631]:
+                  - group [ref=e632]:
+                    - link [ref=e634] [cursor=pointer]:
+                      - /url: /city/new-york-ny-us.html
+                      - generic [ref=e635]:
+                        - heading [level=3] [ref=e636]: New York (NY)
+                        - generic [ref=e637]: 3,049 accommodations
+                - region [ref=e638]:
+                  - group [ref=e639]:
+                    - link [ref=e641] [cursor=pointer]:
+                      - /url: /city/dallas-tx-us.html
+                      - generic [ref=e642]:
+                        - heading [level=3] [ref=e643]: Dallas (TX)
+                        - generic [ref=e644]: 1,813 accommodations
+                - region [ref=e645]:
+                  - group [ref=e646]:
+                    - link [ref=e648] [cursor=pointer]:
+                      - /url: /city/cameron-highlands-my.html
+                      - generic [ref=e649]:
+                        - heading [level=3] [ref=e650]: Cameron Highlands
+                        - generic [ref=e651]: 1,789 accommodations
+                - region [ref=e652]:
+                  - group [ref=e653]:
+                    - link [ref=e655] [cursor=pointer]:
+                      - /url: /city/singapore-sg.html
+                      - generic [ref=e656]:
+                        - heading [level=3] [ref=e657]: Singapore
+                        - generic [ref=e658]: 1,326 accommodations
+                - region [ref=e659]:
+                  - group [ref=e660]:
+                    - link [ref=e662] [cursor=pointer]:
+                      - /url: /city/ipoh-my.html
+                      - generic [ref=e663]:
+                        - heading [level=3] [ref=e664]: Ipoh
+                        - generic [ref=e665]: 2,516 accommodations
+              - button "Next destination" [ref=e667] [cursor=pointer]:
+                - img [ref=e668]
+        - button "Close" [expanded] [ref=e673] [cursor=pointer]:
+          - img [ref=e674]
+  - generic [ref=e679]:
+    - heading "Save 10% on your 1st app booking!" [level=3] [ref=e680]
+    - paragraph [ref=e681]: Just scan the QR code for instant savings
+    - generic [ref=e682]:
+      - img "Phone frame" [ref=e683]
+      - img "Agoda logo" [ref=e685]
+      - img "qr code image to download app" [ref=e687]

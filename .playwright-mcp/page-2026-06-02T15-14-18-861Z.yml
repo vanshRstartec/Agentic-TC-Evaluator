@@ -1,0 +1,214 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - img "menu" [ref=e6] [cursor=pointer]
+      - generic [ref=e8]: V
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e12]: V
+        - generic [ref=e13]:
+          - heading "Vansh Aggarwal" [level=3] [ref=e14]
+          - paragraph [ref=e15]: Vansh.Aggarwal@exeloncorp.com
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - heading "Pinned Items" [level=2] [ref=e18]
+          - list [ref=e19]:
+            - listitem [ref=e20] [cursor=pointer]:
+              - generic [ref=e21]:
+                - img [ref=e22]
+                - generic [ref=e23]: Electrical emergency
+            - listitem [ref=e24] [cursor=pointer]:
+              - generic [ref=e25]:
+                - img [ref=e26]
+                - generic [ref=e27]: Address transfer
+            - listitem [ref=e28] [cursor=pointer]:
+              - generic [ref=e29]:
+                - img [ref=e30]
+                - generic [ref=e31]: Miscellaneous todo
+            - listitem [ref=e32] [cursor=pointer]:
+              - generic [ref=e33]:
+                - img [ref=e34]
+                - generic [ref=e35]: Settlement options
+            - listitem [ref=e36] [cursor=pointer]:
+              - generic [ref=e37]:
+                - img [ref=e38]
+                - generic [ref=e39]: Budget settlement
+            - listitem [ref=e40] [cursor=pointer]:
+              - generic [ref=e41]:
+                - img [ref=e42]
+                - generic [ref=e43]: Stop budget
+            - listitem [ref=e44] [cursor=pointer]:
+              - generic [ref=e45]:
+                - img [ref=e46]
+                - generic [ref=e47]: Budget billing
+            - listitem [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]:
+                - img [ref=e50]
+                - generic [ref=e51]: Check eligibility
+            - listitem [ref=e52] [cursor=pointer]:
+              - generic [ref=e53]:
+                - img [ref=e54]
+                - generic [ref=e55]: Payment arrangements
+            - listitem [ref=e56] [cursor=pointer]:
+              - generic [ref=e57]:
+                - img [ref=e58]
+                - generic [ref=e59]: Budget billing
+            - listitem [ref=e60] [cursor=pointer]:
+              - generic [ref=e61]:
+                - img [ref=e62]
+                - generic [ref=e63]: Outage map
+            - listitem [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]:
+                - img [ref=e66]
+                - generic [ref=e67]: Off in error
+            - listitem [ref=e68] [cursor=pointer]:
+              - generic [ref=e69]:
+                - img [ref=e70]
+                - generic [ref=e71]: Gas emergency
+            - listitem [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]:
+                - img [ref=e74]
+                - generic [ref=e75]: Payment arrangements
+            - listitem [ref=e76] [cursor=pointer]:
+              - generic [ref=e77]:
+                - img [ref=e78]
+                - generic [ref=e79]: Budget billing
+            - listitem [ref=e80] [cursor=pointer]:
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - generic [ref=e83]: Outage map
+            - listitem [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]:
+                - img [ref=e86]
+                - generic [ref=e87]: Auto pay
+            - listitem [ref=e88] [cursor=pointer]:
+              - generic [ref=e89]:
+                - img [ref=e90]
+                - generic [ref=e91]: Auto pay
+            - listitem [ref=e92] [cursor=pointer]:
+              - generic [ref=e93]:
+                - img [ref=e94]
+                - generic [ref=e95]: Auto pay
+            - listitem [ref=e96] [cursor=pointer]:
+              - generic [ref=e97]:
+                - img [ref=e98]
+                - generic [ref=e99]: Paymentus
+            - listitem [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]:
+                - img [ref=e102]
+                - generic [ref=e103]: Payment arrangements
+            - listitem [ref=e104] [cursor=pointer]:
+              - generic [ref=e105]:
+                - img [ref=e106]
+                - generic [ref=e107]: Payment arrangements
+            - listitem [ref=e108] [cursor=pointer]:
+              - generic [ref=e109]:
+                - img [ref=e110]
+                - generic [ref=e111]: Deferred payment
+            - listitem [ref=e112] [cursor=pointer]:
+              - generic [ref=e113]:
+                - img [ref=e114]
+                - generic [ref=e115]: High bill assistance
+            - listitem [ref=e116] [cursor=pointer]:
+              - generic [ref=e117]:
+                - img [ref=e118]
+                - generic [ref=e119]: Pay your bill
+            - listitem [ref=e120] [cursor=pointer]:
+              - generic [ref=e121]:
+                - img [ref=e122]
+                - generic [ref=e123]: Electronic payment p...
+            - listitem [ref=e124] [cursor=pointer]:
+              - img [ref=e126]
+            - listitem [ref=e127] [cursor=pointer]:
+              - generic [ref=e128]:
+                - img [ref=e129]
+                - generic [ref=e130]: Assistance programs
+            - listitem [ref=e131] [cursor=pointer]:
+              - generic [ref=e132]:
+                - img [ref=e133]
+                - generic [ref=e134]: Assistance programs
+            - listitem [ref=e135] [cursor=pointer]:
+              - generic [ref=e136]:
+                - img [ref=e137]
+                - generic [ref=e138]: Assistance programs
+            - listitem [ref=e139] [cursor=pointer]:
+              - generic [ref=e140]:
+                - img [ref=e141]
+                - generic [ref=e142]: Assistance programs
+            - listitem [ref=e143] [cursor=pointer]:
+              - generic [ref=e144]:
+                - img [ref=e145]
+                - generic [ref=e146]: Budget billing
+            - listitem [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]:
+                - img [ref=e149]
+                - generic [ref=e150]: Take a payment
+            - listitem [ref=e151] [cursor=pointer]:
+              - generic [ref=e152]:
+                - img [ref=e153]
+                - generic [ref=e154]: Acceptable forms of ...
+        - generic [ref=e156]:
+          - heading "Chat History" [level=2] [ref=e157]
+          - list
+  - generic [ref=e158]:
+    - generic [ref=e160]:
+      - img "logo" [ref=e161]
+      - generic [ref=e162]:
+        - link "Call Assist" [ref=e163] [cursor=pointer]:
+          - /url: /callassist
+        - link "Knowledge Base":
+          - /url: /
+        - img "PECO Logo" [ref=e164]
+    - separator [ref=e165]
+    - generic [ref=e218]:
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - textbox "Generating response..." [disabled] [ref=e219]
+          - img "search"
+          - generic:
+            - img "search"
+        - generic [ref=e217]: This content was created by AI and might contain errors. Please review before use.
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]: V
+          - generic [ref=e223]:
+            - paragraph [ref=e224]: budget billing
+            - generic [ref=e227] [cursor=pointer]:
+              - img "Send" [ref=e228]
+              - generic [ref=e229]: Edit
+        - generic [ref=e230]:
+          - img "API" [ref=e231]
+          - paragraph [ref=e232]:
+            - paragraph [ref=e233]: "To explain Budget Billing and enroll a customer, follow these steps:"
+            - list [ref=e234]:
+              - listitem [ref=e235]:
+                - paragraph [ref=e236]:
+                  - strong [ref=e237]: "Budget Bill Script:"
+                  - text: “Mr. or Mrs. (insert customer’s name) the purpose of budget billing is to level out your bills. This it is not a savings plan and not based upon a customer’s income. The initial budget bill amount is the average billed revenue of the address over the last 12 months. Every three months, the budget amount is reviewed and could increase, decrease or remain the same depending on the energy usage pattern at the home. The decision of the review displays in the Message Center of your bill if there is a change in Budget Billing amount”
+              - listitem [ref=e238]:
+                - paragraph [ref=e239]:
+                  - strong [ref=e240]: "Who is eligible:"
+                  - text: Residential customers with an active PECO account are eligible when the account balance is current.
+              - listitem [ref=e241]:
+                - paragraph [ref=e242]:
+                  - strong [ref=e243]: "When enrollment starts:"
+                  - text: Enrollment may occur at any time. Budget Billing will begin with the next bill cycle after enrollment.
+              - listitem [ref=e244]:
+                - paragraph [ref=e245]:
+                  - strong [ref=e246]: "How amount is calculated:"
+                  - text: The monthly budget amount is the average billed revenue over the last 12 months. If no 12 months exist, estimate using previous tenant usage or system default annual base.
+              - listitem [ref=e247]:
+                - paragraph [ref=e248]:
+                  - strong [ref=e249]: "Review frequency:"
+                  - text: The budget amount is reviewed every three months and may be adjusted to match usage.
+              - listitem [ref=e250]:
+                - paragraph [ref=e251]:
+                  - strong [ref=e252]: "Settlement and options:"
+                  - text: "After 12 months the budget resets and a settlement occurs. Two settlement options:"
+                - list [ref=e253]:
+                  - listitem [ref=e254]: "Apply option: True-up once every 12 months; credits or debits are applied or billed."
+                  - listitem [ref=e255]: "Roll Over option: Debit balances roll over and are spread over next year’s budget payments."
+              - listitem [ref=e256]:
+                - paragraph [ref=e257]:
+                  - strong [ref=e258]: "Important change for multiple services:"
+                  - text: If electric and gas both enrolled, each service tracks its own budget and deferre

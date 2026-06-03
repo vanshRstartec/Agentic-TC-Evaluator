@@ -1,0 +1,20 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img "Organization background image" [ref=e2]
+          - generic [ref=e3]:
+            - generic [ref=e11]:
+              - img "Organization banner logo" [ref=e13]
+              - main [ref=e14]:
+                - generic [ref=e15]:
+                  - generic "c936939@exelonds.com" [ref=e19]
+                  - progressbar "Please wait" [active] [ref=e21]
+            - contentinfo [ref=e27]:
+              - generic [ref=e28]:
+                - link "Terms of use" [ref=e29] [cursor=pointer]:
+                  - /url: https://www.microsoft.com/en-US/servicesagreement/
+                - link "Privacy & cookies" [ref=e30] [cursor=pointer]:
+                  - /url: https://privacy.microsoft.com/en-US/privacystatement
+                - button "Click here for troubleshooting information" [ref=e31] [cursor=pointer]: ...

@@ -1,0 +1,32 @@
+[    3155ms] [INFO] BSSO Telemetry: {"result":"Error","error":"NoExtension","type":"ChromeSsoTelemetry","data":{},"traces":["BrowserSSO Initialized","Creating ChromeBrowserCore provider","Sending message for method CreateProviderAsync","Received message for method CreateProviderAsync","Error: ChromeBrowserCore error NoExtension: Extension is not installed."]} @ https://aadcdn.msftauth.net/shared/1.0/content/js/BssoInterrupt_Core_9GPLBwek-swGv_tRKLyCgw2.js:17
+[    3314ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://login.microsoftonline.com/favicon.ico:0
+[    4303ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://autologon.microsoftazuread-sso.com/600d01fc-055f-49c6-868f-3ecfcc791773/winauth/ssoprobe?client-request-id=12a9a48a-59b4-4b53-bb3d-8ca1adc49550&_=1780413128254:0
+[    4666ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://login.microsoftonline.com/600d01fc-055f-49c6-868f-3ecfcc791773/oauth2/v2.0/authorize?response_type=code+id_token&redirect_uri=https%3A%2F%2Ft-csr-peco-kb.azurewebsites.net%2F.auth%2Flogin%2Faad%2Fcallback&client_id=2380dc44-f419-464d-a3b9-5bf71dd99da2&scope=openid+profile+email&response_mode=form_post&nonce=92e9a1d052294d9dab36fd51a9d1b275_20260602151704&state=redir%3D%252F&sso_reload=true:0
+[   57152ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://autologon.microsoftazuread-sso.com/exelonds.com/winauth/ssoprobe?client-request-id=12a9a48a-59b4-4b53-bb3d-8ca1adc49550&_=1780413181216:0
+[   57542ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://login.microsoftonline.com/600d01fc-055f-49c6-868f-3ecfcc791773/oauth2/v2.0/authorize?response_type=code+id_token&redirect_uri=https%3A%2F%2Ft-csr-peco-kb.azurewebsites.net%2F.auth%2Flogin%2Faad%2Fcallback&client_id=2380dc44-f419-464d-a3b9-5bf71dd99da2&scope=openid+profile+email&response_mode=form_post&nonce=92e9a1d052294d9dab36fd51a9d1b275_20260602151704&state=redir%3D%252F&sso_reload=true:0
+[  101572ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://t-csr-peco-kb.azurewebsites.net/:27
+[  103425ms] ReferenceError: module is not defined
+    at https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3987:1
+[  104560ms] [LOG] true iframe yes or no @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:2069
+[  104560ms] [LOG] Implementing Search History functionality @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3101
+[  104561ms] [LOG] inside fetchTrendingTopics @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:1829
+[  105036ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://embeds.procedureflow.com/qNCM9tYMsCgWKWQsJ1j4QznX8UoUL6pL/login?returnUrl=%2FqNCM9tYMsCgWKWQsJ1j4QznX8UoUL6pL%2Fflows%2F142955:0
+[  107099ms] [LOG] trending topics fetched successfully: @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:1849
+[  107099ms] [LOG] inside displayTrendingTopicsError @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:1905
+[  107099ms] [LOG] topic: topic1 @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:1906
+[  107099ms] [LOG] Trending topics error displayed @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:1931
+[  107099ms] [LOG] inside showTrendingTopics @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:1937
+[  107271ms] [LOG] Search History functionality implemented successfully @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3204
+[  108058ms] [LOG] Implementing Search History functionality @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3101
+[  108306ms] [LOG] Search History functionality implemented successfully @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3204
+[  111315ms] [WARNING] The resource https://t-csr-peco-kb.azurewebsites.net/assets/icons/userImage.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://t-csr-peco-kb.azurewebsites.net/:0
+[  111315ms] [WARNING] The resource https://t-csr-peco-kb.azurewebsites.net/assets/icons/editbutton.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://t-csr-peco-kb.azurewebsites.net/:0
+[  124080ms] [WARNING] The resource https://t-csr-peco-kb.azurewebsites.net/assets/icons/userImage.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://t-csr-peco-kb.azurewebsites.net/:0
+[  124080ms] [WARNING] The resource https://t-csr-peco-kb.azurewebsites.net/assets/icons/editbutton.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://t-csr-peco-kb.azurewebsites.net/:0
+[  127496ms] [WARNING] No API responses found @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:67
+[  127499ms] [LOG] Calling API with query: budget billing All @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:638
+[  127499ms] [LOG] Current sessionIdUnique: 18d50405-2562-457d-bd83-6f7af8f71a36 @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:2509
+[  127499ms] [LOG] Using search URL: https://t-genai-api-middleware.azurewebsites.net/genai/utility/search-query @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:2522
+[  141611ms] [LOG] Implementing Search History functionality @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3101
+[  142532ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://embeds.procedureflow.com/qNCM9tYMsCgWKWQsJ1j4QznX8UoUL6pL/login?returnUrl=%2FqNCM9tYMsCgWKWQsJ1j4QznX8UoUL6pL%2Fflows%2F142955:0
+[  151280ms] [LOG] Search History functionality implemented successfully @ https://t-csr-peco-kb.azurewebsites.net/js/scripts.js:3204
