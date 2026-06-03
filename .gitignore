@@ -1,0 +1,18 @@
+# IDE
+.idea/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# Environment
+.env
+
+# Generated at runtime
+evaluation.json
+.playwright-mcp/
