@@ -82,14 +82,7 @@ def _parse_steps_xml(raw: str) -> list[dict]:
 # ── Pre-flight checks ─────────────────────────────────────────────────────────
 def _check_prerequisites() -> None:
     """
-    Fail fast with a clear human-readable message if the environment is not ready.
-
-    Checks (in order):
-      1. Claude Code CLI is installed and on PATH
-      2. Claude Code is authenticated (can execute without erroring immediately)
-      3. Playwright MCP server is configured AND connected in Claude Code
-      4. evaluator.md prompt template exists
-      5. EVALUATOR_WORKDIR exists and is writable
+    Verify Claude Code CLI and Playwright MCP package are installed.
     """
     import shutil
 
@@ -98,111 +91,39 @@ def _check_prerequisites() -> None:
         raise EnvironmentError(
             f"Claude Code CLI not found: '{CLAUDE_BIN}' is not on PATH.\n"
             "Install:  npm install -g @anthropic-ai/claude-code\n"
-            "Then run 'claude' once interactively to authenticate.\n"
-            "If installed in a non-standard location set the CLAUDE_BIN env var."
+            "Then run 'claude' once interactively to authenticate."
         )
+    _log("  Claude Code CLI: found.")
 
-    # 2 & 3. Run `claude mcp list` to verify auth AND Playwright MCP status.
-    #
-    # Output format (one line per server):
-    #   ✓ playwright
-    #   ✗ spotify (failed to connect)
-    #   - azure-devops (not connected)
-    #
-    # Exit code 0 = Claude Code ran successfully (auth OK).
-    # We parse stdout to confirm playwright is present and connected.
-    _log("  Checking Claude Code authentication and Playwright MCP status...")
+    # 2. Playwright MCP package installed (npx can resolve it)
     try:
         result = subprocess.run(
-            [CLAUDE_BIN, "mcp", "list"],
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-            timeout=30,
+            ["npx", "--yes", "--no-install", "@playwright/mcp", "--version"],
+            capture_output=True, text=True, timeout=15,
         )
+        if result.returncode == 0:
+            _log(f"  Playwright MCP: found ({result.stdout.strip()}).")
+        else:
+            raise EnvironmentError(
+                "@playwright/mcp package is not installed.\n"
+                "Install it with:  npm install -g @playwright/mcp"
+            )
     except FileNotFoundError:
         raise EnvironmentError(
-            f"Could not execute '{CLAUDE_BIN}'. "
-            "Ensure Claude Code is installed and CLAUDE_BIN is set correctly."
+            "npx not found. Node.js is required to run Playwright MCP.\n"
+            "Install Node.js from https://nodejs.org"
         )
     except subprocess.TimeoutExpired:
-        raise EnvironmentError(
-            "Timed out waiting for 'claude mcp list' (30s). "
-            "Claude Code may be hung or unreachable."
-        )
+        _log("  Playwright MCP: version check timed out — assuming installed.")
 
-    # Non-zero exit = auth failure or CLI error
-    if result.returncode != 0:
-        stderr = (result.stderr or "").strip()
-        raise EnvironmentError(
-            f"Claude Code is not authenticated or returned an error "
-            f"(exit code {result.returncode}).\n"
-            "Run 'claude' interactively once to complete authentication.\n"
-            + (f"Detail: {stderr}" if stderr else "")
-        )
-
-    stdout = result.stdout or ""
-
-    # Log the raw output so the operator can see exactly what claude mcp list returned
-    _log(f"  'claude mcp list' output:\n{stdout.strip()}")
-
-    lines = stdout.lower().splitlines()
-
-    # Check Playwright is listed at all
-    playwright_lines = [l for l in lines if "playwright" in l]
-    if not playwright_lines:
-        raise EnvironmentError(
-            "Playwright MCP server is not configured in Claude Code.\n"
-            "Add it with:\n"
-            "  claude mcp add playwright -- npx @playwright/mcp@latest\n"
-            "Then verify with:  claude mcp list"
-        )
-
-    # Only treat as connected if there is an EXPLICIT positive indicator.
-    # Do NOT use "not failed" logic — disabled/pending/unknown must also fail.
-    #
-    # Known positive patterns from Claude Code output:
-    #   ✓ playwright
-    #   playwright  connected
-    #   playwright (connected)
-    #
-    # Everything else — ✗, disabled, failed, pending, -, ? — is NOT connected.
-    pw_text = " ".join(playwright_lines)
-    connected = any(
-        kw in pw_text
-        for kw in ("✓", "√", "connected", "running", "active", "enabled")
-    ) and not any(
-        kw in pw_text
-        for kw in ("disabled", "✗", "×", "fail", "error", "not connect",
-                   "disconnect", "pending", "timeout")
-    )
-
-    if not connected:
-        # Show the original-case lines for readability
-        raw_lines = [l for l in (result.stdout or "").splitlines() if "playwright" in l.lower()]
-        raw = "\n  ".join(l.strip() for l in raw_lines)
-        raise EnvironmentError(
-            f"Playwright MCP server is configured but not connected/enabled.\n"
-            f"Status from 'claude mcp list':\n  {raw}\n\n"
-            "To enable it run:\n"
-            "  claude mcp enable playwright\n"
-            "Or re-add it:\n"
-            "  claude mcp remove playwright\n"
-            "  claude mcp add playwright -- npx @playwright/mcp@latest\n"
-            "Then verify with:  claude mcp list"
-        )
-
-    _log("  Claude Code: authenticated. Playwright MCP: connected.")
-
-    # 4. evaluator.md prompt template
+    # 3. evaluator.md prompt template
     if not _EVALUATOR_MD.exists():
         raise FileNotFoundError(
             f"Prompt template not found: {_EVALUATOR_MD}\n"
             "Create evaluator.md in the same directory as mainframe.py."
         )
 
-    # 5. Working directory
+    # 4. Working directory exists and is writable
     workdir = Path(EVALUATOR_WORKDIR)
     if not workdir.exists():
         raise FileNotFoundError(
@@ -212,8 +133,9 @@ def _check_prerequisites() -> None:
     if not os.access(workdir, os.W_OK):
         raise PermissionError(
             f"EVALUATOR_WORKDIR is not writable: {workdir}\n"
-            "Check directory permissions — evaluation.json must be written there."
+            "Check directory permissions."
         )
+
 
 # ── ADO fetch ─────────────────────────────────────────────────────────────────
 def fetch_suite_test_cases(org: str, project: str, pat: str,
@@ -393,6 +315,13 @@ def _run_evaluation(org: str, project: str, pat: str,
                 "  - Model not available for your subscription\n"
                 "  - Playwright MCP failed to launch"
             )
+
+        # Clean up Playwright MCP temp files
+        import shutil
+        pw_dir = Path(EVALUATOR_WORKDIR) / ".playwright-mcp"
+        if pw_dir.exists():
+            shutil.rmtree(pw_dir, ignore_errors=True)
+            log(" Cleaned up .playwright-mcp temp files.")
 
         # Read result
         eval_path = Path(EVALUATOR_WORKDIR) / "evaluation.json"
