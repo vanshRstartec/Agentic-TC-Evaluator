@@ -16,16 +16,14 @@ from pathlib import Path
 from typing import Any
 
 import requests
-from dotenv import load_dotenv
 from requests.auth import HTTPBasicAuth
 
-load_dotenv()
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _EVALUATOR_MD   = Path(__file__).resolve().parent / "evaluator.md"
-EVALUATOR_WORKDIR = os.getenv("EVALUATOR_WORKDIR", str(Path(__file__).parent))
-CLAUDE_BIN      = os.getenv("CLAUDE_BIN", "claude")
-CLAUDE_MODEL    = os.getenv("CLAUDE_MODEL", "claude-opus-4-8")  # opus-4-8 | sonnet-4-5 | haiku-4-5
+EVALUATOR_WORKDIR = str(Path(__file__).resolve().parent)
+CLAUDE_BIN      = "claude"
+CLAUDE_MODEL    = "claude-opus-4-8"  # opus-4-8 | sonnet-4-5 | haiku-4-5
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 _log_queue: queue.Queue | None = None
