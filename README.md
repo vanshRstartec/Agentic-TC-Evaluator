@@ -9,11 +9,16 @@ Fetches test cases from Azure DevOps and executes them via Claude Code + Playwri
 ```
 POST /evaluator
       │
-      ├─ Pre-flight  →  Claude Code installed? @playwright/mcp installed?
-      ├─ ADO Fetch   →  Pull test cases (title + steps) from plan/suite
-      ├─ Prompt      →  Inject TCs into evaluator.md
-      ├─ Claude Code →  Runs prompt headlessly, drives Playwright MCP in browser
-      └─ Result      →  evaluation.json written → returned via SSE / poll
+      ├─ Pre-flight    →  Claude Code installed? @playwright/mcp configured?
+      ├─ ADO Fetch     →  Pull test cases (title + steps) from plan/suite
+      ├─ Prompt        →  Inject TCs into evaluator.md
+      ├─ Claude Code   →  Runs prompt headlessly, drives Playwright MCP in browser
+      ├─ Result        →  evaluation.json written → returned via SSE / poll
+      └─ ADO Write-back
+            ├─ Pass / Fail  →  New test run created, outcome recorded,
+            │                  run closed as Completed
+            └─ All TCs      →  Discussion comment posted to each test case
+                               (Result + Reason, regardless of outcome)
 ```
 
 ---
@@ -73,13 +78,13 @@ curl http://localhost:5001/evaluator/result/<job_id>
 
 Edit at the top of `mainframe.py`:
 
-| Variable | Default | |
-|---|---|---|
 | `CLAUDE_MODEL` | `claude-opus-4-8` | `sonnet-4-5` for faster/cheaper |
-| `CLAUDE_BIN` | `claude` | Full path if not on PATH |
 
 ---
 
 ## ADO PAT Permissions
 
-**Test Management** — Read · **Work Items** — Read
+| Scope | Permission |
+|---|---|
+| **Test Management** | Read & Write → fetch test cases · create runs · record outcomes |
+| **Work Items** | Read & Write → fetch titles & steps · post Discussion comments |
