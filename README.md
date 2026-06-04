@@ -78,7 +78,7 @@ curl http://localhost:5001/evaluator/result/<job_id>
 
 Edit at the top of `mainframe.py`:
 
-| `CLAUDE_MODEL` | `claude-opus-4-8` | `sonnet-4-5` for faster/cheaper |
+`CLAUDE_MODEL` -> `claude-opus-4-8` OR `sonnet-4-5` for faster/cheaper OR anything else in `claude models list`
 
 ---
 
