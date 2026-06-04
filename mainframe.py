@@ -19,6 +19,35 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 
+# ── Terminal colors ───────────────────────────────────────────────────────────
+# Two-tone scheme:
+#   CODE (cyan)  = deterministic Python pipeline — what *we* do in code
+#   LLM  (green) = Claude Code / LLM output      — what the agent produced
+# Head / dim / warn / err are accent tones within the pipeline (cyan) stream.
+_USE_COLOR = True            # set False to disable all ANSI colors
+
+_C_RESET = "\033[0m"
+_C_CODE  = "\033[36m"        # cyan      — deterministic pipeline
+_C_LLM   = "\033[32m"        # green     — Claude Code / LLM output
+_C_HEAD  = "\033[1;36m"      # bold cyan — section / phase headers
+_C_DIM   = "\033[90m"        # gray      — rules and hints
+_C_WARN  = "\033[33m"        # yellow    — warnings / skips
+_C_ERR   = "\033[31m"        # red       — errors
+
+# Ensure unicode + ANSI render cleanly on Windows consoles.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+def _paint(text: str, color: str) -> str:
+    """Wrap text in an ANSI color for terminal output (no-op if disabled/blank)."""
+    if not _USE_COLOR or not color or not str(text).strip():
+        return str(text)
+    return f"{color}{text}{_C_RESET}"
+
+
 # ── Config ────────────────────────────────────────────────────────────────────
 _EVALUATOR_MD   = Path(__file__).resolve().parent / "evaluator.md"
 EVALUATOR_WORKDIR = str(Path(__file__).resolve().parent)
@@ -32,17 +61,16 @@ def set_log_queue(q: queue.Queue | None) -> None:
     global _log_queue
     _log_queue = q
 
-def _log(msg: str = "") -> None:
-    """Print to stdout and push to SSE queue."""
-    print(msg, flush=True)
+def _log(msg: str = "", color: str = _C_CODE) -> None:
+    """Print a pipeline line (deterministic code) to stdout; queue plain text."""
+    print(_paint(msg, color), flush=True)
     if _log_queue is not None:
         _log_queue.put(str(msg))
 
 def _tlog(msg: str) -> None:
-    """Timestamped print to stderr (terminal) and push to SSE queue."""
+    """Print a Claude Code / LLM line (green, timestamped) to stderr; queue plain."""
     stamped = f"[{datetime.now().strftime('%H:%M:%S')}] {msg}"
-    print(stamped, file=sys.stderr, flush=True)
-    print("", file=sys.stderr, flush=True)
+    print(_paint(stamped, _C_LLM), file=sys.stderr, flush=True)
     if _log_queue is not None:
         _log_queue.put(stamped)
 
@@ -91,7 +119,7 @@ def _check_prerequisites() -> None:
             "Install:  npm install -g @anthropic-ai/claude-code\n"
             "Then run 'claude' once interactively to authenticate."
         )
-    _log("  Claude Code CLI: found.")
+    _log("  ✓ Claude Code CLI found")
 
     # 2. Playwright MCP — check via claude mcp list (works cross-platform)
     try:
@@ -102,7 +130,7 @@ def _check_prerequisites() -> None:
         )
         mcp_output = (result.stdout or "") + (result.stderr or "")
         if "playwright" in mcp_output.lower():
-            _log("  Playwright MCP: found.")
+            _log("  ✓ Playwright MCP found")
         else:
             raise EnvironmentError(
                 "Playwright MCP server is not configured in Claude Code.\n"
@@ -110,7 +138,7 @@ def _check_prerequisites() -> None:
                 "  claude mcp add playwright -- npx @playwright/mcp@latest"
             )
     except subprocess.TimeoutExpired:
-        _log("  Playwright MCP: check timed out — assuming configured.")
+        _log("  ! Playwright MCP check timed out — assuming configured", _C_WARN)
 
     # 3. evaluator.md prompt template
     if not _EVALUATOR_MD.exists():
@@ -139,7 +167,7 @@ def fetch_suite_test_cases(org: str, project: str, pat: str,
     """Return [{id, title, steps}] for every TC in the given plan/suite."""
     base = f"https://dev.azure.com/{org}/{project}/_apis"
 
-    _log(f"  Fetching TCs from plan #{plan_id}, suite #{suite_id}...")
+    _log(f"  Querying suite #{suite_id} in plan #{plan_id} …")
     try:
         suite_resp = _ado_get(
             f"{base}/testplan/Plans/{plan_id}/Suites/{suite_id}/TestCase?api-version=7.0", pat)
@@ -158,7 +186,7 @@ def fetch_suite_test_cases(org: str, project: str, pat: str,
         )
 
     ids = [str(r["workItem"]["id"]) for r in refs]
-    _log(f"  {len(ids)} TC(s) found — hydrating...")
+    _log(f"  Found {len(ids)} test case(s), loading details …")
 
     try:
         detail = _ado_get(
@@ -173,9 +201,9 @@ def fetch_suite_test_cases(org: str, project: str, pat: str,
         title  = wi["fields"].get("System.Title", "Untitled")
         steps  = _parse_steps_xml(wi["fields"].get("Microsoft.VSTS.TCM.Steps", ""))
         tcs.append({"id": ado_id, "title": title, "steps": steps})
-        _log(f"    #{ado_id}  {title}  ({len(steps)} step(s))")
+        _log(f"    #{ado_id}  {title}  ·  {len(steps)} step(s)")
 
-    _log(f"  Fetch complete — {len(tcs)} TC(s) ready.")
+    _log(f"  ✓ {len(tcs)} test case(s) ready")
     return tcs
 
 # ── Prompt assembly ───────────────────────────────────────────────────────────
@@ -235,8 +263,8 @@ def run_claude_code(prompt: str, log_q: queue.Queue) -> int:
         "--output-format", "stream-json",
         "--verbose",
     ]
-    _log(f"  Workdir : {EVALUATOR_WORKDIR}")
-    _log(f"  Model   : {CLAUDE_MODEL}")
+    _log(f"  Working dir : {EVALUATOR_WORKDIR}")
+    _log(f"  Model       : {CLAUDE_MODEL}")
 
     try:
         proc = subprocess.Popen(
@@ -272,36 +300,43 @@ def _run_evaluation(org: str, project: str, pat: str,
     """Full pipeline. Runs on a background thread. Always pushes None sentinel."""
     q: queue.Queue = job["queue"]
 
-    def log(msg: str = "") -> None:
-        print(msg, flush=True)
+    def log(msg: str = "", color: str = _C_CODE) -> None:
+        print(_paint(msg, color), flush=True)
         q.put(msg)
 
-    hr = "-" * 50
+    rule = "─" * 52
 
     try:
-        # Pre-flight
-        log("Evaluator started.")
-        log(f" Org: {org}  |  Project: {project}  |  Plan: {plan_id}  |  Suite: {suite_id}")
-        log(hr)
+        # ── Banner ──────────────────────────────────────────────
+        log("")
+        log(rule, _C_DIM)
+        log("  TC EVALUATOR", _C_HEAD)
+        log(rule, _C_DIM)
+        log(f"  Org      : {org}")
+        log(f"  Project  : {project}")
+        log(f"  Plan     : {plan_id}     Suite : {suite_id}")
+        log("")
+
+        # ── Pre-flight ──────────────────────────────────────────
+        log("▶ Pre-flight checks", _C_HEAD)
         _check_prerequisites()
+        log("")
 
-        # Step 1 — fetch
-        log("Step 1/3: Fetching test cases from ADO...")
+        # ── 1/4  Fetch test cases ───────────────────────────────
+        log("▶ [1/4]  Fetch test cases from ADO", _C_HEAD)
         tcs = fetch_suite_test_cases(org, project, pat, plan_id, suite_id)
-        log(f" {len(tcs)} TC(s) fetched.")
-        log(hr)
+        log("")
 
-        # Step 2 — prompt
-        log("Step 2/3: Assembling evaluator prompt...")
+        # ── 2/4  Assemble prompt ────────────────────────────────
+        log("▶ [2/4]  Assemble evaluator prompt", _C_HEAD)
         prompt = build_prompt(tcs)
-        log(f" Prompt: {len(prompt)} chars  |  TCs: {len(tcs)}")
-        log(hr)
+        log(f"  ✓ Prompt ready  ({len(prompt):,} chars · {len(tcs)} TC)")
+        log("")
 
-        # Step 3 — Claude Code
-        log("Step 3/3: Invoking Claude Code...")
-        log(hr)
+        # ── 3/4  Execute via Claude Code ────────────────────────
+        log("▶ [3/4]  Execute via Claude Code", _C_HEAD)
+        log("  (timestamped green lines below are Claude Code output)", _C_DIM)
         exit_code = run_claude_code(prompt, q)
-        log(hr)
 
         if exit_code != 0:
             raise Exception(
@@ -311,26 +346,40 @@ def _run_evaluation(org: str, project: str, pat: str,
                 "  - Model not available for your subscription\n"
                 "  - Playwright MCP failed to launch"
             )
+        log("  ✓ Execution finished")
 
         # Clean up Playwright MCP temp files
         import shutil
         pw_dir = Path(EVALUATOR_WORKDIR) / ".playwright-mcp"
         if pw_dir.exists():
             shutil.rmtree(pw_dir, ignore_errors=True)
-            log(" Cleaned up .playwright-mcp temp files.")
+            log("  ✓ Cleaned up temp files")
 
-        # Read result
+        # Read the evaluation Claude Code produced
         eval_path = Path(EVALUATOR_WORKDIR) / "evaluation.json"
         evaluation: list[dict] = []
         if eval_path.exists():
             try:
                 evaluation = json.loads(eval_path.read_text(encoding="utf-8"))
-                log(f" evaluation.json — {len(evaluation)} result(s).")
+                log(f"  ✓ evaluation.json — {len(evaluation)} result(s)")
             except Exception as e:
-                log(f" Warning: evaluation.json exists but could not be parsed — {e}")
+                log(f"  ! evaluation.json could not be parsed — {e}", _C_WARN)
         else:
-            log(" Warning: evaluation.json was not written.")
-            log(" Claude Code may have exited before completing all test cases.")
+            log("  ! evaluation.json was not written", _C_WARN)
+            log("    Claude Code may have stopped before finishing", _C_WARN)
+        log("")
+
+        # ── 4/4  Write results back to ADO ──────────────────────
+        # Isolated in its own try/except so any failure here cannot
+        # affect the result returned below.
+        if evaluation:
+            log("▶ [4/4]  Write results back to ADO", _C_HEAD)
+            try:
+                update_ado_results(org, project, pat, plan_id, suite_id, evaluation)
+            except Exception as e:
+                log(f"  ! ADO update failed — {e}", _C_WARN)
+                log("    evaluation.json is saved; update ADO manually if needed", _C_WARN)
+            log("")
 
         job["result"] = {
             "status":          "complete",
@@ -340,14 +389,295 @@ def _run_evaluation(org: str, project: str, pat: str,
             "evaluation":      evaluation,
             "evaluation_file": str(eval_path),
         }
-        log("Evaluator complete.")
+
+        log(rule, _C_DIM)
+        log("  ✓ EVALUATOR COMPLETE", _C_HEAD)
+        log(rule, _C_DIM)
 
     except (EnvironmentError, FileNotFoundError, PermissionError) as exc:
         # Config/setup errors — clear actionable message
         job["error"] = str(exc)
-        log(f"SETUP ERROR:\n{exc}")
+        log("")
+        log("✗ SETUP ERROR", _C_ERR)
+        log(f"{exc}", _C_ERR)
     except Exception as exc:
         job["error"] = str(exc)
-        log(f"ERROR: {exc}")
+        log("")
+        log("✗ ERROR", _C_ERR)
+        log(f"{exc}", _C_ERR)
     finally:
         q.put(None)
+
+
+# ── ADO result updater ────────────────────────────────────────────────────────
+# Maps evaluation "result" values to ADO outcome strings.
+# Any value NOT in this map is treated as "other" → Active state, no outcome.
+_OUTCOME_MAP = {
+    "pass":   "Passed",
+    "fail":   "Failed",
+    "failed": "Failed",
+}
+
+
+def _ado_patch(url: str, pat: str, body, timeout: int = 30) -> dict:
+    r = requests.patch(
+        url,
+        headers={"Content-Type": "application/json"},
+        auth=HTTPBasicAuth("", pat),
+        json=body,
+        timeout=timeout,
+    )
+    if r.status_code in (200, 201):
+        return r.json()
+    raise Exception(f"ADO PATCH failed (HTTP {r.status_code}): {url}\n{r.text[:300]}")
+
+
+def _ado_post(url: str, pat: str, body, timeout: int = 30) -> dict:
+    r = requests.post(
+        url,
+        headers={"Content-Type": "application/json"},
+        auth=HTTPBasicAuth("", pat),
+        json=body,
+        timeout=timeout,
+    )
+    if r.status_code in (200, 201):
+        return r.json()
+    raise Exception(f"ADO POST failed (HTTP {r.status_code}): {url}\n{r.text[:300]}")
+
+
+def _ado_post_wi_comment(base: str, pat: str, wi_id: str, text: str) -> None:
+    """
+    POST a comment to the Discussion section of a work item.
+
+    Uses the Work Item Comments API (preview).  The comment appears in the
+    Discussion tab of the test case — exactly where the evaluator note
+    should be visible to testers and reviewers.
+
+    Non-fatal: logs a warning on failure so the rest of the update continues.
+    """
+    url = f"{base}/wit/workItems/{wi_id}/comments?api-version=7.0-preview.3"
+    r = requests.post(
+        url,
+        headers={"Content-Type": "application/json"},
+        auth=HTTPBasicAuth("", pat),
+        json={"text": text},
+        timeout=30,
+    )
+    if r.status_code not in (200, 201):
+        raise Exception(
+            f"Work-item comment POST failed (HTTP {r.status_code}): {url}\n{r.text[:300]}"
+        )
+
+
+def update_ado_results(
+    org: str,
+    project: str,
+    pat: str,
+    plan_id: str,
+    suite_id: str,
+    evaluation: list[dict],
+) -> None:
+    """
+    Write each evaluation entry back to ADO as a brand-new test run AND
+    post the evaluator reason as a comment in the test case Discussion tab.
+
+    Rules (applied unconditionally for every entry):
+    ─────────────────────────────────────────────────
+    • Comment text — both "Result: X" and "Reason: Y" are always included,
+      in both the Discussion tab and the execution-history comment field.
+    • result == "pass"        → new run result, outcome = Passed, state = Completed
+    • result == "fail/failed" → new run result, outcome = Failed, state = Completed
+    • anything else           → NO run result created; test case stays Active.
+                                Only a Discussion comment is posted.
+    • Discussion comment is posted for EVERY entry (pass, fail, or other).
+    • Existing test runs are never modified — a new run is always created.
+    """
+    if not evaluation:
+        _log("  No evaluation entries — nothing to update", _C_WARN)
+        return
+
+    base = f"https://dev.azure.com/{org}/{project}/_apis"
+    updated = 0
+    skipped = 0
+
+    # ── Phase 1: resolve every evaluation entry to its test point ─────────────
+    # Each entry becomes (wi_id, point_id, comment, ado_outcome_or_None)
+    # comment   — always set; prefixed with "Evaluator Agent: "
+    # ado_outcome — "Passed"/"Failed" for pass/fail; None for anything else
+    resolved: list[tuple[str, int, str, str | None]] = []
+
+    for entry in evaluation:
+        wi_id   = str(entry.get("id", ""))
+        result  = (entry.get("result") or "").strip()
+        reason  = (entry.get("reason") or "").strip()
+
+        # Comment is built unconditionally — every entry gets one.
+        # Both the result label and the reason are always included so that
+        # anyone reading the Discussion tab or execution history has full context.
+        result_label = result if result else "N/A"
+        reason_text  = reason if reason else "(no reason provided)"
+        comment = (
+            f"Evaluator Agent\n"
+            f"Result: {result_label}\n"
+            f"Reason: {reason_text}"
+        )
+
+        # Outcome is None for anything that is not an explicit pass or fail.
+        ado_outcome: str | None = _OUTCOME_MAP.get(result.lower())
+
+        try:
+            resp = _ado_get(
+                f"{base}/test/Plans/{plan_id}/Suites/{suite_id}/points"
+                f"?testCaseId={wi_id}&$top=1&api-version=7.0",
+                pat,
+            )
+        except Exception as e:
+            _log(f"    #{wi_id}  skipped — could not fetch test point: {e}", _C_WARN)
+            skipped += 1
+            continue
+
+        points = resp.get("value", [])
+        if not points:
+            _log(f"    #{wi_id}  skipped — no test point in suite #{suite_id}", _C_WARN)
+            skipped += 1
+            continue
+
+        point_id: int = int(points[0]["id"])
+        resolved.append((wi_id, point_id, comment, ado_outcome))
+
+    if not resolved:
+        _log("  No resolvable test points — nothing to write to ADO", _C_WARN)
+        _log(f"  ✓ ADO update — 0 updated, {skipped} skipped")
+        return
+
+    # ── Phase 2: create ONE new run — pass/fail test cases only ──────────────
+    # Non-pass/fail test cases are intentionally excluded from the run so they
+    # stay Active in ADO Test Plans.  They still receive a Discussion comment
+    # (Phase 6 below).
+    run_entries  = [(wi, pid, cmt, out) for wi, pid, cmt, out in resolved if out is not None]
+    other_entries = [(wi, pid, cmt, out) for wi, pid, cmt, out in resolved if out is None]
+
+    if other_entries:
+        _log(
+            f"  {len(other_entries)} non-pass/fail TC(s) will be left Active "
+            f"(Discussion comment only)",
+            _C_DIM,
+        )
+
+    if not run_entries:
+        _log("  No pass/fail results — skipping test run creation")
+        updated = 0
+    else:
+        point_ids = [pid for _, pid, _, _ in run_entries]
+        _log(f"  Creating new test run for {len(point_ids)} pass/fail test case(s) …")
+
+        try:
+            run = _ado_post(
+                f"{base}/test/runs?api-version=7.0",
+                pat,
+                {
+                    "name":     f"Evaluator Agent - {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+                    "plan":     {"id": str(plan_id)},
+                    "pointIds": point_ids,
+                },
+            )
+        except Exception as e:
+            _log(f"  ! could not create test run — {e}", _C_WARN)
+            _log("    Discussion comments will still be posted below", _C_WARN)
+            updated = 0
+            run_entries = []   # prevent further run-related steps
+        else:
+            new_run_id: int = run["id"]
+            _log(f"  ✓ Created run #{new_run_id}")
+
+            # Fetch the auto-created result stubs so we have their IDs.
+            try:
+                res = _ado_get(
+                    f"{base}/test/runs/{new_run_id}/results?api-version=7.0",
+                    pat,
+                )
+            except Exception as e:
+                _log(f"  ! could not fetch results for run #{new_run_id} — {e}", _C_WARN)
+                updated = 0
+                run_entries = []
+            else:
+                # Build lookup: test-case ID → (comment, ado_outcome)
+                # Only pass/fail entries are in run_entries so every outcome is non-None.
+                by_tc: dict[str, tuple[str, str]] = {
+                    wi_id: (comment, ado_outcome)          # type: ignore[misc]
+                    for wi_id, _, comment, ado_outcome in run_entries
+                }
+
+                # ── Phase 3: build patches ─────────────────────────────────────────
+                # All stubs in this run are pass/fail → all set to Completed.
+                patches: list[dict] = []
+                for r in res.get("value", []):
+                    tc_id = str(r.get("testCase", {}).get("id", ""))
+                    if tc_id not in by_tc:
+                        continue
+                    comment, ado_outcome = by_tc[tc_id]
+                    patches.append({
+                        "id":      r["id"],
+                        "outcome": ado_outcome,
+                        "state":   "Completed",
+                        "comment": comment,   # result + reason in execution history
+                    })
+                    _log(f"    #{tc_id}  → {ado_outcome}  (comment recorded, state = Completed)")
+
+                if not patches:
+                    _log("  ! No matching result stubs — nothing patched", _C_WARN)
+                    updated = 0
+                else:
+                    # ── Phase 4: write all patches in one PATCH call ───────────────
+                    try:
+                        _ado_patch(
+                            f"{base}/test/runs/{new_run_id}/results?api-version=7.0",
+                            pat,
+                            patches,
+                        )
+                        updated = len(patches)
+                    except Exception as e:
+                        _log(f"  ! could not patch results for run #{new_run_id} — {e}", _C_WARN)
+                        updated = 0
+
+                    # ── Phase 5: close run as Completed ───────────────────────────
+                    # Run only contains pass/fail results, all Completed.
+                    try:
+                        _ado_patch(
+                            f"{base}/test/runs/{new_run_id}?api-version=7.0",
+                            pat,
+                            {"state": "Completed"},
+                        )
+                        _log(f"  ✓ Run #{new_run_id} state → Completed")
+                    except Exception as e:
+                        _log(f"  ! could not close run #{new_run_id} — {e}", _C_WARN)
+
+    # ── Phase 6: post comment to test case Discussion (Work Item Comments) ──────
+    # Posted for EVERY resolved entry — pass, fail, and non-pass/fail alike.
+    # Contains both the result label and the reason so the Discussion tab is
+    # self-contained without needing to open the test run.
+    wi_commented = 0
+    wi_comment_failed = 0
+    _log("  Posting Discussion comments to test case work items …")
+    for wi_id, _, comment, ado_outcome in resolved:
+        tag = ado_outcome if ado_outcome else "Active (no run result)"
+        try:
+            _ado_post_wi_comment(base, pat, wi_id, comment)
+            _log(f"    #{wi_id}  ✓ Discussion comment posted  [{tag}]")
+            wi_commented += 1
+        except Exception as e:
+            _log(f"    #{wi_id}  ! Discussion comment failed — {e}", _C_WARN)
+            wi_comment_failed += 1
+
+    if wi_comment_failed:
+        _log(
+            f"  ! {wi_comment_failed} Discussion comment(s) failed "
+            f"(run results were still written above)",
+            _C_WARN,
+        )
+
+    _log(
+        f"  ✓ ADO update — {updated} run result(s) updated, "
+        f"{wi_commented} Discussion comment(s) posted, "
+        f"{skipped} entry/entries skipped"
+    )
