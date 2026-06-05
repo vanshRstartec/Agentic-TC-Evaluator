@@ -11,7 +11,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime
-from html import unescape
+from html import escape, unescape
 from pathlib import Path
 from typing import Any
 
@@ -322,19 +322,19 @@ def _run_evaluation(org: str, project: str, pat: str,
         _check_prerequisites()
         log("")
 
-        # ── 1/4  Fetch test cases ───────────────────────────────
-        log("▶ [1/4]  Fetch test cases from ADO", _C_HEAD)
+        # ── 1/5  Fetch test cases ───────────────────────────────
+        log("▶ [1/5]  Fetch test cases from ADO", _C_HEAD)
         tcs = fetch_suite_test_cases(org, project, pat, plan_id, suite_id)
         log("")
 
-        # ── 2/4  Assemble prompt ────────────────────────────────
-        log("▶ [2/4]  Assemble evaluator prompt", _C_HEAD)
+        # ── 2/5  Assemble prompt ────────────────────────────────
+        log("▶ [2/5]  Assemble evaluator prompt", _C_HEAD)
         prompt = build_prompt(tcs)
         log(f"  ✓ Prompt ready  ({len(prompt):,} chars · {len(tcs)} TC)")
         log("")
 
-        # ── 3/4  Execute via Claude Code ────────────────────────
-        log("▶ [3/4]  Execute via Claude Code", _C_HEAD)
+        # ── 3/5  Execute via Claude Code ────────────────────────
+        log("▶ [3/5]  Execute via Claude Code", _C_HEAD)
         log("  (timestamped green lines below are Claude Code output)", _C_DIM)
         exit_code = run_claude_code(prompt, q)
 
@@ -369,16 +369,28 @@ def _run_evaluation(org: str, project: str, pat: str,
             log("    Claude Code may have stopped before finishing", _C_WARN)
         log("")
 
-        # ── 4/4  Write results back to ADO ──────────────────────
+        # ── 4/5  Write results back to ADO ──────────────────────
         # Isolated in its own try/except so any failure here cannot
         # affect the result returned below.
         if evaluation:
-            log("▶ [4/4]  Write results back to ADO", _C_HEAD)
+            log("▶ [4/5]  Write results back to ADO", _C_HEAD)
             try:
                 update_ado_results(org, project, pat, plan_id, suite_id, evaluation)
             except Exception as e:
                 log(f"  ! ADO update failed — {e}", _C_WARN)
                 log("    evaluation.json is saved; update ADO manually if needed", _C_WARN)
+            log("")
+
+        # ── 5/5  Create bugs for failed test cases ──────────────
+        # Runs independently — a failure here never affects the
+        # result object returned to the caller.
+        if evaluation:
+            log("▶ [5/5]  Create bugs for failed test cases", _C_HEAD)
+            try:
+                create_bugs_for_failures(org, project, pat, evaluation)
+            except Exception as e:
+                log(f"  ! Bug creation phase failed — {e}", _C_WARN)
+                log("    evaluation.json is saved; create bugs manually if needed", _C_WARN)
             log("")
 
         job["result"] = {
@@ -443,6 +455,27 @@ def _ado_post(url: str, pat: str, body, timeout: int = 30) -> dict:
     if r.status_code in (200, 201):
         return r.json()
     raise Exception(f"ADO POST failed (HTTP {r.status_code}): {url}\n{r.text[:300]}")
+
+
+def _ado_post_wi(url: str, pat: str, body: list, timeout: int = 30) -> dict:
+    """
+    POST a new work item using the JSON-Patch document format required by ADO.
+
+    Differs from _ado_post in that it sends Content-Type: application/json-patch+json,
+    which the ADO work-item creation endpoint mandates.
+    """
+    r = requests.post(
+        url,
+        headers={"Content-Type": "application/json-patch+json"},
+        auth=HTTPBasicAuth("", pat),
+        json=body,
+        timeout=timeout,
+    )
+    if r.status_code in (200, 201):
+        return r.json()
+    raise Exception(
+        f"ADO work-item POST failed (HTTP {r.status_code}): {url}\n{r.text[:300]}"
+    )
 
 
 def _ado_post_wi_comment(base: str, pat: str, wi_id: str, text: str) -> None:
@@ -680,4 +713,296 @@ def update_ado_results(
         f"  ✓ ADO update — {updated} run result(s) updated, "
         f"{wi_commented} Discussion comment(s) posted, "
         f"{skipped} entry/entries skipped"
+    )
+
+
+# ── Bug creator ───────────────────────────────────────────────────────────────
+
+def _build_repro_steps_html(
+    description: str,
+    steps: list[str],
+    expected_result: str,
+    actual_result: str,
+) -> str:
+    """
+    Build the HTML value for the Microsoft.VSTS.TCM.ReproSteps field.
+
+    Matches the ADO bug template layout shown in the screenshot:
+
+        Description,
+        <description text>
+
+        Steps to repro,
+        1. <step 1>
+        2. <step 2>
+        ...
+
+        Expected result,
+        <expected result text>
+
+        Actual result,
+        <actual result text>
+    """
+    steps_li = "".join(f"<li>{escape(s)}</li>" for s in (steps or []))
+    steps_block = f"<ol>{steps_li}</ol>" if steps_li else "<p></p>"
+
+    return (
+        f"<p>Description,</p>"
+        f"<p>{escape(description or '')}</p>"
+        f"<p>Steps to repro,</p>"
+        f"{steps_block}"
+        f"<p>Expected result,</p>"
+        f"<p>{escape(expected_result or '')}</p>"
+        f"<p>Actual result,</p>"
+        f"<p>{escape(actual_result or '')}</p>"
+    )
+
+
+def _fetch_parent_story_ids(base: str, pat: str, tc_id: str) -> list[str]:
+    """
+    Return the work-item IDs of every parent story linked to the test case.
+
+    ADO represents the parent→child hierarchy with two complementary relation
+    types on each end of the link:
+        System.LinkTypes.Hierarchy-Forward  — on the PARENT pointing at the child
+        System.LinkTypes.Hierarchy-Reverse  — on the CHILD pointing at the parent
+
+    We expand the TC's relations and collect every Hierarchy-Reverse URL,
+    then extract the numeric ID from the trailing segment.
+    """
+    resp = _ado_get(
+        f"{base}/wit/workitems/{tc_id}?$expand=relations&api-version=7.0",
+        pat,
+    )
+    parent_ids: list[str] = []
+    for rel in resp.get("relations", []):
+        if rel.get("rel") == "System.LinkTypes.Hierarchy-Reverse":
+            url = rel.get("url", "")
+            m = re.search(r"/workItems/(\d+)$", url, re.IGNORECASE)
+            if m:
+                parent_ids.append(m.group(1))
+    return parent_ids
+
+
+def _fetch_iteration_path(base: str, pat: str, wi_id: str) -> str | None:
+    """
+    Return System.IterationPath for a work item, or None on any error.
+    Used to copy the parent story's iteration onto the created bug.
+    """
+    try:
+        resp = _ado_get(
+            f"{base}/wit/workitems/{wi_id}"
+            f"?fields=System.IterationPath&api-version=7.0",
+            pat,
+        )
+        return resp.get("fields", {}).get("System.IterationPath") or None
+    except Exception:
+        return None
+
+
+def create_bugs_for_failures(
+    org: str,
+    project: str,
+    pat: str,
+    evaluation: list[dict],
+) -> None:
+    """
+    For every evaluation entry where result == 'fail'/'failed' AND a
+    'bug_details' key is present, create a Bug work item in ADO and link
+    it to the corresponding test case work item.
+
+    Bug fields written
+    ──────────────────
+    System.Title                   → "[Evaluator Agent] <bug_details.title>"
+    Microsoft.VSTS.TCM.ReproSteps  → HTML matching the ADO bug template
+    Microsoft.VSTS.Common.Priority → bug_details.priority (int, defaults to 2)
+
+    Area and Iteration are intentionally omitted so ADO inherits the
+    project defaults — consistent with manually filed bugs.
+
+    The bug is related to the originating test-case work item via
+    the System.LinkTypes.Related link type, so it appears in the
+    "Related Work" section of both items.
+
+    Pass / NA entries are untouched — no change to existing behaviour.
+    """
+    if not evaluation:
+        return
+
+    base        = f"https://dev.azure.com/{org}/{project}/_apis"
+    # Work-item URL root used when building relation links.
+    # ADO normalises the URL, so we use the canonical org-scoped form.
+    wi_url_root = f"https://dev.azure.com/{org}/_apis/wit/workItems"
+
+    created = 0
+    skipped = 0
+
+    for entry in evaluation:
+        result = (entry.get("result") or "").strip().lower()
+
+        # Only process explicit failures.
+        if result not in ("fail", "failed"):
+            continue
+
+        tc_id      = str(entry.get("id", ""))
+        bug_details = entry.get("bug_details")
+
+        if not bug_details:
+            _log(
+                f"    #{tc_id}  skipped bug creation — "
+                f"result is '{result}' but no bug_details key found",
+                _C_WARN,
+            )
+            skipped += 1
+            continue
+
+        # ── Extract bug_details fields ─────────────────────────────────────
+        title        = (bug_details.get("title") or "").strip()
+        description  = (bug_details.get("description") or "").strip()
+        steps        = bug_details.get("steps_to_reproduce") or []
+        expected     = (bug_details.get("expected_result") or "").strip()
+        actual       = (bug_details.get("actual_result") or "").strip()
+        priority_raw = bug_details.get("priority", "2")
+
+        try:
+            priority = int(str(priority_raw).strip())
+        except (ValueError, TypeError):
+            priority = 2
+
+        if not title:
+            _log(
+                f"    #{tc_id}  skipped bug creation — bug_details.title is empty",
+                _C_WARN,
+            )
+            skipped += 1
+            continue
+
+        full_title = f"[Evaluator Agent] {title}"
+        repro_html = _build_repro_steps_html(description, steps, expected, actual)
+
+        # ── Resolve parent story IDs and iteration path ────────────────────
+        # Fetch the TC's Hierarchy-Reverse relations to find parent stories.
+        # The bug will be Related-linked to every parent story found, and its
+        # IterationPath will be copied from the first parent story's iteration.
+        # All failures here are non-fatal — we log and carry on without the
+        # story links / iteration rather than aborting the bug creation.
+        parent_story_ids: list[str] = []
+        iteration_path: str | None = None
+
+        if tc_id:
+            try:
+                parent_story_ids = _fetch_parent_story_ids(base, pat, tc_id)
+                if parent_story_ids:
+                    _log(
+                        f"    #{tc_id}  parent story(ies): "
+                        f"{', '.join('#' + s for s in parent_story_ids)}"
+                    )
+                    # Copy iteration from the first parent story (almost always
+                    # only one parent, but we use the first if there are multiple).
+                    iteration_path = _fetch_iteration_path(
+                        base, pat, parent_story_ids[0]
+                    )
+                    if iteration_path:
+                        _log(f"    #{tc_id}  iteration path  : {iteration_path}")
+                    else:
+                        _log(
+                            f"    #{tc_id}  ! could not read parent story iteration "
+                            f"— bug will use project default",
+                            _C_WARN,
+                        )
+                else:
+                    _log(
+                        f"    #{tc_id}  ! no parent story found "
+                        f"— bug will not be linked to a story",
+                        _C_WARN,
+                    )
+            except Exception as e:
+                _log(
+                    f"    #{tc_id}  ! parent story lookup failed — {e} "
+                    f"— continuing without story link",
+                    _C_WARN,
+                )
+
+        # ── Build JSON-Patch document ──────────────────────────────────────
+        patch_doc: list[dict] = [
+            {
+                "op":    "add",
+                "path":  "/fields/System.Title",
+                "value": full_title,
+            },
+            {
+                "op":    "add",
+                "path":  "/fields/Microsoft.VSTS.TCM.ReproSteps",
+                "value": repro_html,
+            },
+            {
+                "op":    "add",
+                "path":  "/fields/Microsoft.VSTS.Common.Priority",
+                "value": priority,
+            },
+        ]
+
+        # Set the bug's iteration to match the parent story so it lands in
+        # the correct sprint/iteration without needing manual triage.
+        if iteration_path:
+            patch_doc.append(
+                {
+                    "op":    "add",
+                    "path":  "/fields/System.IterationPath",
+                    "value": iteration_path,
+                }
+            )
+
+        # ── Relate the bug back to the originating test-case ──────────────
+        if tc_id:
+            patch_doc.append(
+                {
+                    "op":   "add",
+                    "path": "/relations/-",
+                    "value": {
+                        "rel": "System.LinkTypes.Related",
+                        "url": f"{wi_url_root}/{tc_id}",
+                        "attributes": {
+                            "comment": "Linked by Evaluator Agent",
+                        },
+                    },
+                }
+            )
+
+        # ── Relate the bug to every parent story ──────────────────────────
+        # Usually exactly one story, but we handle multiples gracefully.
+        for story_id in parent_story_ids:
+            patch_doc.append(
+                {
+                    "op":   "add",
+                    "path": "/relations/-",
+                    "value": {
+                        "rel": "System.LinkTypes.Related",
+                        "url": f"{wi_url_root}/{story_id}",
+                        "attributes": {
+                            "comment": "Linked by Evaluator Agent (parent story)",
+                        },
+                    },
+                }
+            )
+
+        # ── POST the new Bug work item ─────────────────────────────────────
+        try:
+            bug = _ado_post_wi(
+                f"{base}/wit/workitems/$Bug?api-version=7.0",
+                pat,
+                patch_doc,
+            )
+            bug_id = bug.get("id", "?")
+            _log(
+                f"    #{tc_id}  → Bug #{bug_id} created"
+                f"  (priority {priority})  {full_title}"
+            )
+            created += 1
+        except Exception as e:
+            _log(f"    #{tc_id}  ! Bug creation failed — {e}", _C_WARN)
+            skipped += 1
+
+    _log(
+        f"  ✓ Bug creation — {created} bug(s) created, {skipped} skipped"
     )

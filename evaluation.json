@@ -1,20 +1,27 @@
 [
   {
-    "id": 40126,
-    "title": "Verifying adding a minimum maximum price filter in USD",
-    "result": "Pass",
-    "reason": "Applied USD price filter (min 50, max 150) on the Bangkok results; URL reflected PriceFrom=50&PriceTo=150 and all displayed hotel prices fell within the 50-150 USD range."
-  },
-  {
     "id": 40127,
     "title": "Verify hotel search by popular location (minimum 10 hotel cards must appear)",
     "result": "Pass",
-    "reason": "Search for the popular destination Bangkok loaded the results page with 12 hotel cards displayed, exceeding the minimum of 10."
+    "reason": "Searching the popular destination Tokyo loaded a results page displaying 11 hotel cards, which satisfies the minimum of 10 hotel cards."
   },
   {
     "id": 40130,
     "title": "Verifying sorting the results based on price",
-    "result": "Pass",
-    "reason": "Selected 'Lowest price' sort (URL sort=priceLowToHigh); displayed prices appeared in ascending order (51, 51, 54, 56, 56, 59, 77, 124)."
+    "result": "Fail",
+    "reason": "After sorting by 'Lowest price' the results were displayed lowest price first in ascending order, but the expected result requires the highest price first in descending order.",
+    "bug_details": {
+      "title": "Sorting by lowest price does not display results with highest price first in descending order",
+      "description": "On the Agoda hotel search results page for Tokyo, selecting the 'Lowest price' sort option arranges the hotel cards from the lowest price to the highest (ascending). The test case's expected result requires the results to be shown with the highest price first and then descending, which the application does not do.",
+      "steps_to_reproduce": [
+        "Open agoda.com",
+        "Search for hotels in Tokyo (check-in 11 Jun 2026, check-out 14 Jun 2026, 2 adults, 1 room)",
+        "On the results page, open the 'Sort by' dropdown and select 'Lowest price'",
+        "Observe the price of each hotel card from top to bottom"
+      ],
+      "expected_result": "The results are shown with the highest price first and then in descending order.",
+      "actual_result": "The results are shown with the lowest price first in ascending order (e.g. 20, 22, 24, 26, 27, 28, ... increasing down the list), the opposite of the expected highest-price-first descending order.",
+      "priority": "3"
+    }
   }
 ]
