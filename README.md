@@ -17,8 +17,7 @@ POST /evaluator
       └─ ADO Status/Bug Updates
             │
             ├─ [1/2]  Test Run & Comments
-            │         ├─ Pass / Fail  →  New test run created, outcome recorded,
-            │         │                  run closed as Completed
+            │         ├─ Pass / Fail  →  New test run created, marks test cases execution status
             │         └─ All TCs      →  TC comment posted (Result + Reason,
             │                            regardless of pass / fail / N/A)
             │
