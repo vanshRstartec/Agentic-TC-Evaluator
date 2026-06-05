@@ -866,7 +866,7 @@ def create_bugs_for_failures(
     if assigned_to:
         _log(f"  Assigning bugs to : {assigned_to}")
     else:
-        _log("  ! Could not resolve PAT owner — bugs will be unassigned", _C_WARN)
+        _log("", _C_WARN)
 
     created = 0
     skipped = 0
