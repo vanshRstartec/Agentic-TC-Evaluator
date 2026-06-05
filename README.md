@@ -22,10 +22,8 @@ POST /evaluator
             │         └─ All TCs      →  TC comment posted (Result + Reason,
             │                            regardless of pass / fail / N/A)
             │
-            └─ [2/2]  Bug Creation           (failures only, requires bug_details)
-                      ├─ Bug filed    →  Title  : [Executor Agent] <title>
-                      │                  Fields : repro steps, expected vs actual,
-                      │                           priority, assigned to PAT owner
+            └─ [2/2]  Bug Creation           (failures only)
+                      ├─ Bug filed and linked with story / test case
 ```
 
 ---
