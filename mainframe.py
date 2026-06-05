@@ -718,6 +718,33 @@ def update_ado_results(
 
 # ── Bug creator ───────────────────────────────────────────────────────────────
 
+def _fetch_pat_owner(pat: str) -> str | None:
+    """
+    Return the email address of the identity that owns the PAT.
+
+    Calls the VSTS Profile API (org-agnostic) which is the most reliable
+    way to resolve 'who am I' from a PAT token alone.  Falls back to
+    displayName if emailAddress is absent, and returns None on any failure
+    so callers can skip System.AssignedTo gracefully rather than crashing.
+    """
+    try:
+        r = requests.get(
+            "https://app.vssps.visualstudio.com/_apis/profile/profiles/me"
+            "?api-version=6.0",
+            headers={"Content-Type": "application/json"},
+            auth=HTTPBasicAuth("", pat),
+            timeout=15,
+        )
+        if r.status_code == 200:
+            data = r.json()
+            email   = (data.get("emailAddress") or "").strip()
+            display = (data.get("displayName")  or "").strip()
+            return email or display or None
+    except Exception:
+        pass
+    return None
+
+
 def _build_repro_steps_html(
     description: str,
     steps: list[str],
@@ -747,13 +774,13 @@ def _build_repro_steps_html(
     steps_block = f"<ol>{steps_li}</ol>" if steps_li else "<p></p>"
 
     return (
-        f"<p>Description,</p>"
+        f"<p><b>Description,</b></p>"
         f"<p>{escape(description or '')}</p>"
-        f"<p>Steps to repro,</p>"
+        f"<p><b>Steps to repro,</b></p>"
         f"{steps_block}"
-        f"<p>Expected result,</p>"
+        f"<p><b>Expected result,</b></p>"
         f"<p>{escape(expected_result or '')}</p>"
-        f"<p>Actual result,</p>"
+        f"<p><b>Actual result,</b></p>"
         f"<p>{escape(actual_result or '')}</p>"
     )
 
@@ -833,6 +860,13 @@ def create_bugs_for_failures(
     # Work-item URL root used when building relation links.
     # ADO normalises the URL, so we use the canonical org-scoped form.
     wi_url_root = f"https://dev.azure.com/{org}/_apis/wit/workItems"
+
+    # Resolve the identity that owns the PAT once — reused for every bug.
+    assigned_to = _fetch_pat_owner(pat)
+    if assigned_to:
+        _log(f"  Assigning bugs to : {assigned_to}")
+    else:
+        _log("  ! Could not resolve PAT owner — bugs will be unassigned", _C_WARN)
 
     created = 0
     skipped = 0
@@ -941,6 +975,15 @@ def create_bugs_for_failures(
                 "value": priority,
             },
         ]
+
+        if assigned_to:
+            patch_doc.append(
+                {
+                    "op":    "add",
+                    "path":  "/fields/System.AssignedTo",
+                    "value": assigned_to,
+                }
+            )
 
         # Set the bug's iteration to match the parent story so it lands in
         # the correct sprint/iteration without needing manual triage.
