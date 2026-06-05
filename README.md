@@ -10,15 +10,22 @@ Fetches test cases from Azure DevOps and executes them via Claude Code + Playwri
 POST /evaluator
       │
       ├─ Pre-flight    →  Claude Code installed? @playwright/mcp configured?
-      ├─ ADO Fetch     →  Pull test cases (title + steps) from plan/suite
+      ├─ ADO Fetch     →  Pull test cases (title + steps) from plan / suite
       ├─ Prompt        →  Inject TCs into evaluator.md
       ├─ Claude Code   →  Runs prompt headlessly, drives Playwright MCP in browser
       ├─ Result        →  evaluation.json written → returned via SSE / poll
-      └─ ADO Write-back
-            ├─ Pass / Fail  →  New test run created, outcome recorded,
-            │                  run closed as Completed
-            └─ All TCs      →  Discussion comment posted to each test case
-                               (Result + Reason, regardless of outcome)
+      └─ ADO Status/Bug Updates
+            │
+            ├─ [1/2]  Test Run & Comments
+            │         ├─ Pass / Fail  →  New test run created, outcome recorded,
+            │         │                  run closed as Completed
+            │         └─ All TCs      →  TC comment posted (Result + Reason,
+            │                            regardless of pass / fail / N/A)
+            │
+            └─ [2/2]  Bug Creation           (failures only, requires bug_details)
+                      ├─ Bug filed    →  Title  : [Executor Agent] <title>
+                      │                  Fields : repro steps, expected vs actual,
+                      │                           priority, assigned to PAT owner
 ```
 
 ---
@@ -87,4 +94,4 @@ Edit at the top of `mainframe.py`:
 | Scope | Permission |
 |---|---|
 | **Test Management** | Read & Write → fetch test cases · create runs · record outcomes |
-| **Work Items** | Read & Write → fetch titles & steps · post Discussion comments |
+| **Work Items** | Read & Write → fetch titles & steps · post TC comments · create bugs · fetch parent story & iteration path |
