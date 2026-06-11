@@ -43,7 +43,7 @@ def _paint(text: str, color: str) -> str:
 _EVALUATOR_MD     = Path(__file__).resolve().parent / "evaluator.md"
 EVALUATOR_WORKDIR = str(Path(__file__).resolve().parent)
 CLAUDE_BIN        = "claude"
-CLAUDE_MODEL      = "claude-opus-4-8"
+CLAUDE_MODEL      = "claude-fable-5"
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 _log_queue: queue.Queue | None = None
@@ -483,7 +483,7 @@ def _process_evidence_files(
                           that were uploaded but need an AttachedFile relation
                           added to a work item by the caller.
     """
-    parts:          list[str]             = ["<p><b>Evidence</b></p>"]
+    parts:          list[str]             = ["<p>Evidence,</p>"]
     pending_videos: list[tuple[str, str]] = []
 
     for f in evidence_files:
