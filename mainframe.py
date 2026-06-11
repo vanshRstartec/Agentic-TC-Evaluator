@@ -42,8 +42,9 @@ def _paint(text: str, color: str) -> str:
 # ── Config ────────────────────────────────────────────────────────────────────
 _EVALUATOR_MD     = Path(__file__).resolve().parent / "evaluator.md"
 EVALUATOR_WORKDIR = str(Path(__file__).resolve().parent)
-CLAUDE_BIN        = "claude"
-CLAUDE_MODEL      = "claude-fable-5"
+CLAUDE_BIN    = "claude"
+CLAUDE_MODEL  = "claude-fable-5" # claude-opus-4-8 / claude-sonnet-4-6 / claude-haiku-4-5 / claude-fable-5
+CLAUDE_EFFORT = ""
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 _log_queue: queue.Queue | None = None
@@ -229,10 +230,13 @@ def _parse_event(line: str) -> str | None:
 # ── Claude Code invocation ────────────────────────────────────────────────────
 def run_claude_code(prompt: str, log_q: queue.Queue) -> int:
     """Spawn claude -p, stream parsed output into log_q, return exit code."""
-    cmd = [CLAUDE_BIN, "-p", prompt, "--model", CLAUDE_MODEL,
-           "--dangerously-skip-permissions", "--output-format", "stream-json", "--verbose"]
+    cmd = [CLAUDE_BIN, "-p", prompt, "--model", CLAUDE_MODEL]
+    if CLAUDE_EFFORT:
+        cmd += ["--effort", CLAUDE_EFFORT]
+    cmd += ["--dangerously-skip-permissions", "--output-format", "stream-json", "--verbose"]
     _log(f"  Working dir : {EVALUATOR_WORKDIR}")
     _log(f"  Model       : {CLAUDE_MODEL}")
+    _log(f"  Effort      : {CLAUDE_EFFORT or '(machine default)'}")
     try:
         proc = subprocess.Popen(
             cmd, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
