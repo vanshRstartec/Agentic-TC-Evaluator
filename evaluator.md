@@ -29,10 +29,10 @@ Write `evaluation.json` into the report folder, and save each test case's eviden
 Capture execution evidence with the Playwright MCP tools and save it into the matching `TC_<id>` folder:
 
 - Capture evidence for every Pass and Fail — for a Pass, show the expected end state; for a Fail, show the failure point/state. Create a folder for every test case; an N/A case that never ran in a browser has nothing to capture, so an empty folder is fine.
-- Prefer image (screenshot) evidence. Use video only when a still image can't represent the scenario (e.g. an animation or multi-step interaction a screenshot wouldn't convey).
+- Prefer image (screenshot) evidence if possible. Use video when a still image can't represent the scenario (e.g. an animation or multi-step interaction a screenshot wouldn't convey).
 - One evidence file per test case is usually enough, as long as it clearly proves the result. Add more only when a single file isn't sufficient.
 - Capture image/video of the viewport, not the full page. Take a normal viewport evidence (do NOT pass `fullPage: true`) so evidence stays a readable, screen-sized image/video. Scroll the relevant content into view first, then capture. When the result hinges on one specific component (a sort dropdown, the top result row, an error banner), capture just that element instead. Reserve a full-page evidence for the rare test that genuinely needs the whole page — long scrolling pages produce unusably tall images/videos otherwise.
-- If you think a capture won't clearly show the behaviour you're trying to evidence, resize or adjust the browser window first, then take the screenshot/video — the evidence must depict the result clearly.
+- If you think a capture won't clearly show the behaviour you're trying to evidence, resize or adjust the browser window first, then take the screenshot/video — the evidence must depict the result clearly. Before adding evidence, make sure to verify it if it depicts the result/behavior.
 
 ## evaluation.json
 
