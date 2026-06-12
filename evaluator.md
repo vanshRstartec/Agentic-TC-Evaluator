@@ -66,7 +66,8 @@ For a Fail result, add a `bug_details` object:
       "steps_to_reproduce": ["Step 1", "Step 2", "Step 3"],
       "expected_result": "What should have happened",
       "actual_result": "What actually happened",
-      "priority": "1/2/3/4"
+      "priority": "1 | 2 | 3 | 4",
+      "severity": "1 - Critical | 2 - High | 3 - Medium | 4 - Low"
     }}
   }}
 ]
@@ -75,7 +76,7 @@ For a Fail result, add a `bug_details` object:
 ## Constraints
 
 - Do not install anything, change configurations, or run system-level commands. You may only create files and folders inside the `reports/` output path above (the report folder, the `TC_<id>` folders, the evidence files, and `evaluation.json`).
-- Delete any other files your test execution incidentally creates (downloads, uploads, temp artifacts) so nothing outside the report folder is left behind.
+- Delete any other files your test execution incidentally creates (downloads, uploads, temp artifacts) so nothing outside the report folder is left behind. Make sure all temporary files like snapshots you create are deleted once execution is over.
 
 ## Completion
 

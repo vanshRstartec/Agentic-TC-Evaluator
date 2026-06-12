@@ -41,6 +41,7 @@ def _paint(text: str, color: str) -> str:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _EVALUATOR_MD     = Path(__file__).resolve().parent / "evaluator.md"
+_REPORT_TEMPLATE  = Path(__file__).resolve().parent / "report_template.html"
 EVALUATOR_WORKDIR = str(Path(__file__).resolve().parent)
 CLAUDE_BIN    = "claude"
 CLAUDE_MODEL  = "claude-fable-5" # claude-opus-4-8 / claude-sonnet-4-6 / claude-haiku-4-5 / claude-fable-5
@@ -308,16 +309,16 @@ def _run_evaluation(org: str, project: str, pat: str,
         _check_prerequisites()
         log("")
 
-        log("▶ [1/5]  Fetch test cases from ADO", _C_HEAD)
+        log("▶ [1/6]  Fetch test cases from ADO", _C_HEAD)
         tcs = fetch_suite_test_cases(org, project, pat, plan_id, suite_id)
         log("")
 
-        log("▶ [2/5]  Assemble evaluator prompt", _C_HEAD)
+        log("▶ [2/6]  Assemble evaluator prompt", _C_HEAD)
         prompt = build_prompt(tcs)
         log(f"  ✓ Prompt ready  ({len(prompt):,} chars · {len(tcs)} TC)")
         log("")
 
-        log("▶ [3/5]  Execute via Claude Code", _C_HEAD)
+        log("▶ [3/6]  Execute via Claude Code", _C_HEAD)
         log("  (timestamped green lines below are Claude Code output)", _C_DIM)
         exit_code = run_claude_code(prompt, q)
         if exit_code != 0:
@@ -355,7 +356,7 @@ def _run_evaluation(org: str, project: str, pat: str,
         log("")
 
         if evaluation:
-            log("▶ [4/5]  Write results back to ADO", _C_HEAD)
+            log("▶ [4/6]  Write results back to ADO", _C_HEAD)
             try:
                 # Pass report_dir so evidence files can be attached to TC comments
                 update_ado_results(org, project, pat, plan_id, suite_id,
@@ -366,13 +367,34 @@ def _run_evaluation(org: str, project: str, pat: str,
             log("")
 
         if evaluation:
-            log("▶ [5/5]  Create bugs for failed test cases", _C_HEAD)
+            log("▶ [5/6]  Create bugs for failed test cases", _C_HEAD)
             try:
                 # Pass report_dir so evidence files are embedded in bug ReproSteps
                 create_bugs_for_failures(org, project, pat, evaluation, report_dir)
             except Exception as e:
                 log(f"  ! Bug creation phase failed — {e}", _C_WARN)
                 log("    evaluation.json is saved; create bugs manually if needed", _C_WARN)
+            log("")
+
+        # ── [6/6] Generate HTML report, then remove evaluation.json ──────────
+        if evaluation and report_dir is not None:
+            log("▶ [6/6]  Generate HTML report", _C_HEAD)
+            try:
+                plan_title = _fetch_plan_title(org, project, pat, plan_id)
+                report_path = build_report(
+                    report_dir, evaluation,
+                    plan_id=plan_id, suite_id=suite_id, plan_title=plan_title)
+                log(f"  ✓ report.html written — {report_path.name}")
+                # Report now holds all the data; the raw JSON is no longer needed.
+                if eval_path and eval_path.exists():
+                    try:
+                        eval_path.unlink()
+                        log("  ✓ evaluation.json removed (data now in report.html)")
+                    except Exception as e:
+                        log(f"  ! could not remove evaluation.json — {e}", _C_WARN)
+            except Exception as e:
+                log(f"  ! Report generation failed — {e}", _C_WARN)
+                log("    evaluation.json is preserved for manual inspection", _C_WARN)
             log("")
 
         job["result"] = {
@@ -382,7 +404,7 @@ def _run_evaluation(org: str, project: str, pat: str,
             "tc_count":        len(tcs),
             "evaluation":      evaluation,
             "report_dir":      str(report_dir) if report_dir else None,
-            "evaluation_file": str(eval_path) if eval_path else None,
+            "report_file":     str(report_dir / "report.html") if report_dir else None,
         }
         log(rule, _C_DIM)
         log("  ✓ EVALUATOR COMPLETE", _C_HEAD)
@@ -487,7 +509,7 @@ def _process_evidence_files(
                           that were uploaded but need an AttachedFile relation
                           added to a work item by the caller.
     """
-    parts:          list[str]             = ["<p>Evidence,</p>"]
+    parts:          list[str]             = ["<p><b>Evidence,</b></p>"]
     pending_videos: list[tuple[str, str]] = []
 
     for f in evidence_files:
@@ -642,8 +664,17 @@ def update_ado_results(org: str, project: str, pat: str,
                     except Exception as ve:
                         _log(f"    #{wi_id}  ! video attach failed ({filename}): {ve}", _C_WARN)
 
-            # Build final comment: plain-text header + HTML evidence block
-            comment_html = comment.replace("\n", "<br>") + ev_html
+            # Build final comment: plain-text header → HTML (with bold labels)
+            # + HTML evidence block. The plain-text `comment` is reused as-is
+            # for the test-run execution history; only this HTML copy is bolded.
+            header_html = (
+                comment
+                .replace("Evaluator Agent", "<b>Evaluator Agent</b>", 1)
+                .replace("Result:", "<b>Result:</b>", 1)
+                .replace("Reason:", "<b>Reason:</b>", 1)
+                .replace("\n", "<br>")
+            )
+            comment_html = header_html + ev_html
             _ado_req("post",
                      f"{base}/wit/workItems/{wi_id}/comments?api-version=7.0-preview.3",
                      pat, {"text": comment_html})
@@ -781,6 +812,8 @@ def create_bugs_for_failures(org: str, project: str, pat: str,
         except (ValueError, TypeError):
             priority = 2
 
+        severity = (bug_details.get("severity") or "").strip()
+
         full_title = f"[Evaluator Agent] {title}"
         repro_html = _build_repro_steps_html(
             (bug_details.get("description") or "").strip(),
@@ -827,6 +860,8 @@ def create_bugs_for_failures(org: str, project: str, pat: str,
             {"op": "add", "path": "/fields/Microsoft.VSTS.TCM.ReproSteps",  "value": repro_html},
             {"op": "add", "path": "/fields/Microsoft.VSTS.Common.Priority", "value": priority},
         ]
+        if severity:
+            patch_doc.append({"op": "add", "path": "/fields/Microsoft.VSTS.Common.Severity", "value": severity})
         if assigned_to:
             patch_doc.append({"op": "add", "path": "/fields/System.AssignedTo",    "value": assigned_to})
         if iteration_path:
@@ -857,3 +892,124 @@ def create_bugs_for_failures(org: str, project: str, pat: str,
             skipped += 1
 
     _log(f"  ✓ Bug creation — {created} bug(s) created, {skipped} skipped")
+
+# ── HTML report generator ─────────────────────────────────────────────────────
+
+
+def _fetch_plan_title(org: str, project: str, pat: str, plan_id: str) -> str | None:
+    """Return the ADO test plan name, or None if it can't be fetched."""
+    try:
+        base = f"https://dev.azure.com/{org}/{project}/_apis"
+        resp = _ado_get(f"{base}/testplan/plans/{plan_id}?api-version=7.0", pat)
+        return (resp.get("name") or "").strip() or None
+    except Exception as e:
+        _log(f"  ! could not fetch plan title — {e}", _C_WARN)
+        return None
+
+
+def _result_class(result: str) -> str:
+    r = (result or "").strip().lower()
+    if r == "pass":
+        return "pass"
+    if r in ("fail", "failed"):
+        return "fail"
+    return "na"
+
+
+def _evidence_grid_html(report_dir: Path, tc_id: str) -> str:
+    """Build the evidence thumbnail grid for one TC, referencing files by
+    relative path (TC_<id>/<filename>) so the report stays portable as a folder.
+    """
+    files = _get_tc_evidence(report_dir, tc_id)
+    if not files:
+        return '<p class="no-ev">No evidence captured.</p>'
+    cells = []
+    for f in files:
+        rel  = f"TC_{tc_id}/{f.name}"
+        name = escape(f.name)
+        if f.suffix.lower() in _IMAGE_EXTS:
+            cells.append(
+                f'<a class="ev" href="{escape(rel)}" target="_blank">'
+                f'<img src="{escape(rel)}" alt="{name}" loading="lazy">'
+                f'<span class="ev-name">{name}</span></a>'
+            )
+        else:
+            cells.append(
+                f'<div class="ev"><video src="{escape(rel)}" controls preload="metadata"></video>'
+                f'<span class="ev-name">{name}</span></div>'
+            )
+    return f'<div class="ev-grid">{"".join(cells)}</div>'
+
+
+def _case_card_html(report_dir: Path, entry: dict, open_first: bool) -> str:
+    tc_id  = str(entry.get("id", ""))
+    title  = escape(entry.get("title", "Untitled"))
+    result = entry.get("result", "")
+    reason = escape(entry.get("reason", "") or "")
+    cls    = _result_class(result)
+    label  = escape((result or "N/A").strip() or "N/A")
+    tone   = {"pass": "pass-tone", "fail": "fail-tone", "na": ""}[cls]
+    open_c = " open" if open_first else ""
+
+    return f"""
+    <div class="case {cls}{open_c}" data-result="{cls}">
+      <button class="case-head" onclick="toggle(this)">
+        <span class="chev">▶</span>
+        <span class="badge {cls}">{label}</span>
+        <span class="tc-id">#{escape(tc_id)}</span>
+        <span class="tc-title">{title}</span>
+      </button>
+      <div class="case-body">
+        <div class="divider"></div>
+        <div class="lbl">Reason</div>
+        <div class="reason {tone}">{reason}</div>
+        <div class="lbl">Evidence</div>
+        {_evidence_grid_html(report_dir, tc_id)}
+      </div>
+    </div>"""
+
+def build_report(report_dir: Path, evaluation: list[dict], *,
+                 plan_id: str, suite_id: str,
+                 plan_title: str | None = None) -> Path:
+    """Render report.html into *report_dir* by filling report_template.html.
+
+    The template is a standalone editable HTML file (report_template.html);
+    this function only substitutes {{TOKENS}} — no markup lives in code.
+    Evidence is referenced by relative path (TC_<id>/<file>) so the whole
+    report_dir folder stays portable. Returns the path to the written report.
+    """
+    template = _REPORT_TEMPLATE.read_text(encoding="utf-8")
+
+    total  = len(evaluation)
+    n_pass = sum(1 for e in evaluation if _result_class(e.get("result", "")) == "pass")
+    n_fail = sum(1 for e in evaluation if _result_class(e.get("result", "")) == "fail")
+    n_na   = total - n_pass - n_fail
+
+    def pct(n: int) -> str:
+        return f"{(n / total * 100) if total else 0:.1f}"
+
+    cases_html = "".join(
+        _case_card_html(report_dir, e, open_first=(i == 0))
+        for i, e in enumerate(evaluation)
+    )
+
+    tokens = {
+        "{{HEADLINE}}":     escape(plan_title) if plan_title else "Test Execution Report",
+        "{{PLAN_ID}}":      escape(str(plan_id)),
+        "{{SUITE_ID}}":     escape(str(suite_id)),
+        "{{GENERATED_AT}}": datetime.now().strftime("%d %b %Y, %H:%M"),
+        "{{TOTAL}}":        str(total),
+        "{{PASS}}":         str(n_pass),
+        "{{FAIL}}":         str(n_fail),
+        "{{NA}}":           str(n_na),
+        "{{PASS_PCT}}":     pct(n_pass),
+        "{{FAIL_PCT}}":     pct(n_fail),
+        "{{NA_PCT}}":       pct(n_na),
+        "{{CASES}}":        cases_html,
+    }
+    for token, value in tokens.items():
+        template = template.replace(token, value)
+
+    out_path = report_dir / "report.html"
+    out_path.write_text(template, encoding="utf-8")
+    return out_path
